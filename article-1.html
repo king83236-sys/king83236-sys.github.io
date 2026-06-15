@@ -3,40 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>車禍慰撫金怎麼算？2,800筆判決告訴你真實數字｜鄧宇律師</title>
-<meta name="description" content="車禍慰撫金沒有固定公式，本文整理2,800筆真實判決，告訴你輕傷、骨折、重傷各級別的實際賠償落點，幫助你在談判時有所依據。">
-<meta name="keywords" content="車禍慰撫金,慰撫金怎麼算,車禍賠償金額,慰撫金標準,車禍骨折賠多少">
+<title>車禍慰撫金計算機完整使用說明｜大數據判決查詢、PDF報告下載｜鄧宇律師</title>
+<meta name="description" content="完整說明車禍慰撫金計算機的使用方式、資料來源、慰撫金光譜怎麼看、PDF報告如何使用，以及跟其他計算機最大的不同。包含真實操作示範。">
+<meta name="keywords" content="車禍慰撫金計算機,車禍賠償計算,慰撫金大數據,車禍判決查詢,車禍PDF報告,車禍求償">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif; background: #F5F3EE; color: #1A1A1A; }
-  nav { background: #2D0F0F; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif; background: #F5F3EE; color: #1A1A1A; line-height: 1.8; }
+  nav { background: #2D0F0F; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .nav-brand { color: #D4786A; font-weight: 800; font-size: 1rem; text-decoration: none; }
   .nav-back { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
   .nav-back:hover { color: #D4786A; }
-  .article-hero { background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); padding: 48px 24px; }
+
+  .article-hero { background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); padding: 48px 24px 40px; }
   .article-tag { display: inline-block; background: rgba(212,120,106,0.2); color: #D4786A; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; border: 1px solid rgba(212,120,106,0.4); margin-bottom: 16px; }
-  .article-hero h1 { font-size: 1.6rem; font-weight: 900; color: #FFFFFF; line-height: 1.3; max-width: 700px; }
-  .article-meta { margin-top: 16px; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
-  .container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
-  .article-body { background: #FFFFFF; border-radius: 12px; padding: 36px; margin: 32px auto; max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-  .article-body h2 { font-size: 1.15rem; font-weight: 800; color: #2D0F0F; margin: 28px 0 12px; padding-left: 12px; border-left: 4px solid #C85A50; }
+  .article-hero h1 { font-size: 1.6rem; font-weight: 900; color: #FFFFFF; line-height: 1.3; max-width: 700px; margin-bottom: 12px; }
+  .article-meta { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+
+  .article-wrap { max-width: 740px; margin: 32px auto; padding: 0 24px; }
+  .article-body { background: #FFFFFF; border-radius: 12px; padding: 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+
+  .article-body p { font-size: 0.97rem; color: #333; line-height: 1.95; margin-bottom: 16px; }
+  .article-body h2 { font-size: 1.1rem; font-weight: 900; color: #2D0F0F; margin: 36px 0 14px; padding-left: 14px; border-left: 4px solid #C85A50; }
   .article-body h2:first-child { margin-top: 0; }
-  .article-body p { font-size: 0.95rem; color: #333; line-height: 1.9; margin-bottom: 14px; }
-  .article-body ul { padding-left: 20px; margin-bottom: 14px; }
-  .article-body li { font-size: 0.95rem; color: #333; line-height: 1.9; margin-bottom: 6px; }
-  .highlight-box { background: #FFF8F2; border-left: 4px solid #C85A50; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 20px 0; font-size: 0.9rem; color: #4A1A1A; line-height: 1.75; }
-  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
-  .data-table th { background: #2D0F0F; color: #FFFFFF; padding: 10px 14px; text-align: left; }
-  .data-table td { padding: 10px 14px; border-bottom: 1px solid #F0ECE4; color: #333; }
-  .data-table tr:nth-child(even) td { background: #FAFAF8; }
-  .cta-box { background: linear-gradient(135deg, #2D0F0F, #4A1A1A); border-radius: 10px; padding: 24px; text-align: center; margin: 32px 0 0; }
+  .article-body h3 { font-size: 0.97rem; font-weight: 800; color: #1A1A1A; margin: 24px 0 10px; }
+  .article-body ul { padding-left: 22px; margin-bottom: 16px; }
+  .article-body li { font-size: 0.97rem; color: #333; line-height: 1.85; margin-bottom: 8px; }
+
+  .hl-red { color: #C62828; font-weight: 800; }
+  .hl-dark { color: #2D0F0F; font-weight: 800; }
+
+  .divider { border: none; border-top: 1px solid #F0ECE4; margin: 32px 0; }
+
+  /* 步驟流程 */
+  .steps { display: flex; gap: 0; margin: 24px 0; overflow-x: auto; }
+  .step { flex: 1; min-width: 120px; text-align: center; position: relative; }
+  .step:not(:last-child)::after { content: "→"; position: absolute; right: -10px; top: 20px; font-size: 1.2rem; color: #C85A50; font-weight: 800; }
+  .step-num { width: 40px; height: 40px; background: #2D0F0F; color: #FFFFFF; border-radius: 50%; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+  .step-label { font-size: 0.78rem; font-weight: 700; color: #1A1A1A; line-height: 1.4; }
+  .step-sub { font-size: 0.7rem; color: #888; margin-top: 3px; }
+
+  /* Q1/Q2/Q3 表格 */
+  .spectrum-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .spectrum-table th { padding: 12px 16px; text-align: center; font-size: 0.85rem; font-weight: 800; }
+  .spectrum-table td { padding: 10px 16px; text-align: center; font-size: 0.88rem; border-top: 1px solid #F0ECE4; }
+  .spectrum-table .th-q1 { background: #F5F3EE; color: #555; border-radius: 8px 0 0 0; }
+  .spectrum-table .th-q2 { background: #2D0F0F; color: #FFFFFF; }
+  .spectrum-table .th-q3 { background: #F5F3EE; color: #555; border-radius: 0 8px 0 0; }
+  .spectrum-table .td-q2 { background: #FFF8F5; font-weight: 700; color: #C85A50; }
+  .spectrum-table .amt { font-size: 1.1rem; font-weight: 900; }
+  .spectrum-table .amt.center { color: #C85A50; font-size: 1.3rem; }
+
+  /* 提示框 */
+  .note-box { background: #F4ECE1; border-left: 4px solid #4A1A1A; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.9rem; color: #3A2010; line-height: 1.8; }
+  .note-box strong { color: #2D0F0F; display: block; margin-bottom: 6px; font-size: 0.95rem; }
+  .warn-box { background: #FFEBEE; border-left: 4px solid #C62828; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.9rem; color: #7A1010; line-height: 1.8; }
+  .warn-box strong { display: block; margin-bottom: 6px; font-size: 0.95rem; }
+  .ok-box { background: #EBF5EC; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.9rem; color: #1B4A20; line-height: 1.8; }
+
+  /* 擬真PDF示範 */
+  .demo-label { text-align: center; margin: 28px 0 8px; }
+  .demo-label span { display: inline-block; background: #E8E0D0; color: #666; font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; }
+  .pdf-mock { background: #FFFFFF; border: 1px solid #D0C8C0; border-radius: 8px; padding: 28px 24px; margin: 0 0 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); max-width: 560px; margin: 0 auto; font-size: 0.82rem; color: #1A1A1A; }
+  .pdf-header { background: #1A2B4C; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 4px; font-size: 1rem; font-weight: 800; margin-bottom: 16px; letter-spacing: 0.02em; }
+  .pdf-section-title { font-size: 0.85rem; font-weight: 800; color: #1A1A1A; margin: 14px 0 6px; border-bottom: 1px solid #E0E0E0; padding-bottom: 4px; }
+  .pdf-row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 0.78rem; color: #333; }
+  .pdf-table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  .pdf-table th { background: #1A2B4C; color: #FFFFFF; padding: 5px 8px; font-size: 0.75rem; text-align: left; }
+  .pdf-table td { padding: 4px 8px; font-size: 0.75rem; border-bottom: 1px solid #EFEFEF; }
+  .pdf-table tr:last-child td { font-weight: 800; background: #F5F5F5; }
+  .pdf-conclusion { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 6px; margin: 10px 0; }
+  .pdf-con-item { text-align: center; padding: 8px 4px; border: 1px solid #E0E0E0; border-radius: 4px; font-size: 0.72rem; }
+  .pdf-con-item.center { background: #1A2B4C; color: #FFFFFF; border-color: #1A2B4C; }
+  .pdf-con-item .con-label { font-weight: 700; margin-bottom: 3px; }
+  .pdf-con-item .con-amount { font-size: 0.9rem; font-weight: 900; }
+  .pdf-final { background: #F5F5F5; border: 1px solid #E0E0E0; border-radius: 4px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; margin: 8px 0; font-size: 0.82rem; }
+  .pdf-final .val { font-weight: 900; font-size: 1rem; color: #1A2B4C; }
+  .pdf-watermark { position: relative; }
+  .pdf-watermark::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(26,43,76,0.04) 40px, rgba(26,43,76,0.04) 80px); pointer-events: none; border-radius: 8px; }
+  .mosaic { display: inline-block; background: #888; color: transparent; border-radius: 3px; user-select: none; font-size: 0.78rem; padding: 0 4px; }
+  .pdf-tip { text-align: center; font-size: 0.72rem; color: #AAA; margin-top: 6px; }
+
+  /* CTA */
+  .cta-box { background: linear-gradient(135deg, #2D0F0F, #4A1A1A); border-radius: 12px; padding: 28px 24px; text-align: center; margin: 36px 0 0; }
   .cta-box h3 { color: #FFFFFF; font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
-  .cta-box p { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 16px; }
+  .cta-box p { color: rgba(255,255,255,0.6); font-size: 0.88rem; margin-bottom: 20px; line-height: 1.7; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .cta-btn { display: inline-block; background: #C85A50; color: #FFFFFF; font-size: 0.9rem; font-weight: 700; padding: 12px 24px; border-radius: 6px; text-decoration: none; }
-  .disclaimer { font-size: 0.78rem; color: #AAA; margin-top: 24px; padding-top: 16px; border-top: 1px solid #E8E0D0; line-height: 1.7; }
-  footer { background: #1A1A1A; padding: 20px 24px; text-align: center; margin-top: 0; }
-  footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  .cta-btn.line { background: #06C755; }
+
+  .disclaimer { font-size: 0.78rem; color: #AAA; margin-top: 28px; padding-top: 16px; border-top: 1px solid #E8E0D0; line-height: 1.8; }
+
+  footer { background: #1A1A1A; padding: 20px 24px; text-align: center; }
+  footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
   footer a { color: #D4786A; text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .article-hero h1 { font-size: 1.3rem; }
+    .article-body { padding: 24px 16px; }
+    .steps { gap: 4px; }
+    .step-label { font-size: 0.7rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .pdf-mock { padding: 18px 14px; }
+    .pdf-conclusion { grid-template-columns: 1fr 1.2fr 1fr; gap: 4px; }
+  }
 </style>
 </head>
 <body>
@@ -47,71 +116,157 @@
 </nav>
 
 <div class="article-hero">
-  <div class="container">
-    <div class="article-tag">慰撫金</div>
-    <h1>車禍慰撫金怎麼算？2,800筆判決告訴你真實數字</h1>
+  <div style="max-width:740px;margin:0 auto;padding:0 24px;">
+    <div class="article-tag">工具說明</div>
+    <h1>車禍慰撫金計算機完整使用說明｜大數據判決查詢、PDF報告下載</h1>
     <div class="article-meta">鄧宇律師｜車禍法律知識</div>
   </div>
 </div>
 
-<div class="article-body" style="margin: 32px auto; max-width: 700px; padding: 36px; background: #FFFFFF; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-  <div style="max-width: 700px; margin: 0 auto; padding: 0 24px;">
+<div class="article-wrap">
+<div class="article-body">
 
-  <h2>慰撫金是什麼？</h2>
-  <p>精神慰撫金，又稱非財產上損害賠償，是民法第195條賦予被害人的請求權。簡單說，就是對方因為侵害你的身體，需要賠償你在精神上所受的痛苦。</p>
-  <p>跟醫療費、修車費這些「實支實付」不同，慰撫金沒有固定公式，金額完全由法院依個案裁量，這也是為什麼它是談判中最容易被漫天要價、也最容易被惡意壓低的項目。</p>
+  <p>我知道網路上還有別的車禍賠償計算機，我也實際用過，但大多數只給你一個數字，你不知道這個數字從哪來、可不可以信。如果你是對造，單純看到對方開出一個數字，說是用計算機算出來的結果，沒有任何東西佐證，<span class="hl-dark">你會不會買單？</span></p>
 
-  <h2>法院怎麼決定慰撫金金額？</h2>
-  <p>根據實務，法院通常會考量以下因素：</p>
-  <ul>
-    <li><strong>傷勢嚴重程度</strong>：輕傷、骨折、重傷、失能，金額差距極大</li>
-    <li><strong>原告職業與收入</strong>：影響傷勢對生活的衝擊程度</li>
-    <li><strong>治療期間與後遺症</strong>：需要長期復健或留有永久性傷害的金額較高</li>
-    <li><strong>被告過失程度</strong>：肇責比例會影響法院對慰撫金的裁量</li>
-    <li><strong>雙方經濟狀況</strong>：法院有時會考量被告的賠償能力</li>
-  </ul>
+  <p>所以我決定自己做一個。這套計算機不一樣的地方在於：<span class="hl-dark">數字來自真實的法院判決</span>，你可以直接看到部分案號，自己去找判決書當後盾。</p>
 
-  <div class="highlight-box">
-    ⚠️ 重要提醒：慰撫金沒有法定上限，也沒有法定下限。同樣的傷勢，不同法院、不同法官，可能判出差距數倍的金額。這就是為什麼「大數據」比「感覺」更重要。
+  <p>以下說明怎麼用，以及幾個使用前要知道的事。</p>
+
+  <hr class="divider">
+
+  <h2>一、使用流程</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-label">填入傷勢</div>
+      <div class="step-sub">依診斷證明選擇級別</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-label">輸入費用</div>
+      <div class="step-sub">醫療、工損、修車等</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-label">設定肇責</div>
+      <div class="step-sub">參考初判表填入比例</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-label">查看光譜</div>
+      <div class="step-sub">比對同類判決落點</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-label">下載報告</div>
+      <div class="step-sub">PDF帶去談判桌</div>
+    </div>
   </div>
 
-  <h2>各傷勢級別的判決落點參考</h2>
-  <p>以下數據來自本系統收錄的 2,800+ 筆真實車禍判決（2025.09–2026.03），排除極端值後的中位數參考：</p>
+  <h2>二、這個工具能算什麼</h2>
+  <ul>
+    <li><strong>有人受傷</strong>：算精神慰撫金落點（大數據光譜）＋實支實付損失＋過失相抵後的參考求償金額，最後可以下載 PDF 評估報告。</li>
+    <li><strong>純車損無人受傷</strong>：算修車折舊、全損報廢、其他衍生費用，同樣可以下載報告。</li>
+  </ul>
 
-  <table class="data-table">
+  <h2>三、慰撫金光譜怎麼看</h2>
+
+  <p>系統會給<span class="hl-dark">三個數字</span>，對應同類傷勢判決的不同分位：</p>
+
+  <table class="spectrum-table">
     <thead>
-      <tr><th>傷勢級別</th><th>常見類型</th><th>慰撫金中位數參考</th></tr>
+      <tr>
+        <th class="th-q1">保守低標（Q1）</th>
+        <th class="th-q2">客觀中標（Q2）</th>
+        <th class="th-q3">有利高標（Q3）</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>輕微</td><td>擦傷、挫傷、扭傷、軟組織傷</td><td>NT$ 10,000 ~ 50,000</td></tr>
-      <tr><td>中度</td><td>一般骨折、腦震盪、韌帶斷裂</td><td>NT$ 80,000 ~ 200,000</td></tr>
-      <tr><td>中重度</td><td>粉碎性骨折、脊椎骨折、內臟撕裂</td><td>NT$ 200,000 ~ 500,000</td></tr>
-      <tr><td>重大</td><td>截肢、癱瘓、脊髓損傷</td><td>NT$ 500,000 以上</td></tr>
-      <tr><td>死亡</td><td>家屬求償</td><td>NT$ 700,000 ~ 1,800,000</td></tr>
+      <tr>
+        <td>25th 百分位</td>
+        <td class="td-q2">中位數</td>
+        <td>75th 百分位</td>
+      </tr>
+      <tr>
+        <td>傷勢較輕微或<br>舉證較不充分</td>
+        <td class="td-q2"><strong>談判主要參考基準</strong></td>
+        <td>傷勢較重或<br>舉證較充分</td>
+      </tr>
     </tbody>
   </table>
 
-  <p>以上數字僅為中位數參考，實際金額因個案差異極大。傷勢描述越精確、舉證越充分，談判時越有底氣。</p>
+  <p>建議以 <span class="hl-dark">Q2 為起點</span>，視個案情況調整，不要死守單一數字。調解的本質是各退一步，帶著數字上桌是為了讓你知道自己的底線在哪，不是為了加速談判破局。</p>
 
-  <h2>談判時應該開多少？</h2>
-  <p>實務上，開價有兩個常見錯誤：</p>
+  <div class="note-box">
+    <strong>重要：光譜和判決表格顯示的是過失相抵前的原始慰撫金</strong>
+    系統萃取的慰撫金是法院裁量的原始數字，<span style="font-weight:800;">尚未扣除過失比例</span>。這樣做是為了讓你帶入自己的肇責比例正確換算。實際套用個案的數字，是最後「<strong>參考求償金額</strong>」那個欄位。
+  </div>
+
+  <h2>四、資料怎麼來的</h2>
+
+  <p>資料來源是<span class="hl-dark">司法院資料開放平台</span>的公開判決，收錄 2025.09～2026.03 共 <span class="hl-dark">2,800+ 筆</span>車禍民事案件（持續更新中），使用 AI 輔助從判決書中萃取傷勢描述、慰撫金金額等欄位後整理分類。計算光譜時排除統計上的極端值，取 Q1、Q2、Q3 呈現。</p>
+
+  <div class="warn-box">
+    <strong>⚠️ 一個重要的須知</strong>
+    慰撫金光譜是「同類傷勢的歷史分布」，<span class="hl-red">不是「你的案件進法院一定可以要到這個數字」</span>。<br><br>
+    法院判賠金額受很多個案因素影響——法官心證、舉證品質、雙方態度、論述是否完整——同樣是骨折，不同案件的判決可能差距好幾倍。<br><br>
+    這就是為什麼工具同時提供真實判決讓你對照：<strong>光譜給你方向，判決傷勢描述才能幫你確認自己落在哪個位置</strong>，甚至進一步找出類似判決幫自己主張。
+  </div>
+
+  <h3>另一件影響調解金額的事：刑事問題</h3>
+  <p>車禍如果有人受傷，通常同時涉及民事賠償和<span class="hl-dark">刑事過失傷害</span>兩個問題，而這兩件事往往在調解裡一起處理。</p>
+  <p>肇事者不在乎刑事前科的，傾向壓低金額；希望避免刑事紀錄的，談判籌碼就會體現在願意接受更高的調解金額。所以<span class="hl-dark">實際調解金額可能高於也可能低於光譜範圍</span>，取決於雙方的籌碼和意願。</p>
+
+  <h2>五、跟其他計算機最大的不同</h2>
+
+  <p>大部分工具給你一個數字，但<span class="hl-red">不告訴你依據是什麼</span>。</p>
+  <p>這套系統會列出具代表性的真實判決，包含案號、職業、傷勢描述、判賠慰撫金金額，<span class="hl-dark">案號可自行至司法院裁判書查詢系統查證</span>。你可以找跟自己傷勢最接近的案例，作為談判時的具體依據。</p>
+
+  <h2>六、PDF 評估報告</h2>
+
+  <p>計算完成後可以下載 PDF，內容包含損害項目明細、過失相抵計算過程、三個參考數字、律師實務建議。可以直接帶去調解現場。<span class="hl-dark">PDF 報告是輔助工具，不能取代診斷證明、收據等實際證據本身</span>，調解時還是要讓對方清楚看到你的證據。</p>
+
+  <div style="max-width:560px;margin:20px auto;">
+    <img src="images/pdf-demo.png" alt="車禍理賠評估報告" style="width:100%;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.15);display:block;">
+  </div>
+
+  <h2>七、什麼情況下建議找律師</h2>
   <ul>
-    <li><strong>開太低</strong>：怕對方不接受，壓低自己的期待，結果委屈和解</li>
-    <li><strong>開太高</strong>：沒有依據的天價，讓對方直接拒絕談判，最後打官司拿到的反而更少</li>
+    <li>傷勢屬於重大（截肢、癱瘓、脊髓損傷等）或死亡案件，或總求償金額超過50萬</li>
+    <li>對方否認肇事責任，或初判表認定有爭議</li>
+    <li>調解已經破局超過一次、對方態度強硬或惡劣，或對方已委託律師處理</li>
   </ul>
-  <p>最有效的策略是：以客觀中標（Q2中位數）為基礎，保留一定談判空間，帶著判決資料上桌，讓數字說話。</p>
+
+  <div class="ok-box">
+    以下情況通常可以自己處理：<br><br>
+    ・傷勢輕微（擦傷、挫傷、扭傷），雙方對肇責沒有爭議<br>
+    ・求償金額在10萬以內，對方有誠意協商<br>
+    ・調解進行中，只是需要一個數字參考<br><br>
+    自己處理不代表不能諮詢，如果有任何疑慮，<strong>諮詢律師的成本遠低於談判失誤的代價</strong>。
+  </div>
+
+  <h2>八、使用前要知道的事</h2>
+  <ul>
+    <li>數字是歷史判決落點，<span class="hl-red">不是保證金額</span></li>
+    <li>個案差異大，同樣傷勢可能因各種因素而有不同結果</li>
+    <li>本工具不構成法律建議，複雜案件建議諮詢律師</li>
+  </ul>
 
   <div class="cta-box">
-    <h3>想知道你的案件慰撫金落點？</h3>
-    <p>輸入傷勢級別與相關費用，系統自動比對判決資料庫，產出你的專屬參考區間。</p>
-    <a href="https://accident-bigdata.streamlit.app/" target="_blank" class="cta-btn">🔢 免費使用計算機</a>
+    <h3>準備好了嗎？</h3>
+    <p>帶著數字上談判桌，讓判決說話。</p>
+    <div class="cta-buttons">
+      <a href="https://accident-bigdata.streamlit.app/" target="_blank" class="cta-btn">🔢 直接使用計算機</a>
+      <a href="https://lin.ee/yfDGMXo" target="_blank" class="cta-btn line">💬 LINE 諮詢</a>
+    </div>
   </div>
 
   <div class="disclaimer">
-    本文內容僅供法律知識參考，不構成法律建議。個案情況存在差異，建議諮詢專業律師評估。資料來源：司法院資訊開放平台。
+    本文內容僅供法律知識參考，不構成法律建議。個案情況存在差異，建議諮詢專業律師評估。資料來源：司法院資料開放平台。
   </div>
 
-  </div>
+</div>
 </div>
 
 <footer>
