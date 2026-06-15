@@ -54,7 +54,7 @@
   .spectrum-table .amt.center { color: #C85A50; font-size: 1.3rem; }
 
   /* 提示框 */
-  .note-box { background: #F4ECE1; border-left: 4px solid #4A1A1A; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.9rem; color: #3A2010; line-height: 1.8; }
+  .note-box { background: #F4ECE1; border-left: 4px solid #4A1A1A; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.9rem; color: #3A2010; line-height: 1.8; word-break: break-word; }
   .note-box strong { color: #2D0F0F; display: block; margin-bottom: 6px; font-size: 0.95rem; }
   .warn-box { background: #FFEBEE; border-left: 4px solid #C62828; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 0.9rem; color: #7A1010; line-height: 1.8; }
   .warn-box strong { display: block; margin-bottom: 6px; font-size: 0.95rem; }
@@ -107,10 +107,11 @@
     .pdf-conclusion { grid-template-columns: 1fr 1.2fr 1fr; gap: 4px; }
   }
 
-  .line-float { position: fixed; bottom: 28px; right: 20px; z-index: 999; }
-  .line-float a { display: block; width: 60px; height: 60px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; }
+  .line-float { position: fixed; bottom: 28px; right: 20px; z-index: 999; text-align: center; }
+  .line-float a { display: block; width: 60px; height: 60px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; margin: 0 auto; }
   .line-float a:hover { transform: scale(1.08); }
   .line-float img { width: 60px; height: 60px; display: block; }
+  .line-float-label { font-size: 0.68rem; font-weight: 700; color: #333; margin-top: 5px; background: rgba(255,255,255,0.9); border-radius: 6px; padding: 2px 6px; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
@@ -135,9 +136,9 @@
 <div class="article-wrap">
 <div class="article-body">
 
-  <p>我知道網路上還有別的車禍賠償計算機，我也實際用過，但大多數只給你一個數字，你不知道這個數字從哪來、可不可以信。如果你是對造，單純看到對方開出一個數字，說是用計算機算出來的結果，沒有任何東西佐證，<span class="hl-dark">你會不會買單？</span></p>
+  <p>網路上還有別的車禍賠償計算機，我也實際用過，但大多數只給你一個數字，沒有說這個數字從哪來、依據是什麼。如果是談判對造看到這個數字，沒有任何東西可以佐證，說服力有限。</p>
 
-  <p>所以我決定自己做一個。這套計算機不一樣的地方在於：<span class="hl-dark">數字來自真實的法院判決</span>，你可以直接對照同類傷勢的真實判決，找到跟自己情況最接近的案例當後盾。</p>
+  <p>所以我決定自己做一個計算機。這套不一樣的地方在於：<span class="hl-dark">數字來自真實的法院判決</span>，你可以直接對照同類傷勢的真實判決，找到跟自己情況最接近的案例當後盾，不論是拿來主張或是拿來抗辯都適用。</p>
 
   <p>以下說明怎麼用，以及幾個使用前要知道的事。</p>
 
@@ -252,7 +253,7 @@
     ・傷勢輕微（擦傷、挫傷、扭傷），雙方對肇責沒有爭議<br>
     ・求償金額在10萬以內，對方有誠意協商<br>
     ・調解進行中，只是需要一個數字參考<br><br>
-    自己處理不代表不能諮詢，如果有任何疑慮，<strong>諮詢律師的成本遠低於談判失誤的代價</strong>。
+    自己處理時，如果遇到任何疑慮，歡迎加 LINE 了解更多，加LINE不用付錢。
   </div>
 
   <h2>八、使用前要知道的事</h2>
@@ -288,6 +289,7 @@
   <a href="https://lin.ee/yfDGMXo" target="_blank" title="LINE 諮詢鄧宇律師">
     <img src="images/line-icon.png" alt="LINE 諮詢">
   </a>
+  <div class="line-float-label">LINE 諮詢</div>
 </div>
 </body>
 </html>
