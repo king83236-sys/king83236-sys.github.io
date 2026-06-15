@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="vIXgApX3KW1xnqlfxOYG7Nf8z_8t5Krr4E6Pz8qa-P4" />
-<title>鄧宇律師｜車禍法律資源中心</title>
-<meta name="description" content="鄧宇律師提供車禍慰撫金大數據計算機、車禍法律知識文章，幫助您在談判桌上掌握數字依據，保障自身權益。">
+<title>鄧宇律師｜法律工具人</title>
+<meta name="description" content="鄧宇律師提供車禍慰撫金大數據計算機、車禍文章文章，幫助您在談判桌上掌握數字依據，保障自身權益。">
 <meta name="keywords" content="車禍慰撫金,車禍賠償,車禍律師,慰撫金計算,車禍時效,強制險">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,6 +64,11 @@
     .articles-grid { grid-template-columns: 1fr; }
     .stat-num { font-size: 1.3rem; }
   }
+
+  .line-float { position: fixed; bottom: 28px; right: 20px; z-index: 999; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25)); }
+  .line-float a { display: block; width: 60px; height: 60px; transition: transform 0.2s; }
+  .line-float a:hover { transform: scale(1.08); }
+  .line-float img { width: 60px; height: 60px; border-radius: 14px; }
 </style>
 </head>
 <body>
@@ -78,7 +83,7 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-tag">車禍法律資源中心</div>
+  <div class="hero-tag">法律工具人</div>
   <h1>車禍求償，<span>讓數據說話</span></h1>
   <p>整合全台 2,600+ 筆真實判決，幫您在談判桌上掌握數字依據，不再靠感覺開價。</p>
   <a href="https://accident-bigdata.streamlit.app/" target="_blank" class="btn-primary">🔢 免費使用慰撫金計算機</a>
@@ -106,8 +111,8 @@
 
 <div class="articles-section" id="articles">
   <div class="container">
-    <div class="section-label">法律知識</div>
-    <div class="section-title">車禍法律文章</div>
+    <div class="section-label">文章</div>
+    <div class="section-title">法律文章</div>
     <div class="articles-grid" style="grid-template-columns:1fr;max-width:500px;">
       <a href="article-1.html" class="article-card">
         <div class="article-tag">工具說明</div>
@@ -157,5 +162,12 @@
   </p>
 </footer>
 
+
+<!-- LINE 浮動按鈕 -->
+<div class="line-float">
+  <a href="https://lin.ee/yfDGMXo" target="_blank" title="LINE 諮詢鄧宇律師">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
+  </a>
+</div>
 </body>
 </html>
