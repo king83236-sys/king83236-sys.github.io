@@ -11,8 +11,8 @@
   body { font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif; background: #F5F3EE; color: #1A1A1A; line-height: 1.8; }
   nav { background: #2D0F0F; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .nav-brand { color: #D4786A; font-weight: 800; font-size: 1rem; text-decoration: none; }
-  .nav-back { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; }
-  .nav-back:hover { color: #D4786A; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 20px; font-size: 0.88rem; }
+  .nav-links a:hover { color: #D4786A; }
 
   .article-hero { background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); padding: 48px 24px 40px; }
   .article-tag { display: inline-block; background: rgba(212,120,106,0.2); color: #D4786A; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; border: 1px solid rgba(212,120,106,0.4); margin-bottom: 16px; }
@@ -106,13 +106,22 @@
     .pdf-mock { padding: 18px 14px; }
     .pdf-conclusion { grid-template-columns: 1fr 1.2fr 1fr; gap: 4px; }
   }
+
+  .line-float { position: fixed; bottom: 28px; right: 20px; z-index: 999; }
+  .line-float a { display: block; width: 60px; height: 60px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; }
+  .line-float a:hover { transform: scale(1.08); }
+  .line-float img { width: 60px; height: 60px; display: block; }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-brand">鄧宇律師</a>
-  <a href="index.html" class="nav-back">← 返回首頁</a>
+  <div class="nav-links">
+    <a href="https://accident-bigdata.streamlit.app/" target="_blank">計算工具</a>
+    <a href="index.html#articles">法律文章</a>
+    <a href="index.html#contact">聯絡我</a>
+  </div>
 </nav>
 
 <div class="article-hero">
@@ -205,7 +214,7 @@
 
   <h2>四、資料怎麼來的</h2>
 
-  <p>資料來源是<span class="hl-dark">司法院資料開放平台</span>的公開判決，收錄 2025.09～2026.03 共 <span class="hl-dark">2,600+ 筆</span>車禍民事案件（持續更新中），使用 AI 輔助從判決書中萃取傷勢描述、慰撫金金額等欄位後整理分類。計算光譜時排除統計上的極端值，取 Q1、Q2、Q3 呈現。</p>
+  <p>資料來源是<span class="hl-dark">司法院資料開放平台</span>的公開判決，收錄 2025.09～2026.03 共 <span class="hl-dark">2,800+ 筆</span>車禍民事案件（持續更新中），使用 AI 輔助從判決書中萃取傷勢描述、慰撫金金額等欄位後整理分類。計算光譜時排除統計上的極端值，取 Q1、Q2、Q3 呈現。</p>
 
   <div class="warn-box">
     <strong>⚠️ 一個重要的須知</strong>
@@ -273,5 +282,12 @@
   <p>© 2026 鄧宇律師｜<a href="index.html">返回首頁</a>｜<a href="https://lin.ee/yfDGMXo" target="_blank">LINE 諮詢</a></p>
 </footer>
 
+
+<!-- LINE 浮動按鈕 -->
+<div class="line-float">
+  <a href="https://lin.ee/yfDGMXo" target="_blank" title="LINE 諮詢鄧宇律師">
+    <img src="images/line-icon.png" alt="LINE 諮詢">
+  </a>
+</div>
 </body>
 </html>
