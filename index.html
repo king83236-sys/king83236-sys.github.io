@@ -30,10 +30,10 @@
   .stat-item:last-child { border-right: none; }
   .stat-num { font-size: 1.8rem; font-weight: 900; color: #2D0F0F; }
   .stat-label { font-size: 0.78rem; color: #888; margin-top: 4px; }
-  .section-label { font-size: 0.75rem; font-weight: 700; color: #C85A50; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
-  .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 12px; }
-  .articles-section { padding: 60px 0; }
-  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .section-label { font-size: 0.75rem; font-weight: 700; color: #D4786A; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .section-title { font-size: 1.6rem; font-weight: 900; color: #FFFFFF; margin-bottom: 12px; }
+  .articles-section { padding: 60px 0; background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); }
+  .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
   .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; }
   .article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
   .article-tag { background: #2D0F0F; color: #D4786A; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; display: inline-block; }
@@ -114,7 +114,7 @@
   <div class="container">
     <div class="section-label">文章</div>
     <div class="section-title">法律文章</div>
-    <div class="articles-grid" style="grid-template-columns:1fr;max-width:500px;">
+    <div class="articles-grid">
       <a href="article-1.html" class="article-card">
         <div class="article-tag">工具說明</div>
         <div class="article-body">
