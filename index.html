@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="vIXgApX3KW1xnqlfxOYG7Nf8z_8t5Krr4E6Pz8qa-P4" />
 <title>鄧宇律師｜法律工具人</title>
-<meta name="description" content="鄧宇律師提供車禍車禍求償評估工具、法律文章，幫助您在談判桌上掌握數字依據，保障自身權益。">
+<meta name="description" content="鄧宇律師專注車禍求償，提供真實判決慰撫金評估工具與法律文章，幫助您在談判前掌握數字依據。">
 <meta name="keywords" content="車禍慰撫金,車禍賠償,車禍律師,慰撫金計算,車禍時效,強制險">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -19,9 +19,10 @@
   .hero h1 { font-size: 2.2rem; font-weight: 900; color: #FFFFFF; line-height: 1.2; margin-bottom: 12px; }
   .hero h1 span { color: #D4786A; }
   .hero p { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 600px; margin: 0 auto 32px; }
-  .btn-primary { display: inline-block; background: #C85A50; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+  .btn-primary { display: inline-block; background: #C85A50; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 150ms ease-out, transform 100ms ease-out; }
   .btn-primary:hover { background: #A84840; }
-  .btn-secondary { display: inline-block; background: transparent; color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 600; padding: 14px 24px; border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); margin-left: 12px; transition: all 0.2s; }
+  .btn-primary:active { transform: scale(0.97); background: #963830; }
+  .btn-secondary { display: inline-block; background: transparent; color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 600; padding: 14px 24px; border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); margin-left: 12px; transition: border-color 150ms ease-out, color 150ms ease-out; }
   .btn-secondary:hover { border-color: #D4786A; color: #D4786A; }
   .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
   .stats { background: #FFFFFF; border-bottom: 1px solid #E8E0D0; padding: 28px 0; }
@@ -34,8 +35,11 @@
   .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 12px; }
   .articles-section { padding: 60px 0; }
   .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
-  .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; }
-  .article-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1); }
+  @media (hover: hover) and (pointer: fine) {
+    .article-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); transform: translateY(-3px); }
+  }
+  .article-card:active { transform: scale(0.98); }
   .article-tag { background: #2D0F0F; color: #D4786A; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; display: inline-block; }
   .article-body { padding: 16px; }
   .article-title { font-size: 0.95rem; font-weight: 800; color: #1A1A1A; line-height: 1.5; margin-bottom: 8px; }
@@ -53,7 +57,8 @@
   .contact-section { background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); padding: 60px 0; text-align: center; }
   .contact-section h2 { font-size: 1.5rem; font-weight: 900; color: #FFFFFF; margin-bottom: 8px; }
   .contact-section p { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
-  .contact-btn { display: inline-block; background: #06C755; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; }
+  .contact-btn { display: inline-block; background: #06C755; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 150ms ease-out, transform 100ms ease-out; }
+  .contact-btn:active { transform: scale(0.97); background: #059A44; }
   .contact-id { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 12px; }
   footer { background: #1A1A1A; padding: 24px; text-align: center; }
   footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
@@ -67,8 +72,11 @@
   }
 
   .line-float { position: fixed; bottom: 28px; right: 20px; z-index: 999; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25)); }
-  .line-float a { display: block; width: 60px; height: 60px; transition: transform 0.2s; }
-  .line-float a:hover { transform: scale(1.08); }
+  .line-float a { display: block; width: 60px; height: 60px; transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1); }
+  @media (hover: hover) and (pointer: fine) {
+    .line-float a:hover { transform: scale(1.08); }
+  }
+  .line-float a:active { transform: scale(0.95); }
   .line-float img { width: 60px; height: 60px; border-radius: 14px; }
 </style>
 </head>
@@ -100,7 +108,7 @@
         <div class="stat-label">收錄真實車禍判決</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">幫您整理</div>
+        <div class="stat-num">幫您整理好了</div>
         <div class="stat-label">求償明細</div>
       </div>
       <div class="stat-item">
