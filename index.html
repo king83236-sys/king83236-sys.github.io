@@ -40,19 +40,37 @@
   .stat-num { font-size: 1.8rem; font-weight: 900; color: #2D0F0F; }
   .stat-label { font-size: 0.78rem; color: #888; margin-top: 4px; }
   .section-label { font-size: 0.75rem; font-weight: 700; color: #C85A50; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
-  .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 12px; }
+  .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 20px; }
   .articles-section { padding: 60px 0; }
-  .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
-  .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1); }
+
+  /* 分類 tags */
+  .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .filter-tag { padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: 1.5px solid #D8D0C8; background: #FFFFFF; color: #555; transition: all 0.15s; user-select: none; }
+  .filter-tag.active { background: #2D0F0F; color: #D4786A; border-color: #2D0F0F; }
+  .filter-tag:hover:not(.active) { border-color: #2D0F0F; color: #2D0F0F; }
+
+  /* 文章卡片 */
+  .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; min-height: 400px; }
+  .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1); display: flex; flex-direction: column; }
   @media (hover: hover) and (pointer: fine) {
     .article-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); transform: translateY(-3px); }
   }
   .article-card:active { transform: scale(0.98); }
+  .article-card.hidden { display: none; }
   .article-tag { background: #2D0F0F; color: #D4786A; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; display: inline-block; }
-  .article-body { padding: 16px; }
+  .article-body { padding: 16px; flex: 1; }
   .article-title { font-size: 0.95rem; font-weight: 800; color: #1A1A1A; line-height: 1.5; margin-bottom: 8px; }
   .article-excerpt { font-size: 0.8rem; color: #666; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .article-footer { padding: 10px 16px; border-top: 1px solid #F0ECE4; font-size: 0.75rem; color: #AAA; display: flex; justify-content: space-between; }
+
+  /* 換頁 */
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 20px; padding-bottom: 8px; }
+  .pg-btn { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid #D8D0C8; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; color: #555; transition: all 0.15s; user-select: none; }
+  .pg-btn:hover:not(.disabled) { border-color: #2D0F0F; color: #2D0F0F; }
+  .pg-btn.disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+  .pg-info { font-size: 0.85rem; color: #888; font-weight: 700; min-width: 80px; text-align: center; }
+
+  /* 關於 */
   .about-section { background: #FFFFFF; padding: 60px 0; border-top: 1px solid #E8E0D0; border-bottom: 1px solid #E8E0D0; }
   .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
   .about-avatar { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 3px solid #E8E0D0; }
@@ -65,8 +83,7 @@
   .contact-section { background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); padding: 60px 0; text-align: center; }
   .contact-section h2 { font-size: 1.5rem; font-weight: 900; color: #FFFFFF; margin-bottom: 8px; }
   .contact-section p { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
-  .contact-btn { display: inline-block; background: #06C755; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 150ms ease-out, transform 100ms ease-out; }
-  .contact-btn:active { transform: scale(0.97); background: #059A44; }
+  .contact-btn { display: inline-block; background: #06C755; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; }
   .contact-id { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 12px; }
   footer { background: #1A1A1A; padding: 24px; text-align: center; }
   footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
@@ -80,9 +97,7 @@
   }
   .line-float { position: fixed; bottom: 28px; right: 20px; z-index: 999; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25)); }
   .line-float a { display: block; width: 60px; height: 60px; transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1); }
-  @media (hover: hover) and (pointer: fine) {
-    .line-float a:hover { transform: scale(1.08); }
-  }
+  @media (hover: hover) and (pointer: fine) { .line-float a:hover { transform: scale(1.08); } }
   .line-float a:active { transform: scale(0.95); }
   .line-float img { width: 60px; height: 60px; border-radius: 14px; }
 </style>
@@ -130,106 +145,21 @@
   <div class="container">
     <div class="section-label">文章</div>
     <div class="section-title">法律文章</div>
-    <div class="articles-grid">
-      <a href="article-1.html" class="article-card">
-        <div class="article-tag">工具說明</div>
-        <div class="article-body">
-          <div class="article-title">車禍慰撫金計算機完整使用說明｜真實判決查詢、PDF報告下載</div>
-          <div class="article-excerpt">數字來自真實法院判決，你可以直接對照同類傷勢的判決，找到跟自己情況最接近的案例。完整說明使用方式、慰撫金光譜怎麼看、PDF報告如何運用。</div>
-        </div>
-        <div class="article-footer">
-          <span>工具說明</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-2.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">慰撫金是什麼？同樣的傷勢慰撫金竟然不會一樣？我的傷勢到底能拿到多少慰撫金？</div>
-          <div class="article-excerpt">骨折有人拿5萬、有人拿30萬，這不是法官亂判。慰撫金沒有固定公式，法官會調閱雙方稅務資料、審酌傷勢嚴重度與後遺症。本文用真實判決說明影響金額的關鍵因素。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-3.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">肱骨骨折、兩個月不能工作，慰撫金只拿到377元——這就是法律</div>
-          <div class="article-excerpt">車禍造成肱骨骨折合併脫位，兩個月無法工作，慰撫金卻只拿到377元？這不是法官亂判，是當事人自己只請求377元。本文從真實判決說明處分權主義對慰撫金請求的影響。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-4.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">車禍調解「含不含強」是什麼意思？少確認這件事，強制險可能就拿不到了</div>
-          <div class="article-excerpt">調解金額談好了，簽下去，以為結束了。但強制險理賠，你還拿得到嗎？調解筆錄沒有特別載明，強制險預設已算在調解金額裡，事後可能無法再另行申請。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-5.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">車禍打官司聽說不用繳裁判費？注意！不是所有都免——一張圖看懂刑事附帶民事</div>
-          <div class="article-excerpt">刑事附帶民事可以免裁判費，但財產損失、無罪後移送民事庭、追加聲明金額都要補繳。一張圖看懂全流程，起訴前先有輪廓才不會措手不及。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-6.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">車禍後傷勢還沒確定，可以先簽調解嗎？三種常見處理方式圖解說明</div>
-          <div class="article-excerpt">車禍後若傷勢未確定，調解可以先簽，但方式很重要。本文說明三種常見處理方式的優缺點，幫助你在調解前做好準備，避免事後求償無門。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-7.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">車禍調解成立，對方不給錢怎麼辦？</div>
-          <div class="article-excerpt">調解成立不代表馬上可以強制執行。調解筆錄要先經法官核定才有執行名義，本文說明完整流程與法條依據，帶你一步步了解對方不履行時該怎麼做。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-8.html" class="article-card">
-        <div class="article-tag">法律知識</div>
-        <div class="article-body">
-          <div class="article-title">調解筆錄成立不等於有執行力？這些情況法院可能不予核定</div>
-          <div class="article-excerpt">車禍調解談成了，但法院可能不予核定調解筆錄。本文整理4大常見原因，包含地點未載明、金額不具體、條款矛盾、多人金額未分列，附真實案例說明。</div>
-        </div>
-        <div class="article-footer">
-          <span>法律知識</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
-      <a href="article-9.html" class="article-card">
-        <div class="article-tag">訴訟程序</div>
-        <div class="article-body">
-          <div class="article-title">車禍調解不成立後怎麼辦？車禍刑事附帶民事起訴狀怎麼寫？刑附民時間點？勝訴要付律師費嗎？</div>
-          <div class="article-excerpt">調解破局後的完整說明：刑事附帶民事起訴狀架構、訴之聲明範本、刑附民的時間點與注意事項、律師費是否算訴訟費用。</div>
-        </div>
-        <div class="article-footer">
-          <span>訴訟程序</span>
-          <span>閱讀全文 →</span>
-        </div>
-      </a>
+
+    <div class="filter-tags">
+      <div class="filter-tag active" data-cat="all">全部</div>
+      <div class="filter-tag" data-cat="工具說明">工具說明</div>
+      <div class="filter-tag" data-cat="法律知識">法律知識</div>
+      <div class="filter-tag" data-cat="訴訟程序">訴訟程序</div>
+      <div class="filter-tag" data-cat="判決分析">判決分析</div>
+    </div>
+
+    <div class="articles-grid" id="articles-grid"></div>
+
+    <div class="pagination">
+      <div class="pg-btn disabled" id="pg-prev">←</div>
+      <div class="pg-info" id="pg-info">第 1 頁 / 共 2 頁</div>
+      <div class="pg-btn" id="pg-next">→</div>
     </div>
   </div>
 </div>
@@ -275,5 +205,78 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
   </a>
 </div>
+
+<script>
+const ARTICLES = [
+  { href:'article-1.html', cat:'工具說明', title:'車禍慰撫金計算機完整使用說明｜真實判決查詢、PDF報告下載', excerpt:'數字來自真實法院判決，你可以直接對照同類傷勢的判決，找到跟自己情況最接近的案例。完整說明使用方式、慰撫金光譜怎麼看、PDF報告如何運用。' },
+  { href:'article-2.html', cat:'法律知識', title:'慰撫金是什麼？同樣的傷勢慰撫金竟然不會一樣？我的傷勢到底能拿到多少慰撫金？', excerpt:'骨折有人拿5萬、有人拿30萬，這不是法官亂判。慰撫金沒有固定公式，法官會調閱雙方稅務資料、審酌傷勢嚴重度與後遺症。' },
+  { href:'article-3.html', cat:'法律知識', title:'肱骨骨折、兩個月不能工作，慰撫金只拿到377元——這就是法律', excerpt:'車禍造成肱骨骨折合併脫位，兩個月無法工作，慰撫金卻只拿到377元？這不是法官亂判，是當事人自己只請求377元。' },
+  { href:'article-4.html', cat:'法律知識', title:'車禍調解「含不含強」是什麼意思？少確認這件事，強制險可能就拿不到了', excerpt:'調解金額談好了，簽下去，以為結束了。但強制險理賠，你還拿得到嗎？調解筆錄沒有特別載明，強制險預設已算在調解金額裡。' },
+  { href:'article-5.html', cat:'法律知識', title:'車禍打官司聽說不用繳裁判費？注意！不是所有都免——一張圖看懂刑事附帶民事', excerpt:'刑事附帶民事可以免裁判費，但財產損失、無罪後移送民事庭、追加聲明金額都要補繳。一張圖看懂全流程。' },
+  { href:'article-6.html', cat:'法律知識', title:'車禍後傷勢還沒確定，可以先簽調解嗎？三種常見處理方式圖解說明', excerpt:'車禍後若傷勢未確定，調解可以先簽，但方式很重要。本文說明三種常見處理方式的優缺點。' },
+  { href:'article-7.html', cat:'法律知識', title:'車禍調解成立，對方不給錢怎麼辦？', excerpt:'調解成立不代表馬上可以強制執行。調解筆錄要先經法官核定才有執行名義，本文說明完整流程與法條依據。' },
+  { href:'article-8.html', cat:'法律知識', title:'調解筆錄成立不等於有執行力？這些情況法院可能不予核定', excerpt:'車禍調解談成了，但法院可能不予核定調解筆錄。本文整理4大常見原因，附真實案例說明。' },
+  { href:'article-9.html', cat:'訴訟程序', title:'車禍調解不成立後怎麼辦？車禍刑事附帶民事起訴狀怎麼寫？刑附民時間點？勝訴要付律師費嗎？', excerpt:'調解破局後的完整說明：刑事附帶民事起訴狀架構、訴之聲明範本、刑附民的時間點與注意事項、律師費是否算訴訟費用。' },
+  { href:'article-10.html', cat:'判決分析', title:'車禍鎖骨骨折慰撫金能拿多少？8筆真實判決分析', excerpt:'同樣是鎖骨骨折，判決金額從5萬到20萬都有，差距將近4倍。本文分析骨折型態、手術、後遺症對金額的影響。' },
+  { href:'article-11.html', cat:'判決分析', title:'車禍肋骨骨折慰撫金能拿多少？8筆真實判決分析', excerpt:'同樣是肋骨骨折，慰撫金從3,400元到60萬元都有，差距超過百倍。本文分析骨折根數、合併傷勢對金額的影響。' },
+];
+
+const PER_PAGE = 6;
+let currentCat = 'all';
+let currentPage = 1;
+
+function getFiltered() {
+  if (currentCat === 'all') return ARTICLES;
+  return ARTICLES.filter(a => a.cat === currentCat);
+}
+
+function render() {
+  const filtered = getFiltered();
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  const start = (currentPage - 1) * PER_PAGE;
+  const pageItems = filtered.slice(start, start + PER_PAGE);
+
+  const grid = document.getElementById('articles-grid');
+  grid.innerHTML = pageItems.map(a => `
+    <a href="${a.href}" class="article-card">
+      <div class="article-tag">${a.cat}</div>
+      <div class="article-body">
+        <div class="article-title">${a.title}</div>
+        <div class="article-excerpt">${a.excerpt}</div>
+      </div>
+      <div class="article-footer">
+        <span>${a.cat}</span>
+        <span>閱讀全文 →</span>
+      </div>
+    </a>
+  `).join('');
+
+  document.getElementById('pg-info').textContent = `第 ${currentPage} 頁 / 共 ${totalPages} 頁`;
+  document.getElementById('pg-prev').className = 'pg-btn' + (currentPage <= 1 ? ' disabled' : '');
+  document.getElementById('pg-next').className = 'pg-btn' + (currentPage >= totalPages ? ' disabled' : '');
+}
+
+document.querySelectorAll('.filter-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+    currentCat = tag.dataset.cat;
+    currentPage = 1;
+    render();
+  });
+});
+
+document.getElementById('pg-prev').addEventListener('click', () => {
+  if (currentPage > 1) { currentPage--; render(); }
+});
+document.getElementById('pg-next').addEventListener('click', () => {
+  const total = Math.ceil(getFiltered().length / PER_PAGE);
+  if (currentPage < total) { currentPage++; render(); }
+});
+
+render();
+</script>
 </body>
 </html>
