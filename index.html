@@ -43,13 +43,11 @@
   .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 20px; }
   .articles-section { padding: 60px 0; }
 
-  /* 分類 tags */
   .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
   .filter-tag { padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: 1.5px solid #D8D0C8; background: #FFFFFF; color: #555; transition: all 0.15s; user-select: none; }
   .filter-tag.active { background: #2D0F0F; color: #D4786A; border-color: #2D0F0F; }
   .filter-tag:hover:not(.active) { border-color: #2D0F0F; color: #2D0F0F; }
 
-  /* 文章卡片 */
   .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; min-height: 400px; }
   .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1); display: flex; flex-direction: column; }
   @media (hover: hover) and (pointer: fine) {
@@ -63,14 +61,12 @@
   .article-excerpt { font-size: 0.8rem; color: #666; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .article-footer { padding: 10px 16px; border-top: 1px solid #F0ECE4; font-size: 0.75rem; color: #AAA; display: flex; justify-content: space-between; }
 
-  /* 換頁 */
   .pagination { display: flex; align-items: center; justify-content: center; gap: 20px; padding-bottom: 8px; }
   .pg-btn { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid #D8D0C8; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; color: #555; transition: all 0.15s; user-select: none; }
   .pg-btn:hover:not(.disabled) { border-color: #2D0F0F; color: #2D0F0F; }
   .pg-btn.disabled { opacity: 0.3; cursor: default; pointer-events: none; }
   .pg-info { font-size: 0.85rem; color: #888; font-weight: 700; min-width: 80px; text-align: center; }
 
-  /* 關於 */
   .about-section { background: #FFFFFF; padding: 60px 0; border-top: 1px solid #E8E0D0; border-bottom: 1px solid #E8E0D0; }
   .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
   .about-avatar { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 3px solid #E8E0D0; }
@@ -107,7 +103,7 @@
 <nav>
   <a href="index.html" class="nav-brand">鄧宇律師</a>
   <div class="nav-links">
-    <a href="https://accident-bigdata.streamlit.app/" target="_blank">評估工具</a>
+    <a href="https://tool.tengyulaw.tw" target="_blank">評估工具</a>
     <a href="#articles">法律文章</a>
     <a href="#contact">聯絡我</a>
   </div>
@@ -118,7 +114,7 @@
   <h1>車禍求償，<span>算清楚再開口</span></h1>
   <p>損害明細自動加總．慰撫金參照真實判決</p>
   <p style="font-size:0.9rem;color:rgba(255,255,255,0.55);max-width:560px;margin:0 auto 28px;">輸入傷勢，比對2,600+筆法院判決，知道同類案件實際判多少。<br>輸入費用，自動加總損害明細並生成求償明細。<br>帶著數字去談判，不再憑感覺開口。</p>
-  <a href="https://accident-bigdata.streamlit.app/" target="_blank" class="btn-primary">🔢 立即評估慰撫金範圍<br>免費生成求償明細</a>
+  <a href="https://tool.tengyulaw.tw" target="_blank" class="btn-primary">🔢 立即評估慰撫金範圍<br>免費生成求償明細</a>
   <a href="#articles" class="btn-secondary">閱讀法律文章</a>
 </div>
 
@@ -196,7 +192,7 @@
 <footer>
   <p>
     © 2026 鄧宇律師｜本網站內容僅供參考，不構成法律建議。<br>
-    資料來源：司法院資料開放平台｜<a href="https://accident-bigdata.streamlit.app/" target="_blank">車禍慰撫金評估工具</a>
+    資料來源：司法院資料開放平台｜<a href="https://tool.tengyulaw.tw" target="_blank">車禍慰撫金評估工具</a>
   </p>
 </footer>
 
@@ -219,6 +215,7 @@ const ARTICLES = [
   { href:'article-9.html', cat:'訴訟程序', title:'車禍調解不成立後怎麼辦？車禍刑事附帶民事起訴狀怎麼寫？刑附民時間點？勝訴要付律師費嗎？', excerpt:'調解破局後的完整說明：刑事附帶民事起訴狀架構、訴之聲明範本、刑附民的時間點與注意事項、律師費是否算訴訟費用。' },
   { href:'article-10.html', cat:'判決分析', title:'車禍鎖骨骨折慰撫金能拿多少？8筆真實判決分析', excerpt:'同樣是鎖骨骨折，判決金額從5萬到20萬都有，差距將近4倍。本文分析骨折型態、手術、後遺症對金額的影響。' },
   { href:'article-11.html', cat:'判決分析', title:'車禍肋骨骨折慰撫金能拿多少？8筆真實判決分析', excerpt:'同樣是肋骨骨折，慰撫金從3,400元到60萬元都有，差距超過百倍。本文分析骨折根數、合併傷勢對金額的影響。' },
+  { href:'article-12.html', cat:'判決分析', title:'被撞到終身看護，法院認定8,534,367元，最後只判賠472元', excerpt:'無照少年超速撞人，受害者終身癱瘓，法院認定853萬損害，最後被告只需再賠472元。肇責、未戴安全帽、強制險扣除，三刀下去數字完全變形。' },
 ];
 
 const PER_PAGE = 6;
