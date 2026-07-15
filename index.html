@@ -402,7 +402,17 @@
           <span>閱讀全文 →</span>
         </div>
       </a>
-    </div>
+      <a href='article-22.html' class='article-card' data-cat='判決分析'>
+        <div class='article-tag'>判決分析</div>
+        <div class='article-body'>
+          <div class='article-title'>車禍脛骨平台骨折慰撫金怎麼判？6件判決看休養、後遺症與舉證重點</div>
+          <div class='article-excerpt'>整理6件傷勢相對集中的脛骨平台骨折判決，說明法院如何認定休養期間、工作損失、親屬看護、勞動能力減損及未來手術費。</div>
+        </div>
+        <div class='article-footer'>
+          <span>判決分析</span>
+          <span>閱讀全文 →</span>
+        </div>
+      </a>    </div>
 
     <div class="pagination">
       <div class="pg-btn disabled" id="pg-prev">←</div>
@@ -464,7 +474,7 @@
 </div>
 
 <script>
-const articleCards = Array.from(document.querySelectorAll('.article-card'));
+const articleCards = Array.from(document.querySelectorAll('.article-card')).reverse();
 
 const PER_PAGE = 6;
 let currentCat = 'all';
@@ -484,7 +494,7 @@ function render() {
   const pageItems = filtered.slice(start, start + PER_PAGE);
 
   articleCards.forEach(card => { card.style.display = 'none'; });
-  pageItems.forEach(card => { card.style.display = 'flex'; });
+  pageItems.forEach((card, index) => { card.style.display = 'flex'; card.style.order = index; });
 
   document.getElementById('pg-info').textContent = `第 ${currentPage} 頁 / 共 ${totalPages} 頁`;
   document.getElementById('pg-prev').className = 'pg-btn' + (currentPage <= 1 ? ' disabled' : '');
