@@ -23,16 +23,31 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "鄧宇律師",
-  "jobTitle": "執業律師",
-  "url": "https://tengyulaw.tw/",
-  "image": "https://tengyulaw.tw/images/avatar.jpg",
-  "alumniOf": [
-    { "@type": "CollegeOrUniversity", "name": "國立中興大學" },
-    { "@type": "CollegeOrUniversity", "name": "東吳大學" }
-  ],
-  "knowsAbout": ["車禍賠償", "車禍慰撫金評估", "民事代理", "刑事辯護", "刑事告訴代理", "檢警陪偵", "調解代理", "法律文書撰擬"]
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://tengyulaw.tw/#person",
+      "name": "鄧宇律師",
+      "jobTitle": "執業律師",
+      "url": "https://tengyulaw.tw/",
+      "image": "https://tengyulaw.tw/images/avatar.jpg",
+      "telephone": "+886-911-494-236",
+      "worksFor": { "@id": "https://tengyulaw.tw/#legalservice" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "國立中興大學" },
+        { "@type": "CollegeOrUniversity", "name": "東吳大學" }
+      ],
+      "knowsAbout": ["車禍賠償", "車禍慰撫金評估", "民事代理", "刑事辯護", "刑事告訴代理", "檢警陪偵", "調解代理", "法律文書撰擬"]
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://tengyulaw.tw/#legalservice",
+      "name": "鄧宇法律事務所",
+      "url": "https://tengyulaw.tw/",
+      "telephone": "+886-911-494-236",
+      "employee": { "@id": "https://tengyulaw.tw/#person" }
+    }
+  ]
 }
 </script>
 <style>
@@ -98,12 +113,16 @@
   .about-text p:last-child { margin-bottom: 0; }
   .contact-section { background: linear-gradient(135deg, #2D0F0F 0%, #4A1A1A 100%); padding: 60px 0; text-align: center; }
   .contact-section h2 { font-size: 1.5rem; font-weight: 900; color: #FFFFFF; margin-bottom: 8px; }
-  .contact-section p { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
-  .contact-btn { display: inline-block; background: #06C755; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; }
-  .contact-id { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 12px; }
+  .contact-section p { font-size: 0.95rem; color: rgba(255,255,255,0.82); margin-bottom: 28px; }
+  .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .contact-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; background: #06C755; color: #FFFFFF; font-size: 1rem; font-weight: 700; padding: 13px 24px; border-radius: 8px; text-decoration: none; }
+  .contact-btn-phone { background: #C85A50; }
+  .contact-btn:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }
+  .contact-id { font-size: 0.85rem; color: rgba(255,255,255,0.72); margin-top: 12px; }
   footer { background: #1A1A1A; padding: 24px; text-align: center; }
   footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.8; }
   footer a { color: #D4786A; text-decoration: none; }
+  footer .footer-phone { color: #E8A69C; font-weight: 700; }
   @media (max-width: 640px) {
     .hero h1 { font-size: 1.5rem; }
     .btn-secondary { display: none; }
@@ -453,16 +472,19 @@
 
 <div class="contact-section" id="contact">
   <div class="container">
-    <h2>需要更多幫助？</h2>
-    <p>工具結果僅供參考，個案情況仍建議諮詢專業律師評估。</p>
-    <a href="https://lin.ee/yfDGMXo" target="_blank" class="contact-btn">💬 LINE 聯絡鄧宇律師</a>
+    <h2>需要協助，可以先聯絡</h2>
+    <p>可直接來電，或加入 LINE 簡單說明情況。</p>
+    <div class="contact-actions">
+      <a href="tel:0911494236" class="contact-btn contact-btn-phone" aria-label="撥打鄧宇律師工作手機 0911-494-236">電話 0911-494-236</a>
+      <a href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" class="contact-btn">LINE 聯絡鄧宇律師</a>
+    </div>
     <div class="contact-id">LINE ID：@251jwoab</div>
   </div>
 </div>
 
 <footer>
   <p>
-    © 2026 鄧宇律師｜本網站內容僅供參考，不構成法律建議。<br>
+    © 2026 鄧宇律師｜電話：<a class="footer-phone" href="tel:0911494236">0911-494-236</a>｜本網站內容僅供參考，不構成法律建議。<br>
     資料來源：司法院資料開放平台｜<a href="https://tool.tengyulaw.tw" target="_blank">車禍慰撫金評估工具</a>
   </p>
 </footer>
