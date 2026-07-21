@@ -11,6 +11,11 @@
   }
 
   function getLineLocation(link) {
+    var explicitLocation = link.getAttribute('data-line-location');
+    if (explicitLocation) {
+      return explicitLocation;
+    }
+
     if (link.closest('.line-float, .float-btns')) {
       return 'floating_line';
     }
