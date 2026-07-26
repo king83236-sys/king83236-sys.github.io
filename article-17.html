@@ -116,6 +116,22 @@
   .float-label { font-size: 0.68rem; font-weight: 700; color: #333; margin-top: 5px; background: rgba(255,255,255,0.9); border-radius: 6px; padding: 2px 6px; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
 </style>
   <script src="/line-tracking.js" defer></script>
+  <style>
+    /* Unified mid-article CTA v2 */
+    .inline-cta{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;margin:28px 0 44px!important;padding:22px 24px!important;background:#4B1717!important;color:#fff!important;border-radius:10px!important;align-items:initial!important}
+    .inline-cta-copy{min-width:0!important}.inline-cta h2{margin:0 0 6px!important;padding:0!important;border:0!important;color:#fff!important;font-size:1.25rem!important;line-height:1.45!important}.inline-cta p{margin:0!important;color:#eadfda!important;font-size:.92rem!important;line-height:1.72!important}
+    .inline-cta .cta-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;width:100%!important}
+    .inline-cta .btn{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:48px!important;margin:0!important;padding:12px 16px!important;border:0!important;border-radius:7px!important;background:#fff!important;color:#2D0F0F!important;text-align:center!important;text-decoration:none!important;font-size:.9rem!important;font-weight:900!important;line-height:1.45!important;white-space:normal!important}
+    @media(max-width:600px){.inline-cta{padding:20px!important}.inline-cta .cta-actions{grid-template-columns:1fr!important}}
+  </style>
+  <style>
+    /* Unified related reading list */
+    .related-heading{margin:42px 0 16px!important;padding:3px 0 3px 14px!important;border:0!important;border-left:4px solid #C85A50!important;color:#2D0F0F!important;font-size:1.18rem!important;line-height:1.45!important}
+    .related-articles{display:block!important;margin:0 0 30px!important;padding-left:1.35rem!important;list-style:disc!important}
+    .related-articles li{display:list-item!important;margin:7px 0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important}
+    .related-articles a{display:inline!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;color:#C85A50!important;font-weight:500!important;line-height:1.7!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important}
+    .related-articles a:hover{color:#8F302B!important;text-decoration-thickness:2px!important}
+  </style>
 </head>
 <body>
 
@@ -204,10 +220,7 @@
     <p class="table-caption">以上資料來自司法院公開判決，慰撫金均為過失相抵前金額。</p>
   </div>
 
-  <div class="tool-inline">
-    <div class="tool-title">【想看更多判決落點或製作專屬求償明細？】</div>
-    → <a href="https://tool.tengyulaw.tw" target="_blank">點擊使用慰撫金評估工具</a>，比對2,600筆以上真實判決並製作專屬求償明細。
-  </div>
+  <section class="inline-cta" aria-labelledby="mid-tool-cta-title"><div class="inline-cta-copy"><h2 id="mid-tool-cta-title">你的尺骨骨折不完全符合這6件判決？</h2><p>先比對更多相近傷勢的判決範圍，並整理目前可確認的醫療費、工作損失與其他求償項目。</p></div><div class="cta-actions"><a class="btn" href="https://tool.tengyulaw.tw" target="_blank" rel="noopener">免費製作車禍求償明細</a><a class="btn" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" data-line-location="article_table_cta">加LINE取得律師免費初評</a></div></section>
 
   <hr class="divider">
 
@@ -254,11 +267,11 @@
   <!-- SEO related articles -->
   <hr class='divider'>
 
-  <h2>延伸閱讀</h2>
-  <ul class='related-articles'>
-    <li><a href='article-3.html'>肱骨骨折、兩個月不能工作，慰撫金只拿到377元——這就是法律</a></li>
-    <li><a href='article-10.html'>車禍鎖骨骨折慰撫金能拿多少？8筆真實判決分析</a></li>
-    <li><a href='article-16.html'>車禍除疤費用法院會認可嗎？實際費用怎麼認定？從被駁回到准許</a></li>
+  <h2 class="related-heading">延伸閱讀</h2>
+  <ul class="related-articles">
+    <li><a href="article-3.html">肱骨骨折、兩個月不能工作，慰撫金只拿到377元——這就是法律</a></li>
+    <li><a href="article-10.html">車禍鎖骨骨折慰撫金能拿多少？8筆真實判決分析</a></li>
+    <li><a href="article-16.html">車禍除疤費用法院會認可嗎？實際費用怎麼認定？從被駁回到准許</a></li>
   </ul>
 
   <div class="cta-box">

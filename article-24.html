@@ -39,6 +39,30 @@
   </style>
   <style>.inline-reading{margin:18px 0;padding:15px 17px;background:#fff;border:1px solid var(--line);border-radius:8px}.inline-reading strong{display:block;color:var(--green);margin-bottom:3px}.inline-reading a{font-weight:800;text-decoration-thickness:1.5px;text-underline-offset:3px}</style>
   <script src="/line-tracking.js?v=20260721" defer></script>
+  <style>
+    /* Responsive inline CTA: wrap by available content width, not viewport width alone. */
+    .inline-cta{flex-wrap:wrap}
+    .inline-cta-copy{flex:1 1 280px}
+    .inline-cta .cta-actions{display:flex;flex:1 1 400px;min-width:0;flex-wrap:wrap;gap:10px}
+    .inline-cta .cta-actions .btn{flex:1 1 190px;white-space:normal;margin:0;text-align:center}
+    @media(max-width:680px){.inline-cta-copy{flex-basis:100%}.inline-cta .cta-actions{flex-basis:100%;flex-direction:column}.inline-cta .cta-actions .btn{width:100%}}
+  </style>
+  <style>
+    /* Unified mid-article CTA v2 */
+    .inline-cta{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;margin:28px 0 44px!important;padding:22px 24px!important;background:#4B1717!important;color:#fff!important;border-radius:10px!important;align-items:initial!important}
+    .inline-cta-copy{min-width:0!important}.inline-cta h2{margin:0 0 6px!important;padding:0!important;border:0!important;color:#fff!important;font-size:1.25rem!important;line-height:1.45!important}.inline-cta p{margin:0!important;color:#eadfda!important;font-size:.92rem!important;line-height:1.72!important}
+    .inline-cta .cta-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;width:100%!important}
+    .inline-cta .btn{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:48px!important;margin:0!important;padding:12px 16px!important;border:0!important;border-radius:7px!important;background:#fff!important;color:#2D0F0F!important;text-align:center!important;text-decoration:none!important;font-size:.9rem!important;font-weight:900!important;line-height:1.45!important;white-space:normal!important}
+    @media(max-width:600px){.inline-cta{padding:20px!important}.inline-cta .cta-actions{grid-template-columns:1fr!important}}
+  </style>
+  <style>
+    /* Unified related reading list */
+    .related-heading{margin:42px 0 16px!important;padding:3px 0 3px 14px!important;border:0!important;border-left:4px solid #C85A50!important;color:#2D0F0F!important;font-size:1.18rem!important;line-height:1.45!important}
+    .related-articles{display:block!important;margin:0 0 30px!important;padding-left:1.35rem!important;list-style:disc!important}
+    .related-articles li{display:list-item!important;margin:7px 0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important}
+    .related-articles a{display:inline!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;color:#C85A50!important;font-weight:500!important;line-height:1.7!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important}
+    .related-articles a:hover{color:#8F302B!important;text-decoration-thickness:2px!important}
+  </style>
 </head>
 <body>
   <nav class="nav"><div class="nav-inner"><a class="brand" href="/">鄧宇律師</a><div class="nav-links"><a href="https://tool.tengyulaw.tw">評估工具</a><a href="/#articles">法律文章</a><a href="/#contact">聯絡我</a></div></div></nav>
@@ -126,7 +150,13 @@
 
     <section class="cta"><h2>文章沒有涵蓋你的傷勢、收入或理賠狀況？</h2><p>多處傷勢、既有舊疾、沒有固定薪資、收入包含獎金或兼差、傷勢尚未穩定、多人共同肇事，或已經領取部分保險與賠償，都可能改變個案判斷。</p><p>你可以先用免費工具整理目前能確認的醫療費、看護費、交通費與不能工作損失，製作求償明細，調解時有具體數字可談，也能增加自己判斷下一步的底氣。至於勞動能力減損，通常仍須依醫院鑑定比例及個案證據判斷。</p><div class="cta-actions"><a class="btn secondary" href="https://tool.tengyulaw.tw" target="_blank" rel="noopener">免費製作車禍求償明細</a><a class="btn secondary" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" data-line-location="article_end_cta">加LINE取得律師免費初評</a></div></section>
 
-    <h2>延伸閱讀</h2><div class="related"><a href="article-23.html">車禍不能工作損失怎麼算？11件判決看公傷假、待業與自營業法院認定細節</a><a href="article-22.html">車禍脛骨平台骨折慰撫金怎麼判？6件判決看休養、後遺症與舉證重點</a><a href="article-12.html">被撞到終身看護，法院認定853萬，最後只判賠472元？真實判決分析</a><a href="article-9.html">車禍調解不成立後怎麼辦？車禍刑事附帶民事起訴狀怎麼寫？刑附民時間點？勝訴要付律師費嗎？</a></div>
+    <h2 class="related-heading">延伸閱讀</h2>
+  <ul class="related-articles">
+    <li><a href="article-23.html">車禍不能工作損失怎麼算？ 11件判決看公傷假、待業與自營業法院認定細節</a></li>
+    <li><a href="article-22.html">車禍脛骨平台骨折慰撫金怎麼判？ 6件判決看休養、後遺症與舉證重點</a></li>
+    <li><a href="article-12.html">被撞到終身看護，法院認定8,534,367元，最後只判賠472元</a></li>
+    <li><a href="article-9.html">車禍調解不成立後怎麼辦？車禍刑事附帶民事起訴狀怎麼寫？刑附民時間點？勝訴要付律師費嗎？</a></li>
+  </ul>
     <p class="disclaimer">本文為一般法律資訊，不構成法律諮詢及個案結果保證。</p>
   </main>
   <footer class="footer">資料來源：司法院資料開放平台　｜　© 2026 鄧宇律師</footer>

@@ -109,6 +109,36 @@
   .line-float-label { font-size: 0.68rem; font-weight: 700; color: #333; margin-top: 5px; background: rgba(255,255,255,0.9); border-radius: 6px; padding: 2px 6px; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
 </style>
   <script src="/line-tracking.js" defer></script>
+  <style>
+    .inline-cta{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:28px 0 44px;padding:22px 24px;background:#4B1717;color:#fff;border-radius:10px}
+    .inline-cta-copy{min-width:0}.inline-cta h2{margin:0 0 5px;padding:0;border:0;color:#fff;font-size:1.25rem;line-height:1.45}.inline-cta p{margin:0;color:#eadfda;font-size:.92rem;line-height:1.7}
+    .inline-cta .cta-actions{display:flex;flex:0 0 auto;flex-wrap:wrap;gap:10px}.inline-cta .btn{display:inline-block;background:#fff;color:#2D0F0F!important;text-decoration:none;font-weight:900;padding:13px 22px;border-radius:7px;margin:0;text-align:center;white-space:nowrap}
+    @media(max-width:680px){.inline-cta{align-items:stretch;flex-direction:column;padding:20px}.inline-cta .cta-actions{flex-direction:column}.inline-cta .btn{white-space:normal}}
+  </style>
+  <style>
+    /* Responsive inline CTA: wrap by available content width, not viewport width alone. */
+    .inline-cta{flex-wrap:wrap}
+    .inline-cta-copy{flex:1 1 280px}
+    .inline-cta .cta-actions{display:flex;flex:1 1 400px;min-width:0;flex-wrap:wrap;gap:10px}
+    .inline-cta .cta-actions .btn{flex:1 1 190px;white-space:normal;margin:0;text-align:center}
+    @media(max-width:680px){.inline-cta-copy{flex-basis:100%}.inline-cta .cta-actions{flex-basis:100%;flex-direction:column}.inline-cta .cta-actions .btn{width:100%}}
+  </style>
+  <style>
+    /* Unified mid-article CTA v2 */
+    .inline-cta{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;margin:28px 0 44px!important;padding:22px 24px!important;background:#4B1717!important;color:#fff!important;border-radius:10px!important;align-items:initial!important}
+    .inline-cta-copy{min-width:0!important}.inline-cta h2{margin:0 0 6px!important;padding:0!important;border:0!important;color:#fff!important;font-size:1.25rem!important;line-height:1.45!important}.inline-cta p{margin:0!important;color:#eadfda!important;font-size:.92rem!important;line-height:1.72!important}
+    .inline-cta .cta-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;width:100%!important}
+    .inline-cta .btn{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:48px!important;margin:0!important;padding:12px 16px!important;border:0!important;border-radius:7px!important;background:#fff!important;color:#2D0F0F!important;text-align:center!important;text-decoration:none!important;font-size:.9rem!important;font-weight:900!important;line-height:1.45!important;white-space:normal!important}
+    @media(max-width:600px){.inline-cta{padding:20px!important}.inline-cta .cta-actions{grid-template-columns:1fr!important}}
+  </style>
+  <style>
+    /* Unified related reading list */
+    .related-heading{margin:42px 0 16px!important;padding:3px 0 3px 14px!important;border:0!important;border-left:4px solid #C85A50!important;color:#2D0F0F!important;font-size:1.18rem!important;line-height:1.45!important}
+    .related-articles{display:block!important;margin:0 0 30px!important;padding-left:1.35rem!important;list-style:disc!important}
+    .related-articles li{display:list-item!important;margin:7px 0!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important}
+    .related-articles a{display:inline!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;color:#C85A50!important;font-weight:500!important;line-height:1.7!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:3px!important}
+    .related-articles a:hover{color:#8F302B!important;text-decoration-thickness:2px!important}
+  </style>
 </head>
 <body>
 
@@ -208,6 +238,8 @@
         </tr>
       </tbody>
     </table>
+
+  <section class="inline-cta" aria-labelledby="mid-tool-cta-title"><div class="inline-cta-copy"><h2 id="mid-tool-cta-title">你的肋骨骨折不只一處，或合併其他傷勢？</h2><p>先比對更多相近傷勢的判決範圍，並整理目前可確認的醫療費、工作損失與其他求償項目。</p></div><div class="cta-actions"><a class="btn" href="https://tool.tengyulaw.tw" target="_blank" rel="noopener">免費製作車禍求償明細</a><a class="btn" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" data-line-location="article_table_cta">加LINE取得律師免費初評</a></div></section>
     <p class="table-caption">以上資料來自司法院公開判決，慰撫金為過失相抵前金額。</p>
     <p class="table-caption" style="margin-top:6px;"><strong style="color:#555;">名詞說明：</strong>連枷胸和血胸在醫學上屬於較嚴重的胸部創傷，通常伴隨多根肋骨骨折。以上為網路資訊，非專業醫療意見。</p>
   </div>
@@ -247,19 +279,18 @@
   <p>以上8筆是從資料庫中挑選、傷勢相對單純的肋骨骨折判決，盡量排除其他部位骨折或重大複合傷勢的干擾。實際個案中，肋骨骨折合併其他傷勢的情況很常見，評估工具裡也有收錄這類複合傷勢的判決可供對照。</p>
 
   <p>工具收錄了2,600筆以上的真實車禍判決，得出的光譜是根據更完整的判決分布計算的，協助你在談判、訴訟前知道同類傷勢的落點在哪，不是憑感覺開口，做出更有把握的決定。</p>
-
-  <p>如果您的情況比較複雜，或是有其他問題想詢問，歡迎加LINE聊聊。</p>
+<p>如果您的情況比較複雜，或是有其他問題想詢問，歡迎加LINE聊聊。</p>
 
 
   <!-- SEO related articles -->
   <hr class='divider'>
 
-  <h2>延伸閱讀</h2>
-  <ul class='related-articles'>
-    <li><a href='article-2.html'>慰撫金是什麼？同樣的傷勢慰撫金竟然不會一樣？</a></li>
-    <li><a href='article-10.html'>車禍鎖骨骨折慰撫金能拿多少？8筆真實判決分析</a></li>
-    <li><a href='article-12.html'>被撞到終身看護，法院認定853萬，最後只判賠472元？真實判決分析</a></li>
-    <li><a href='article-14.html'>車禍股骨骨折慰撫金能拿多少？8筆真實判決分析</a></li>
+  <h2 class="related-heading">延伸閱讀</h2>
+  <ul class="related-articles">
+    <li><a href="article-2.html">慰撫金是什麼？同樣的傷勢慰撫金竟然不會一樣？我的傷勢到底能拿到多少慰撫金？</a></li>
+    <li><a href="article-10.html">車禍鎖骨骨折慰撫金能拿多少？8筆真實判決分析</a></li>
+    <li><a href="article-12.html">被撞到終身看護，法院認定8,534,367元，最後只判賠472元</a></li>
+    <li><a href="article-14.html">車禍股骨骨折慰撫金能拿多少？8筆真實判決分析</a></li>
   </ul>
 
   <div class="cta-box">
