@@ -1,0 +1,854 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2d0f0f">
+  <title>車禍和解金試算器｜慰撫金、醫療費、薪資與肇責計算｜鄧宇律師</title>
+  <meta name="description" content="免費車禍和解金試算器。輸入傷勢、醫療費、薪資損失、看護費、車損、保險與肇責，參考2,600筆法院判決評估慰撫金，產生求償明細PDF。">
+  <link rel="canonical" href="https://tengyulaw.tw/calculator/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="鄧宇律師">
+  <meta property="og:title" content="車禍和解金試算器｜慰撫金、費用與肇責一次整理">
+  <meta property="og:description" content="參考2,600筆法院判決評估慰撫金，整理醫療費、薪資、看護、車損、保險與肇責，免費產生求償明細。">
+  <meta property="og:url" content="https://tengyulaw.tw/calculator/">
+  <meta property="og:image" content="https://tengyulaw.tw/images/avatar.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="車禍和解金試算器｜鄧宇律師">
+  <meta name="twitter:description" content="輸入傷勢與費用，參考真實判決整理車禍求償明細。">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3DT3RWBJP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V3DT3RWBJP');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://tengyulaw.tw/calculator/#app",
+        "name": "車禍和解金試算器",
+        "url": "https://tengyulaw.tw/calculator/",
+        "applicationCategory": "LegalApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "zh-TW",
+        "isAccessibleForFree": true,
+        "description": "輸入傷勢、費用、保險與肇責，參考法院判決評估慰撫金並整理車禍求償明細。",
+        "author": {
+          "@type": "Person",
+          "name": "鄧宇律師",
+          "url": "https://tengyulaw.tw/",
+          "telephone": "+886-911-494-236",
+          "sameAs": [
+            "https://www.instagram.com/tengyu.exe/",
+            "https://www.facebook.com/profile.php?id=61591741754267&locale=zh_TW",
+            "https://www.threads.net/@tengyu.exe"
+          ]
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "TWD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首頁",
+            "item": "https://tengyulaw.tw/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "車禍和解金試算器",
+            "item": "https://tengyulaw.tw/calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "車禍和解金有固定公式嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "沒有固定公式。財產損害通常依單據與實際損失整理；慰撫金則會受到傷勢、治療期間、後遺症、生活影響、雙方狀況與舉證程度等因素影響。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "這個試算器可以整理哪些車禍賠償項目？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "工具可初步整理慰撫金判決參考、醫療及輔具費、不能工作損失、看護費、交通費、車輛及其他財物損失、已受領賠償與預估肇責比例。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "沒有骨折，也可能請求慰撫金嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可能。擦傷、挫傷、扭傷或撕裂傷也可能涉及慰撫金，但仍要依個案的就醫紀錄、疼痛期間、生活影響與其他證據判斷。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "工具算出的金額就是法院會判的金額嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不是。試算結果用來初步整理求償項目與判決落點，不是法律意見，也不能代替法院對個案證據的判斷。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "使用工具需要登入或付費嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "目前不需要登入，也不收取使用費用。填寫完成後，可依工具提供的功能產生求償明細。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "為什麼從LINE開啟後無法下載PDF？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "部分LINE內嵌瀏覽器會限制檔案下載。遇到這種情況，可從LINE選單選擇在系統瀏覽器中開啟，再重新下載。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #f7f2ea;
+      --surface: #fffdf9;
+      --surface-strong: #ffffff;
+      --ink: #231815;
+      --muted: #6f625d;
+      --wine: #4b1717;
+      --wine-deep: #2d0f0f;
+      --rose: #c65f55;
+      --rose-soft: #f2d8d2;
+      --line: #ded3c6;
+      --focus: #a83f38;
+      --shadow: rgba(75, 23, 23, 0.12);
+      --radius: 14px;
+      --max: 1040px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--wine); }
+    a:focus-visible, summary:focus-visible, iframe:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--surface-strong);
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .skip-link:focus { top: 12px; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(45, 15, 15, 0.97);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 68px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      color: #f3b0a5;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-links { display: flex; align-items: center; gap: 18px; }
+    .nav-links a {
+      color: rgba(255, 255, 255, .82);
+      font-size: .9rem;
+      font-weight: 650;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: #f3b0a5; }
+    .nav-phone { font-variant-numeric: tabular-nums; }
+    .nav-social { display: flex; align-items: center; gap: 6px; }
+    .nav-links .nav-social-link {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid rgba(243, 176, 165, .28);
+      border-radius: 10px;
+    }
+    .nav-links .nav-social-link:hover { border-color: rgba(243, 176, 165, .72); background: rgba(243, 176, 165, .08); }
+    .nav-social-link img { width: 17px; height: 17px; display: block; }
+    .nav-links .nav-primary {
+      padding: 8px 14px;
+      border: 1px solid rgba(243, 176, 165, .62);
+      border-radius: 8px;
+      color: #ffd8d1;
+    }
+    .hero {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 520px;
+      margin: auto;
+      padding: 72px 0 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      align-items: center;
+      gap: clamp(48px, 8vw, 96px);
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--rose);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2.35rem, 6vw, 4.25rem);
+      letter-spacing: -.045em;
+      color: var(--wine-deep);
+    }
+    .hero-title-break { display: inline; }
+    .hero-lead {
+      max-width: 610px;
+      margin: 18px 0 28px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2vw, 1.16rem);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-decoration: none;
+      transition: transform 120ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button:active { transform: scale(.98); }
+    .button-primary { background: var(--wine); color: #fff7f5; }
+    .button-primary:hover { background: var(--wine-deep); }
+    .button-secondary { border-color: var(--line); background: var(--surface); color: var(--wine); }
+    .hero-facts {
+      border-left: 1px solid var(--line);
+      padding-left: clamp(28px, 5vw, 54px);
+    }
+    .fact { padding: 18px 0; }
+    .fact + .fact { border-top: 1px solid var(--line); }
+    .fact strong { display: block; color: var(--wine); font-size: 1.45rem; line-height: 1.2; }
+    .fact span { color: var(--muted); font-size: .9rem; }
+    main { overflow: clip; }
+    .section {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+      padding: 76px 0;
+    }
+    .section h2 {
+      max-width: 760px;
+      margin: 0 0 14px;
+      color: var(--wine-deep);
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      letter-spacing: -.025em;
+    }
+    .section-intro { max-width: 720px; margin: 0 0 34px; color: var(--muted); }
+    .tool-band { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
+    .tool-section { padding-top: 58px; padding-bottom: 62px; }
+    .tool-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 24px;
+    }
+    .tool-head h2 { margin-bottom: 6px; }
+    .tool-head p { margin: 0; color: var(--muted); }
+    .external-link { white-space: nowrap; font-weight: 800; }
+    .tool-shell {
+      position: relative;
+      height: min(82dvh, 920px);
+      min-height: 640px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-strong);
+      box-shadow: 0 24px 70px var(--shadow);
+    }
+    .tool-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background: var(--surface-strong);
+      color: var(--muted);
+      text-align: center;
+      transition: opacity 220ms ease, visibility 220ms ease;
+    }
+    .tool-shell.is-ready .tool-loading { visibility: hidden; opacity: 0; }
+    .loading-mark {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      border-radius: 12px;
+      background: var(--rose-soft);
+      box-shadow: inset 0 0 0 1px var(--line);
+      animation: breathe 1.4s ease-in-out infinite alternate;
+    }
+    .tool-frame { position: relative; z-index: 2; width: 100%; height: 100%; border: 0; background: #fff; }
+    .embed-help {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .embed-help a { font-weight: 800; }
+    .process-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: clamp(42px, 8vw, 96px);
+      align-items: start;
+    }
+    .process-list { margin: 0; padding: 0; list-style: none; counter-reset: process; }
+    .process-list li {
+      position: relative;
+      padding: 0 0 28px 58px;
+      counter-increment: process;
+    }
+    .process-list li::before {
+      content: counter(process);
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--wine);
+      font-weight: 900;
+    }
+    .process-list strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 1.05rem; }
+    .process-list p { margin: 0; color: var(--muted); }
+    .coverage {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .coverage-group {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .coverage-group h3 { margin: 0 0 10px; color: var(--wine); font-size: 1.08rem; }
+    .coverage-group p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .method-band { background: var(--wine-deep); color: #fff7f5; }
+    .method {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: clamp(42px, 8vw, 94px);
+      align-items: center;
+    }
+    .method h2 { color: #fff7f5; }
+    .method .section-intro { color: rgba(255, 247, 245, .72); margin-bottom: 0; }
+    .method-note {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+    }
+    .method-note strong { display: block; margin-bottom: 8px; color: #f3b0a5; font-size: 1.12rem; }
+    .method-note p { margin: 0; color: rgba(255, 247, 245, .78); }
+    .faq-list { max-width: 820px; margin-top: 30px; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary {
+      position: relative;
+      padding: 21px 48px 21px 0;
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 850;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 10px;
+      top: 16px;
+      color: var(--rose);
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 720px; margin: -4px 0 22px; color: var(--muted); }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .related-link {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.55;
+      text-decoration: none;
+      transition: transform 120ms ease, border-color 160ms ease;
+    }
+    .related-link:hover { transform: translateY(-2px); border-color: var(--rose); }
+    .contact-band { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--rose-soft); }
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 36px;
+    }
+    .contact h2 { margin-bottom: 8px; }
+    .contact p { max-width: 650px; margin: 0; color: var(--muted); }
+    .contact-note { display: block; max-width: 650px; margin-top: 10px; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+    .line-button { background: #087d3b; color: #fff; }
+    .line-button:hover { background: #056d33; }
+    .review-band { border-bottom: 1px solid var(--line); background: var(--surface); }
+    .review-invite { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 36px; }
+    .review-invite h2 { margin-bottom: 8px; }
+    .review-invite p { max-width: 650px; margin: 0; color: var(--muted); }
+    .review-button { border: 1px solid var(--rose); background: transparent; color: var(--wine); }
+    .review-button:hover { background: var(--rose-soft); }
+    .line-float {
+      position: fixed;
+      right: 18px;
+      bottom: calc(max(18px, env(safe-area-inset-bottom)) + var(--line-footer-offset, 0px));
+      z-index: 90;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 58px;
+      padding: 6px 14px 6px 6px;
+      border: 1px solid rgba(255, 255, 255, .48);
+      border-radius: 14px;
+      background: #087d3b;
+      color: #fff;
+      box-shadow: 0 12px 34px rgba(8, 85, 48, .28);
+      font-size: .9rem;
+      font-weight: 850;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: transform 120ms ease, background-color 160ms ease, bottom 180ms ease;
+    }
+    .line-float:hover { transform: translateY(-2px); background: #056d33; }
+    .line-float:active { transform: scale(.97); }
+    .line-float img { width: 46px; height: 46px; border-radius: 10px; display: block; }
+    footer { padding: 28px 20px 30px; background: var(--wine-deep); color: rgba(255, 247, 245, .66); font-size: .82rem; }
+    .footer-inner { width: min(100%, var(--max)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .footer-meta { margin: 0; text-align: left; }
+    .footer-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    footer a { color: #f3b0a5; }
+    .footer-phone { font-weight: 760; text-decoration: none; white-space: nowrap; }
+    .footer-phone:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .social-links { display: flex; align-items: center; gap: 8px; }
+    .social-link { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid rgba(243, 176, 165, .34); border-radius: 12px; transition: transform 120ms ease, border-color 160ms ease, background-color 160ms ease; }
+    .social-link:hover { transform: translateY(-2px); border-color: #f3b0a5; background: rgba(243, 176, 165, .1); }
+    .social-link:active { transform: scale(.97); }
+    .social-link img { width: 20px; height: 20px; display: block; }
+    @keyframes breathe { from { transform: scale(.92); opacity: .55; } to { transform: scale(1); opacity: 1; } }
+    @media (max-width: 760px) {
+      .nav-inner { width: min(100% - 30px, var(--max)); min-height: 62px; }
+      .nav-links { display: none; }
+      .hero {
+        width: min(100% - 34px, var(--max));
+        min-height: auto;
+        padding: 48px 0 44px;
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+      h1 { font-size: clamp(2.25rem, 13vw, 3.4rem); }
+      .hero-title-break { display: block; }
+      .hero-facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+      .fact { padding: 18px 0 0; }
+      .fact + .fact { border-top: 0; }
+      .fact strong { font-size: 1.08rem; }
+      .fact span { font-size: .75rem; line-height: 1.45; display: block; margin-top: 5px; }
+      .section { width: min(100% - 34px, var(--max)); padding: 58px 0; }
+      .tool-head { display: block; }
+      .external-link { display: inline-block; margin-top: 10px; }
+      .tool-shell { height: 78dvh; min-height: 590px; border-radius: 12px; }
+      .process-grid, .method, .contact, .review-invite { grid-template-columns: 1fr; gap: 32px; }
+      .coverage, .related-grid { grid-template-columns: 1fr; }
+      .contact { align-items: start; }
+      .contact .button { width: 100%; }
+      .review-invite .button { width: 100%; }
+      .footer-inner { flex-direction: column; align-items: center; gap: 18px; }
+      .footer-meta { text-align: center; line-height: 1.7; }
+      .footer-actions { flex-wrap: wrap; justify-content: center; }
+      .line-float {
+        right: 12px;
+        min-width: 56px;
+        min-height: 56px;
+        padding: 5px;
+      }
+      .line-float span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    }
+    @media (max-width: 430px) {
+      .hero-actions .button { width: 100%; }
+      .hero-facts { grid-template-columns: 1fr; }
+      .fact { display: grid; grid-template-columns: 92px 1fr; align-items: baseline; gap: 8px; }
+      .tool-shell { width: calc(100% + 18px); margin-left: -9px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #181313;
+        --surface: #211919;
+        --surface-strong: #271d1d;
+        --ink: #f2e8e4;
+        --muted: #c1b1aa;
+        --wine: #dd8176;
+        --wine-deep: #f0b2aa;
+        --rose: #e28a7f;
+        --rose-soft: #4a2827;
+        --line: #4b3935;
+        --focus: #f0a69c;
+        --shadow: rgba(0, 0, 0, .28);
+      }
+      .button-primary { background: #b84f47; color: #fff8f6; }
+      .button-primary:hover { background: #a6423b; }
+      .button-secondary { color: var(--ink); }
+      .method-band, footer { background: #140d0d; }
+      .tool-frame { background: #171717; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <nav class="nav" aria-label="主要導覽">
+    <div class="nav-inner">
+      <a class="brand" href="/">鄧宇律師</a>
+      <div class="nav-links">
+        <a href="/#articles">法律文章</a>
+        <a class="nav-phone" href="tel:0911494236">0911-494-236</a>
+        <div class="nav-social" aria-label="社群連結">
+          <a class="nav-social-link" href="https://www.instagram.com/tengyu.exe/" target="_blank" rel="noopener me" aria-label="前往鄧宇律師的 Instagram"><img src="https://cdn.simpleicons.org/instagram/f3b0a5" alt="" width="17" height="17"></a>
+          <a class="nav-social-link" href="https://www.facebook.com/profile.php?id=61591741754267&amp;locale=zh_TW" target="_blank" rel="noopener me" aria-label="前往鄧宇法律事務所的 Facebook"><img src="https://cdn.simpleicons.org/facebook/f3b0a5" alt="" width="17" height="17"></a>
+          <a class="nav-social-link" href="https://www.threads.net/@tengyu.exe" target="_blank" rel="noopener me" aria-label="前往鄧宇律師的 Threads"><img src="https://cdn.simpleicons.org/threads/f3b0a5" alt="" width="17" height="17"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow">免費線上評估工具</p>
+      <h1>車禍和解金<span class="hero-title-break">試算器</span></h1>
+      <p class="hero-lead">輸入傷勢、費用、保險與肇責，參考2,600筆判決，免費產生求償明細。</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#calculator">開始試算</a>
+        <a class="button button-secondary" href="#how-it-works">了解計算方式</a>
+      </div>
+    </div>
+    <aside class="hero-facts" aria-label="工具重點">
+      <div class="fact"><strong>2,600+</strong><span>真實車禍判決參考</span></div>
+      <div class="fact"><strong>免費</strong><span>不用登入即可使用</span></div>
+      <div class="fact"><strong>PDF</strong><span>整理求償明細下載</span></div>
+    </aside>
+  </header>
+
+  <main id="main">
+    <div class="tool-band" id="calculator">
+      <section class="section tool-section" aria-labelledby="tool-title">
+        <div class="tool-head">
+          <div>
+            <h2 id="tool-title">直接開始整理求償項目</h2>
+            <p>依畫面順序填寫，資料不完整時也可以先試算。</p>
+          </div>
+          <a class="external-link" href="https://tool.tengyulaw.tw" target="_blank" rel="noopener">另開完整工具</a>
+        </div>
+        <div class="tool-shell" id="tool-shell">
+          <div class="tool-loading" aria-live="polite">
+            <div>
+              <div class="loading-mark" aria-hidden="true"></div>
+              <strong>正在載入評估工具</strong><br>
+              Render服務剛喚醒時可能需要多等幾秒。
+            </div>
+          </div>
+          <iframe
+            class="tool-frame"
+            id="tool-frame"
+            title="車禍求償評估工具"
+            data-src-light="https://tool.tengyulaw.tw/?embed=true&amp;embed_options=light_theme"
+            data-src-dark="https://tool.tengyulaw.tw/?embed=true&amp;embed_options=dark_theme"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+        <p class="embed-help">工具未顯示、下載沒有反應，或手機操作不順時，請改用<a href="https://tool.tengyulaw.tw" target="_blank" rel="noopener">完整工具頁面</a>。LINE內嵌瀏覽器可能限制PDF下載，建議改用Chrome或Safari。</p>
+        <noscript><p class="embed-help">瀏覽器未啟用JavaScript，請直接前往<a href="https://tool.tengyulaw.tw">完整工具頁面</a>。</p></noscript>
+      </section>
+    </div>
+
+    <section class="section process-grid" id="how-it-works" aria-labelledby="process-title">
+      <div>
+        <h2 id="process-title">三個動作，先把數字整理清楚</h2>
+        <p class="section-intro">工具協助整理資料，不替代單據、診斷證明或個案法律判斷。</p>
+      </div>
+      <ol class="process-list">
+        <li>
+          <strong>選擇事故與傷勢</strong>
+          <p>依診斷證明選擇接近的傷勢級別，作為慰撫金判決範圍的初步參考。</p>
+        </li>
+        <li>
+          <strong>輸入費用與責任資料</strong>
+          <p>整理醫療、薪資、看護、交通、車損、已領保險與預估肇責。</p>
+        </li>
+        <li>
+          <strong>查看並下載求償明細</strong>
+          <p>檢查各項金額與扣抵方式，下載PDF供調解、和解或諮詢前整理使用。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="coverage-title">
+      <h2 id="coverage-title">試算涵蓋哪些賠償項目？</h2>
+      <p class="section-intro">同一件車禍可能同時包含人身、財物、保險扣抵與肇責。分開整理，比只談一個總額更容易核對。</p>
+      <div class="coverage">
+        <article class="coverage-group">
+          <h3>傷勢與慰撫金</h3>
+          <p>依傷勢級別比對法院判決分布，協助理解同類案件的可能落點。</p>
+        </article>
+        <article class="coverage-group">
+          <h3>醫療與生活支出</h3>
+          <p>包含醫療、輔具、看護、交通及其他有單據可核對的必要費用。</p>
+        </article>
+        <article class="coverage-group">
+          <h3>工作與財物損失</h3>
+          <p>整理不能工作損失、車輛維修或全損，以及手機、安全帽等財物損失。</p>
+        </article>
+        <article class="coverage-group">
+          <h3>保險與肇責扣抵</h3>
+          <p>納入已受領賠償、強制險或其他保險給付，以及預估肇責比例。</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="method-band">
+      <section class="section method" aria-labelledby="method-title">
+        <div>
+          <h2 id="method-title">慰撫金不是套公式，而是比對判決</h2>
+          <p class="section-intro">工具參考司法院公開判決與整理後的車禍民事案例，讓使用者先看見相近傷勢的金額分布。</p>
+        </div>
+        <div class="method-note">
+          <strong>判決資料是參考座標</strong>
+          <p>法院仍會依傷勢、治療與後遺症、生活影響、雙方狀況及證據完整程度判斷。試算結果不是法院保證金額。</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="section" aria-labelledby="faq-title">
+      <h2 id="faq-title">車禍和解金試算常見問題</h2>
+      <p class="section-intro">先釐清工具能做什麼，也要知道哪些部分仍需依個案證據判斷。</p>
+      <div class="faq-list">
+        <details>
+          <summary>車禍和解金有固定公式嗎？</summary>
+          <p>沒有固定公式。財產損害通常依單據與實際損失整理；慰撫金則會受到傷勢、治療期間、後遺症、生活影響、雙方狀況與舉證程度等因素影響。</p>
+        </details>
+        <details>
+          <summary>這個試算器可以整理哪些車禍賠償項目？</summary>
+          <p>工具可初步整理慰撫金判決參考、醫療及輔具費、不能工作損失、看護費、交通費、車輛及其他財物損失、已受領賠償與預估肇責比例。</p>
+        </details>
+        <details>
+          <summary>沒有骨折，也可能請求慰撫金嗎？</summary>
+          <p>可能。擦傷、挫傷、扭傷或撕裂傷也可能涉及慰撫金，但仍要依個案的就醫紀錄、疼痛期間、生活影響與其他證據判斷。</p>
+        </details>
+        <details>
+          <summary>工具算出的金額就是法院會判的金額嗎？</summary>
+          <p>不是。試算結果用來初步整理求償項目與判決落點，不是法律意見，也不能代替法院對個案證據的判斷。</p>
+        </details>
+        <details>
+          <summary>使用工具需要登入或付費嗎？</summary>
+          <p>目前不需要登入，也不收取使用費用。填寫完成後，可依工具提供的功能產生求償明細。</p>
+        </details>
+        <details>
+          <summary>為什麼從LINE開啟後無法下載PDF？</summary>
+          <p>部分LINE內嵌瀏覽器會限制檔案下載。遇到這種情況，可從LINE選單選擇在系統瀏覽器中開啟，再重新下載。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reading-title">
+      <h2 id="reading-title">搭配判決分析，理解試算結果</h2>
+      <p class="section-intro">工具整理數字，文章補充法院如何看待傷勢、證據與各項請求。</p>
+      <div class="related-grid">
+        <a class="related-link" href="/article-1.html">車禍慰撫金計算機完整使用說明</a>
+        <a class="related-link" href="/article-2.html">慰撫金是什麼？法院如何決定金額</a>
+        <a class="related-link" href="/article-4.html">車禍調解「含不含強」是什麼意思</a>
+        <a class="related-link" href="/article-5.html">刑事附帶民事與裁判費怎麼計算</a>
+      </div>
+    </section>
+
+    <div class="contact-band">
+      <section class="section contact" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">重大損害，及早諮詢才能完整準備</h2>
+          <p>勞動能力減損、終身看護、扶養費或重大傷害，通常涉及鑑定、期間與金額計算。先提供事故時間、傷勢與目前處理進度，我會協助確認可優先處理的方向。</p>
+          <small class="contact-note">免費初評提供初步方向，不包含完整案件分析或正式法律意見。</small>
+        </div>
+        <a class="button line-button" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" data-line-source="calculator_cta">LINE免費初評</a>
+      </section>
+    </div>
+
+    <div class="review-band">
+      <section class="section review-invite" aria-labelledby="review-title">
+        <div>
+          <h2 id="review-title">使用後，歡迎留下真實心得</h2>
+          <p>你的回饋能支持我持續製作更多免費法律工具，也能幫助其他人了解這項工具。</p>
+        </div>
+        <a class="button review-button" href="https://g.page/r/CeXbBfXOjSQnEAI/review" target="_blank" rel="noopener">在 Google 分享心得</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-meta">資料來源：司法院公開判決資料<br>© 2026 鄧宇律師　|　<a href="/">返回首頁</a></p>
+      <div class="footer-actions">
+        <a class="footer-phone" href="tel:0911494236">電話 0911-494-236</a>
+        <div class="social-links" aria-label="社群連結">
+          <a class="social-link" href="https://www.instagram.com/tengyu.exe/" target="_blank" rel="noopener me" aria-label="前往鄧宇律師的 Instagram">
+            <img src="https://cdn.simpleicons.org/instagram/f3b0a5" alt="" width="20" height="20">
+          </a>
+          <a class="social-link" href="https://www.facebook.com/profile.php?id=61591741754267&amp;locale=zh_TW" target="_blank" rel="noopener me" aria-label="前往鄧宇法律事務所的 Facebook">
+            <img src="https://cdn.simpleicons.org/facebook/f3b0a5" alt="" width="20" height="20">
+          </a>
+          <a class="social-link" href="https://www.threads.net/@tengyu.exe" target="_blank" rel="noopener me" aria-label="前往鄧宇律師的 Threads">
+            <img src="https://cdn.simpleicons.org/threads/f3b0a5" alt="" width="20" height="20">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="line-float" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" aria-label="使用LINE取得免費初評" data-line-source="calculator_float">
+    <img src="https://tengyulaw.tw/images/line-icon.png" alt="" width="46" height="46">
+    <span>LINE免費初評</span>
+  </a>
+
+  <script>
+    (function () {
+      var frame = document.getElementById('tool-frame');
+      var shell = document.getElementById('tool-shell');
+      var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var floatingLine = document.querySelector('.line-float');
+      var pageFooter = document.querySelector('footer');
+      if (floatingLine && pageFooter && 'IntersectionObserver' in window) {
+        var footerObserver = new IntersectionObserver(function (entries) {
+          var footerHeight = entries[0].isIntersecting ? Math.ceil(pageFooter.getBoundingClientRect().height) : 0;
+          document.documentElement.style.setProperty('--line-footer-offset', footerHeight + 'px');
+        }, { threshold: [.01] });
+        footerObserver.observe(pageFooter);
+      }
+      document.querySelectorAll('[data-line-source]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'line_click', {
+              event_category: 'conversion',
+              event_label: link.dataset.lineSource,
+              transport_type: 'beacon'
+            });
+          }
+        });
+      });
+      var loaded = false;
+      function loadTool() {
+        if (loaded) return;
+        loaded = true;
+        frame.src = dark ? frame.dataset.srcDark : frame.dataset.srcLight;
+      }
+      frame.addEventListener('load', function () {
+        shell.classList.add('is-ready');
+      }, { once: true });
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting && entries[0].intersectionRatio >= .3) {
+            loadTool();
+            observer.disconnect();
+          }
+        }, { threshold: [.3] });
+        observer.observe(shell);
+      } else {
+        loadTool();
+      }
+    }());
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
