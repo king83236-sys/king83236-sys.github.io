@@ -66,6 +66,17 @@
   .nav-links { display: flex; align-items: center; gap: 18px; }
   .nav-links > a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.88rem; font-weight: 650; white-space: nowrap; }
   .nav-links > a:hover { color: #F3B0A5; }
+  .nav-tools { position: relative; }
+  .nav-tools-trigger { display: inline-flex; min-height: 38px; align-items: center; gap: 7px; padding: 0; border: 0; background: transparent; color: rgba(255,255,255,0.78); font: inherit; font-size: 0.88rem; font-weight: 650; cursor: pointer; }
+  .nav-tools-trigger::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 150ms ease-out; }
+  .nav-tools:hover .nav-tools-trigger, .nav-tools.is-open .nav-tools-trigger { color: #F3B0A5; }
+  .nav-tools:hover .nav-tools-trigger::after, .nav-tools.is-open .nav-tools-trigger::after { transform: translateY(2px) rotate(225deg); }
+  .nav-tools-menu { position: absolute; top: 100%; left: -18px; width: 310px; padding: 10px; border: 1px solid rgba(243,176,165,0.24); border-radius: 12px; background: #2D0F0F; box-shadow: 0 8px 8px rgba(20,8,8,0.18); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 150ms ease-out, visibility 150ms ease-out, transform 150ms ease-out; }
+  .nav-tools:hover .nav-tools-menu, .nav-tools.is-open .nav-tools-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-tools-menu a { display: block; padding: 11px 12px; border-radius: 8px; color: #FFFFFF; text-decoration: none; }
+  .nav-tools-menu a:hover, .nav-tools-menu a:focus-visible { background: rgba(243,176,165,0.1); }
+  .nav-tools-menu strong { display: block; font-size: 0.88rem; }
+  .nav-tools-menu span { display: block; margin-top: 2px; color: rgba(255,255,255,0.62); font-size: 0.75rem; line-height: 1.5; }
   .nav-phone { font-variant-numeric: tabular-nums; }
   .nav-social { display: flex; align-items: center; gap: 6px; }
   .nav-links .nav-social-link { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(243,176,165,0.28); border-radius: 10px; transition: border-color 150ms ease-out, background-color 150ms ease-out; }
@@ -88,6 +99,18 @@
   .stat-item:last-child { border-right: none; }
   .stat-num { font-size: 1.8rem; font-weight: 900; color: #2D0F0F; }
   .stat-label { font-size: 0.78rem; color: #888; margin-top: 4px; }
+  .free-tools { padding: 54px 0 58px; background: #F5F3EE; border-bottom: 1px solid #E8E0D0; }
+  .free-tools-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 24px; }
+  .free-tools-head h2 { margin: 0; color: #2D0F0F; font-size: 1.55rem; line-height: 1.3; }
+  .free-tools-head p { max-width: 520px; margin: 0; color: #5E5551; font-size: 0.9rem; line-height: 1.7; }
+  .free-tools-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-top: 1px solid #D8D0C8; border-bottom: 1px solid #D8D0C8; }
+  .free-tool { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; padding: 28px 30px 30px 0; color: #1A1A1A; text-decoration: none; transition: background-color 160ms ease-out; }
+  .free-tool + .free-tool { padding-right: 0; padding-left: 30px; border-left: 1px solid #D8D0C8; }
+  .free-tool:hover { background: #FFFFFF; }
+  .free-tool-type { color: #A84840; font-size: 0.75rem; font-weight: 800; }
+  .free-tool h3 { margin: 8px 0 8px; color: #2D0F0F; font-size: 1.15rem; line-height: 1.45; }
+  .free-tool p { max-width: 48ch; margin: 0 0 18px; color: #5E5551; font-size: 0.86rem; line-height: 1.7; }
+  .free-tool-cta { margin-top: auto; color: #A84840; font-size: 0.84rem; font-weight: 800; }
   .section-label { font-size: 0.75rem; font-weight: 700; color: #C85A50; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
   .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 20px; }
   .articles-section { padding: 60px 0; }
@@ -153,6 +176,12 @@
     .about-avatar { width: 140px; height: 175px; }
     .articles-grid { grid-template-columns: 1fr; }
     .stat-num { font-size: 1.3rem; }
+    .free-tools { padding: 42px 0 46px; }
+    .free-tools-head { display: block; }
+    .free-tools-head p { margin-top: 8px; }
+    .free-tools-grid { grid-template-columns: 1fr; }
+    .free-tool, .free-tool + .free-tool { padding: 24px 0; border-left: 0; }
+    .free-tool + .free-tool { border-top: 1px solid #D8D0C8; }
     .footer-inner { flex-direction: column; text-align: center; gap: 18px; }
     .footer-actions { flex-wrap: wrap; justify-content: center; }
   }
@@ -173,7 +202,13 @@
       <span class="nav-brand-firm">鄧宇法律事務所</span>
     </a>
     <div class="nav-links">
-      <a href="https://tengyulaw.tw/calculator/" target="_blank" rel="noopener">評估工具</a>
+      <div class="nav-tools">
+        <button class="nav-tools-trigger" type="button" aria-expanded="false" aria-controls="nav-tools-menu">免費法律工具</button>
+        <div class="nav-tools-menu" id="nav-tools-menu">
+          <a href="https://tengyulaw.tw/calculator/"><strong>車禍慰撫金與求償計算機</strong><span>比對真實判決，整理損害賠償明細</span></a>
+          <a href="/child-support-calculator/"><strong>子女扶養費計算機</strong><span>依114年生活費與父母收入比例試算</span></a>
+        </div>
+      </div>
       <a href="#articles">法律文章</a>
       <a class="nav-phone" href="tel:0911494236">0911-494-236</a>
       <div class="nav-social" aria-label="社群連結">
@@ -212,6 +247,29 @@
     </div>
   </div>
 </div>
+
+<section class="free-tools" id="tools" aria-labelledby="free-tools-title">
+  <div class="container">
+    <div class="free-tools-head">
+      <h2 id="free-tools-title">免費法律工具</h2>
+      <p>先用客觀資料整理問題，再決定是否需要進一步協商、調解或諮詢。</p>
+    </div>
+    <div class="free-tools-grid">
+      <a class="free-tool" href="https://tengyulaw.tw/calculator/" data-tool-name="traffic_accident">
+        <span class="free-tool-type">車禍求償</span>
+        <h3>車禍慰撫金與求償計算機</h3>
+        <p>比對2,600+筆法院判決，試算慰撫金範圍並產生損害賠償計算明細。</p>
+        <span class="free-tool-cta">開始車禍求償評估 →</span>
+      </a>
+      <a class="free-tool" href="/child-support-calculator/" data-tool-name="child_support">
+        <span class="free-tool-type">家事扶養</span>
+        <h3>子女扶養費計算機</h3>
+        <p>依主計總處114年居住地消費支出與父母收入比例，試算每月扶養費。</p>
+        <span class="free-tool-cta">開始試算扶養費 →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <div class="articles-section" id="articles">
   <div class="container">
@@ -774,6 +832,36 @@
 </div>
 
 <script>
+const navTools = document.querySelector('.nav-tools');
+const navToolsTrigger = document.querySelector('.nav-tools-trigger');
+if (navTools && navToolsTrigger) {
+  navToolsTrigger.addEventListener('click', () => {
+    const isOpen = navTools.classList.toggle('is-open');
+    navToolsTrigger.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', event => {
+    if (!navTools.contains(event.target)) {
+      navTools.classList.remove('is-open');
+      navToolsTrigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+  navTools.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      navTools.classList.remove('is-open');
+      navToolsTrigger.setAttribute('aria-expanded', 'false');
+      navToolsTrigger.focus();
+    }
+  });
+}
+
+document.querySelectorAll('[data-tool-name]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'tool_click', { tool_name: link.dataset.toolName, source: 'homepage_tools' });
+    }
+  });
+});
+
 const articleCards = Array.from(document.querySelectorAll('.article-card')).reverse();
 
 const PER_PAGE = 6;

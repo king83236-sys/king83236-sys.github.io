@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2d0f0f">
+  <title>子女扶養費計算機｜依居住地與父母收入比例試算｜鄧宇律師</title>
+  <meta name="description" content="免費子女扶養費計算機。輸入子女人數、年齡、居住地及父母收入，依主計總處平均每人每月消費支出與收入比例，試算每月扶養費及至18歲概估總額。">
+  <link rel="canonical" href="https://tengyulaw.tw/child-support-calculator/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="鄧宇律師">
+  <meta property="og:title" content="子女扶養費計算機｜每月應分擔多少？">
+  <meta property="og:description" content="輸入子女年齡、居住地及父母收入，免費試算每月扶養費與至18歲概估總額。">
+  <meta property="og:url" content="https://tengyulaw.tw/child-support-calculator/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="子女扶養費計算機｜鄧宇律師">
+  <meta name="twitter:description" content="依居住地生活費與父母收入比例，初步試算子女扶養費。">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3DT3RWBJP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V3DT3RWBJP');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://tengyulaw.tw/child-support-calculator/#app",
+        "name": "子女扶養費計算機",
+        "url": "https://tengyulaw.tw/child-support-calculator/",
+        "applicationCategory": "LegalApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "zh-TW",
+        "isAccessibleForFree": true,
+        "description": "依子女居住地平均每人每月消費支出及父母收入比例，初步試算未成年子女扶養費。",
+        "author": {
+          "@type": "Person",
+          "name": "鄧宇律師",
+          "url": "https://tengyulaw.tw/",
+          "telephone": "+886-911-494-236"
+        },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://tengyulaw.tw/" },
+          { "@type": "ListItem", "position": 2, "name": "子女扶養費計算機", "item": "https://tengyulaw.tw/child-support-calculator/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "子女扶養費有固定公式嗎？",
+            "acceptedAnswer": { "@type": "Answer", "text": "沒有唯一固定公式。法院會依子女實際需要、父母經濟能力與身分、照顧現況等因素判斷；居住地平均每人每月消費支出及父母收入比例，通常只能作為初步參考。" }
+          },
+          {
+            "@type": "Question",
+            "name": "離婚後沒有監護權，還要負擔扶養費嗎？",
+            "acceptedAnswer": { "@type": "Answer", "text": "原則上仍要負擔。父母對未成年子女的扶養義務，不因離婚或未擔任主要照顧者而免除。" }
+          },
+          {
+            "@type": "Question",
+            "name": "扶養費原則上要付到幾歲？",
+            "acceptedAnswer": { "@type": "Answer", "text": "本工具以成年年齡18歲作為概估終點；個案若有在學、身心狀況或無法維持生活等情形，仍可能需要另外判斷。" }
+          },
+          {
+            "@type": "Question",
+            "name": "工具算出的金額就是法院會判的金額嗎？",
+            "acceptedAnswer": { "@type": "Answer", "text": "不是。試算結果只提供整理與協商的起點，法院仍會依雙方提出的收入、財產、支出、照顧勞務及子女特殊需要等證據調整。" }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f2ea;
+      --surface: #fffdf9;
+      --surface-strong: #ffffff;
+      --ink: #231815;
+      --muted: #665852;
+      --wine: #4b1717;
+      --wine-deep: #2d0f0f;
+      --rose: #b84f47;
+      --rose-soft: #f2d8d2;
+      --line: #d8cbc0;
+      --success: #176544;
+      --error: #a12b2b;
+      --focus: #a83f38;
+      --radius: 14px;
+      --max: 1080px;
+      --z-sticky: 20;
+      --z-float: 30;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    button, input, select { font: inherit; }
+    a { color: var(--wine); }
+    h1, h2, h3 { line-height: 1.3; text-wrap: balance; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--surface-strong);
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .skip-link:focus { top: 12px; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-sticky);
+      background: rgba(45, 15, 15, .98);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 66px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; flex-direction: column; gap: 1px; color: #f3b0a5; line-height: 1.2; letter-spacing: .06em; text-decoration: none; white-space: nowrap; }
+    .brand-name { font-size: 1rem; font-weight: 900; }
+    .brand-firm { color: rgba(255,255,255,.7); font-size: .68rem; font-weight: 650; letter-spacing: .08em; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-links a { color: rgba(255,255,255,.84); font-size: .92rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .nav-links a:hover { color: #f3b0a5; }
+    .nav-phone { font-variant-numeric: tabular-nums; }
+    .nav-social { display: flex; align-items: center; gap: 6px; }
+    .nav-links .nav-social-link { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(243,176,165,.28); border-radius: 10px; }
+    .nav-links .nav-social-link:hover { border-color: rgba(243,176,165,.72); background: rgba(243,176,165,.08); }
+    .nav-social-link img { display: block; width: 17px; height: 17px; }
+    .nav-tools { position: relative; }
+    .nav-tools-trigger { display: inline-flex; min-height: 38px; align-items: center; gap: 7px; padding: 0; border: 0; background: transparent; color: rgba(255,255,255,.84); font: inherit; font-size: .92rem; font-weight: 700; cursor: pointer; }
+    .nav-tools-trigger::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 150ms ease-out; }
+    .nav-tools:hover .nav-tools-trigger, .nav-tools.is-open .nav-tools-trigger { color: #f3b0a5; }
+    .nav-tools:hover .nav-tools-trigger::after, .nav-tools.is-open .nav-tools-trigger::after { transform: translateY(2px) rotate(225deg); }
+    .nav-tools-menu { position: absolute; top: 100%; left: -18px; width: 310px; padding: 10px; border: 1px solid rgba(243,176,165,.24); border-radius: 12px; background: #2d0f0f; box-shadow: 0 8px 8px rgba(20,8,8,.18); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 150ms ease-out, visibility 150ms ease-out, transform 150ms ease-out; }
+    .nav-tools:hover .nav-tools-menu, .nav-tools.is-open .nav-tools-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-tools-menu a { display: block; padding: 11px 12px; border-radius: 8px; color: #fff; text-decoration: none; }
+    .nav-tools-menu a:hover, .nav-tools-menu a:focus-visible { background: rgba(243,176,165,.1); }
+    .nav-tools-menu strong { display: block; font-size: .88rem; }
+    .nav-tools-menu span { display: block; margin-top: 2px; color: rgba(255,255,255,.62); font-size: .75rem; line-height: 1.5; }
+    .hero {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+      padding: clamp(58px, 9vw, 100px) 0 clamp(54px, 8vw, 88px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      align-items: end;
+      gap: clamp(38px, 7vw, 88px);
+    }
+    .hero-kicker { margin: 0 0 12px; color: var(--rose); font-size: .84rem; font-weight: 850; letter-spacing: .08em; }
+    h1 { margin: 0; max-width: 760px; color: var(--wine-deep); font-size: clamp(2.35rem, 6vw, 4.8rem); letter-spacing: -.035em; }
+    .hero-lead { max-width: 660px; margin: 20px 0 0; color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.18rem); }
+    .hero-note { padding: 26px 0 6px 30px; border-left: 1px solid var(--line); }
+    .hero-note strong { display: block; margin-bottom: 8px; color: var(--wine); font-size: 1.15rem; }
+    .hero-note p { margin: 0; color: var(--muted); font-size: .94rem; }
+    main { overflow: clip; }
+    .tool-band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .tool-layout {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+      padding: clamp(48px, 7vw, 76px) 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(310px, .92fr);
+      gap: clamp(32px, 6vw, 72px);
+      align-items: start;
+    }
+    .tool-intro { margin-bottom: 30px; }
+    .tool-intro h2 { margin: 0 0 10px; color: var(--wine-deep); font-size: clamp(1.65rem, 3vw, 2.35rem); }
+    .tool-intro p { max-width: 64ch; margin: 0; color: var(--muted); }
+    .tool-intro p + p { margin-top: 8px; }
+    .form-section { margin: 0; padding: 0; border: 0; }
+    .form-section + .form-section { margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--line); }
+    .form-section legend { width: 100%; margin: 0 0 18px; padding: 0; color: var(--wine-deep); font-size: 1.12rem; font-weight: 900; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .field { min-width: 0; }
+    .field-wide { grid-column: 1 / -1; }
+    label, .label { display: block; margin-bottom: 7px; color: var(--ink); font-size: .94rem; font-weight: 800; }
+    .hint { display: block; margin-top: 7px; color: var(--muted); font-size: .8rem; line-height: 1.55; }
+    input[type="number"], select {
+      width: 100%;
+      min-height: 50px;
+      padding: 11px 12px;
+      border: 1px solid #aa9b91;
+      border-radius: 9px;
+      background: var(--surface-strong);
+      color: var(--ink);
+      box-shadow: none;
+    }
+    input::placeholder { color: #74645d; opacity: 1; }
+    input:hover, select:hover { border-color: var(--wine); }
+    .choice-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .basis-field { margin-bottom: 20px; }
+    .choice {
+      position: relative;
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--surface-strong);
+      cursor: pointer;
+      font-weight: 750;
+    }
+    .choice:has(input:checked) { border-color: var(--wine); background: #f8e9e5; color: var(--wine-deep); }
+    .choice input { width: 18px; height: 18px; margin: 0; accent-color: var(--wine); }
+    .children-fields { display: grid; gap: 12px; margin-top: 4px; }
+    .child-row {
+      display: grid;
+      grid-template-columns: 94px minmax(120px,.8fr) minmax(160px,1fr);
+      gap: 12px;
+      align-items: end;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffaf5;
+    }
+    .child-index { align-self: center; color: var(--wine); font-weight: 900; }
+    .custom-field[hidden] { display: none; }
+    .form-error {
+      margin: 20px 0 0;
+      padding: 12px 14px;
+      border: 1px solid #d58c88;
+      border-radius: 9px;
+      background: #fff1ef;
+      color: var(--error);
+      font-weight: 750;
+    }
+    .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 19px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-weight: 850;
+      line-height: 1.3;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 150ms cubic-bezier(.22,1,.36,1), background-color 180ms ease, border-color 180ms ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button:active { transform: translateY(0); }
+    .button-primary { background: var(--wine); color: #fff; }
+    .button-primary:hover { background: var(--wine-deep); }
+    .button-secondary { border-color: var(--line); background: transparent; color: var(--wine); }
+    .result-panel {
+      position: sticky;
+      top: 92px;
+      min-height: 430px;
+      padding: clamp(24px, 4vw, 34px);
+      border-radius: var(--radius);
+      background: var(--wine-deep);
+      color: #fff8f5;
+    }
+    .result-empty { display: grid; min-height: 360px; align-content: center; }
+    .result-empty strong { display: block; margin-bottom: 8px; color: #f3b0a5; font-size: 1.3rem; }
+    .result-empty p { margin: 0; color: rgba(255,248,245,.72); }
+    .result-content[hidden], .result-empty[hidden] { display: none; }
+    .result-title { margin: 0; color: #f3b0a5; font-size: .9rem; font-weight: 850; letter-spacing: .06em; }
+    .result-total { margin: 8px 0 6px; font-size: clamp(2.25rem, 5vw, 3.7rem); font-weight: 950; line-height: 1.08; letter-spacing: -.025em; font-variant-numeric: tabular-nums; }
+    .result-caption { margin: 0 0 22px; color: rgba(255,248,245,.72); font-size: .88rem; }
+    .result-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.16); }
+    .result-list li { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .result-list span { color: rgba(255,248,245,.72); }
+    .result-list strong { text-align: right; font-variant-numeric: tabular-nums; }
+    .child-results { margin-top: 20px; }
+    .child-result { padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .child-result-head { display: flex; justify-content: space-between; gap: 16px; }
+    .child-result-head strong:last-child { color: #f3b0a5; font-variant-numeric: tabular-nums; }
+    .child-result small { display: block; margin-top: 4px; color: rgba(255,248,245,.66); }
+    .result-warning { margin: 20px 0 0; color: rgba(255,248,245,.72); font-size: .82rem; line-height: 1.65; }
+    .result-actions { display: flex; gap: 10px; margin-top: 20px; }
+    .result-actions .button { min-height: 44px; border-color: rgba(255,255,255,.28); color: #fff; }
+    .section {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+      padding: clamp(58px, 8vw, 88px) 0;
+    }
+    .section h2 { max-width: 760px; margin: 0 0 14px; color: var(--wine-deep); font-size: clamp(1.75rem, 4vw, 2.65rem); letter-spacing: -.025em; }
+    .section-intro { max-width: 70ch; margin: 0 0 34px; color: var(--muted); }
+    .method {
+      display: grid;
+      grid-template-columns: minmax(0,.86fr) minmax(0,1.14fr);
+      gap: clamp(42px, 8vw, 96px);
+      align-items: start;
+    }
+    .method-steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+    .method-steps li { position: relative; padding: 0 0 26px 52px; counter-increment: step; }
+    .method-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--wine);
+      font-weight: 900;
+    }
+    .method-steps strong { display: block; margin-bottom: 4px; }
+    .method-steps p { margin: 0; color: var(--muted); }
+    .evidence-band { background: var(--wine-deep); color: #fff8f5; }
+    .evidence { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(38px,7vw,88px); align-items: start; }
+    .evidence h2 { color: #fff8f5; }
+    .evidence p { color: rgba(255,248,245,.74); }
+    .evidence-list { margin: 0; padding: 0; list-style: none; }
+    .evidence-list li { padding: 17px 0; border-top: 1px solid rgba(255,255,255,.16); }
+    .evidence-list li:last-child { border-bottom: 1px solid rgba(255,255,255,.16); }
+    .evidence-list strong { display: block; margin-bottom: 4px; color: #f3b0a5; }
+    .evidence-list span { color: rgba(255,248,245,.74); }
+    .source-note { margin-top: 24px; font-size: .82rem; color: rgba(255,248,245,.62); }
+    .source-note a { color: #ffd2ca; }
+    .faq-list { max-width: 820px; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { position: relative; padding: 21px 46px 21px 0; cursor: pointer; font-weight: 850; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 10px; top: 15px; color: var(--rose); font-size: 1.5rem; font-weight: 500; }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 72ch; margin: -4px 0 22px; color: var(--muted); }
+    .contact-band { border-top: 1px solid var(--line); background: var(--rose-soft); }
+    .contact { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 34px; }
+    .contact h2 { margin-bottom: 8px; }
+    .contact p { max-width: 68ch; margin: 0; color: var(--muted); }
+    .line-button { gap: 10px; background: #07893f; color: #fff; }
+    .line-button:hover { background: #056d33; }
+    .line-mark { display: grid; width: 36px; height: 36px; flex: 0 0 36px; place-items: center; border-radius: 50%; background: #fff; }
+    .line-mark img { display: block; width: 24px; height: 24px; }
+    footer { padding: 28px 20px 30px; background: #180b0b; color: rgba(255,248,245,.66); font-size: .82rem; }
+    .footer-inner { width: min(100%, var(--max)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { color: #f3b0a5; }
+    .line-float {
+      position: fixed;
+      right: 18px;
+      bottom: max(18px, env(safe-area-inset-bottom));
+      z-index: var(--z-float);
+      display: inline-flex;
+      min-height: 58px;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px 8px 9px;
+      border-radius: 12px;
+      background: #07893f;
+      color: #fff;
+      box-shadow: 0 6px 12px rgba(20,14,12,.18);
+      font-size: .88rem;
+      font-weight: 850;
+      text-decoration: none;
+      transition: opacity 160ms ease, visibility 160ms ease, transform 160ms ease, background-color 160ms ease;
+    }
+    .line-float:hover { background: #056d33; }
+    .line-float.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); }
+    @media (max-width: 820px) {
+      .hero, .tool-layout, .method, .evidence, .contact { grid-template-columns: 1fr; }
+      .hero { align-items: start; }
+      .hero-note { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+      .result-panel { position: static; min-height: 0; }
+      .result-empty { min-height: 220px; }
+      .contact { align-items: start; }
+      .contact .button { width: 100%; }
+    }
+    @media (max-width: 620px) {
+      .nav-inner, .hero, .tool-layout, .section { width: min(100% - 28px, var(--max)); }
+      .nav-links { display: none; }
+      .field-grid { grid-template-columns: 1fr; }
+      .child-row { grid-template-columns: 1fr; gap: 10px; }
+      .child-index { padding-bottom: 3px; border-bottom: 1px solid var(--line); }
+      .form-actions .button { flex: 1 1 140px; }
+      .result-list li, .child-result-head { align-items: start; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .line-float { right: 12px; padding-right: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      .nav, .hero, .tool-form-wrap, .method-section, .evidence-band, .faq-section, .contact-band, footer, .line-float, .result-actions { display: none !important; }
+      body, .tool-band { background: #fff; }
+      .tool-layout { display: block; width: 100%; padding: 0; }
+      .result-panel { position: static; color: #000; background: #fff; border: 1px solid #777; }
+      .result-title, .result-total, .child-result-head strong:last-child { color: #000; }
+      .result-caption, .result-list span, .child-result small, .result-warning { color: #333; }
+      .result-list, .result-list li, .child-result { border-color: #bbb; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <nav class="nav" aria-label="主要導覽">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-name">鄧宇律師</span>
+        <span class="brand-firm">鄧宇法律事務所</span>
+      </a>
+      <div class="nav-links">
+        <div class="nav-tools">
+          <button class="nav-tools-trigger" type="button" aria-expanded="false" aria-controls="nav-tools-menu">免費法律工具</button>
+          <div class="nav-tools-menu" id="nav-tools-menu">
+            <a href="/calculator/"><strong>車禍慰撫金與求償計算機</strong><span>比對真實判決，整理損害賠償明細</span></a>
+            <a href="/child-support-calculator/" aria-current="page"><strong>子女扶養費計算機</strong><span>依114年生活費與父母收入比例試算</span></a>
+          </div>
+        </div>
+        <a href="/#articles">法律文章</a>
+        <a class="nav-phone" href="tel:0911494236">0911-494-236</a>
+        <div class="nav-social" aria-label="社群連結">
+          <a class="nav-social-link" href="https://www.instagram.com/tengyu.exe/" target="_blank" rel="noopener me" aria-label="前往鄧宇律師的 Instagram"><img src="https://cdn.simpleicons.org/instagram/f3b0a5" alt="" width="17" height="17"></a>
+          <a class="nav-social-link" href="https://www.facebook.com/profile.php?id=61591741754267&amp;locale=zh_TW" target="_blank" rel="noopener me" aria-label="前往鄧宇法律事務所的 Facebook"><img src="https://cdn.simpleicons.org/facebook/f3b0a5" alt="" width="17" height="17"></a>
+          <a class="nav-social-link" href="https://www.threads.net/@tengyu.exe" target="_blank" rel="noopener me" aria-label="前往鄧宇律師的 Threads"><img src="https://cdn.simpleicons.org/threads/f3b0a5" alt="" width="17" height="17"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <p class="hero-kicker">免費・本工具不儲存你輸入的資料</p>
+      <h1>子女扶養費<br>計算機</h1>
+      <p class="hero-lead">輸入子女年齡、居住地與父母收入，先算出每月可能分擔額，再看實際生活需要會不會改變結果。</p>
+    </div>
+    <aside class="hero-note" aria-label="試算限制">
+      <strong>先取得協商起點，不是預測判決</strong>
+      <p>法院仍會審酌子女實際需要、雙方財產與工作能力、主要照顧者投入的勞務及個案證據。</p>
+    </aside>
+  </header>
+
+  <main id="main">
+    <div class="tool-band" id="calculator">
+      <div class="tool-layout">
+        <div class="tool-form-wrap">
+          <div class="tool-intro">
+            <h2>填入目前狀況</h2>
+            <p>試算前先分清楚：工具提供的是協商與整理的起點，不是把法院裁量變成唯一公式。</p>
+            <p>一般試算採主計總處114年居住地平均每人每月消費支出；若有實際支出，也可改用實際支出。</p>
+          </div>
+          <form id="support-form" novalidate>
+            <fieldset class="form-section">
+              <legend>子女與生活費基準</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="child-count">未成年子女人數</label>
+                  <select id="child-count" name="childCount">
+                    <option value="1">1 名</option>
+                    <option value="2">2 名</option>
+                    <option value="3">3 名</option>
+                    <option value="4">4 名</option>
+                    <option value="5">5 名</option>
+                    <option value="6">6 名</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="region">子女主要居住地</label>
+                  <select id="region" name="region"></select>
+                  <small class="hint" id="region-source">基準為114年家庭收支調查。</small>
+                </div>
+                <div class="field field-wide basis-field">
+                  <span class="label" id="basis-label">生活需要採用方式</span>
+                  <div class="choice-row" role="radiogroup" aria-labelledby="basis-label">
+                    <label class="choice"><input type="radio" name="basis" value="region" checked> 使用居住地平均</label>
+                    <label class="choice"><input type="radio" name="basis" value="custom"> 改用實際每月需要</label>
+                  </div>
+                </div>
+              </div>
+              <div class="children-fields" id="children-fields" aria-live="polite"></div>
+              <small class="hint">特殊支出只填一般生活費未涵蓋、且可提出資料說明的固定費用，例如特殊醫療或復健；避免把一般學費、餐費重複加計。</small>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>父母收入與給付方向</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="father-income">父方平均月收入</label>
+                  <input id="father-income" name="fatherIncome" type="number" min="0" step="1000" inputmode="numeric" placeholder="例如 60000" autocomplete="off">
+                </div>
+                <div class="field">
+                  <label for="mother-income">母方平均月收入</label>
+                  <input id="mother-income" name="motherIncome" type="number" min="0" step="1000" inputmode="numeric" placeholder="例如 40000" autocomplete="off">
+                </div>
+                <div class="field field-wide">
+                  <small class="hint">請盡量填平均可得收入。若收入不明，法院也可能參考財產、工作能力與其他證據。填0恐影響計算結果。</small>
+                </div>
+                <div class="field field-wide">
+                  <span class="label" id="payer-label">由誰向誰請求？</span>
+                  <div class="choice-row" role="radiogroup" aria-labelledby="payer-label">
+                    <label class="choice"><input type="radio" name="payer" value="father" checked> 向父方請求（父方給付）</label>
+                    <label class="choice"><input type="radio" name="payer" value="mother"> 向母方請求（母方給付）</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">立即試算</button>
+              <button class="button button-secondary" id="reset-button" type="reset">重新填寫</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="result-panel" id="result-panel" aria-live="polite">
+          <div class="result-empty" id="result-empty">
+            <div>
+              <strong>試算結果會顯示在這裡</strong>
+              <p>先填入左側資料。工具不會上傳或保存你的收入及子女資料。</p>
+            </div>
+          </div>
+          <div class="result-content" id="result-content" hidden>
+            <p class="result-title">給付方每月概估分擔額</p>
+            <div class="result-total" id="monthly-total">NT$ 0</div>
+            <p class="result-caption">全部未成年子女合計，四捨五入至元</p>
+            <ul class="result-list">
+              <li><span>給付方收入比例</span><strong id="payer-ratio">0%</strong></li>
+              <li><span>子女人數</span><strong id="result-child-count">0 名</strong></li>
+              <li><span>至各子女18歲概估總額</span><strong id="future-total">NT$ 0</strong></li>
+            </ul>
+            <div class="child-results" id="child-results"></div>
+            <p class="result-warning">這不是法院保證金額。未計入過去代墊扶養費、已給付金額、一次給付的中間利息，也不會自動把主要照顧者的勞務換算成固定比例。</p>
+            <div class="result-actions">
+              <button class="button button-secondary" id="print-result" type="button">列印結果</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section method method-section" aria-labelledby="method-title">
+      <div>
+        <h2 id="method-title">這個數字怎麼算？</h2>
+        <p class="section-intro">工具把法院常見的兩個判斷拆開：先估子女每月需要，再依父母經濟能力分擔。</p>
+      </div>
+      <ol class="method-steps">
+        <li>
+          <strong>找出每名子女的每月生活需要</strong>
+          <p>預設使用主要居住地平均每人每月消費支出；若有更符合個案的固定支出，可改用實際金額。</p>
+        </li>
+        <li>
+          <strong>計算給付方收入占比</strong>
+          <p>給付方月收入 ÷ 父母月收入合計，得到初步分擔比例。</p>
+        </li>
+        <li>
+          <strong>逐名計算，再加總</strong>
+          <p>每名子女的生活需要乘以給付方比例；未來總額則依每名子女距離18歲的年數分別概估。</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="evidence-band">
+      <section class="section evidence" aria-labelledby="adjust-title">
+        <div>
+          <h2 id="adjust-title">法院不一定按平均數算</h2>
+          <p>平均消費支出是比較客觀的參考起點，不是每個家庭都必須套用的定額。</p>
+        </div>
+        <div>
+          <ul class="evidence-list">
+            <li><strong>子女有特殊需要</strong><span>托育、就學、重大醫療、復健或身心照護費用，都可能影響合理生活需要。</span></li>
+            <li><strong>收入不等於完整負擔能力</strong><span>法院還可能看財產、工作能力、收入穩定性，以及收入資料是否可信。</span></li>
+            <li><strong>照顧勞務也是扶養的一部分</strong><span>主要照顧者投入的時間與勞務可能被納入判斷，分擔比例不必然只按薪資機械計算。</span></li>
+          </ul>
+          <p class="source-note">資料基準：行政院主計總處「114年平均每戶家庭收支－按區域別分」，以每戶全年消費支出 ÷ 平均每戶人數 ÷ 12計算。法規方向參考民法第1084條、第1116條之2及第1119條。<a href="https://www.stat.gov.tw/cp.aspx?n=3984" target="_blank" rel="noopener">查看主計總處資料</a></p>
+        </div>
+      </section>
+    </div>
+
+    <section class="section faq-section" aria-labelledby="faq-title">
+      <h2 id="faq-title">子女扶養費常見問題</h2>
+      <div class="faq-list">
+        <details>
+          <summary>子女扶養費有固定公式嗎？</summary>
+          <p>沒有唯一固定公式。法院會依子女實際需要、父母經濟能力與身分、照顧現況等因素判斷；居住地平均每人每月消費支出及父母收入比例，通常只是常見的初步參考方式。</p>
+        </details>
+        <details>
+          <summary>離婚後沒有監護權，還要負擔扶養費嗎？</summary>
+          <p>原則上仍要負擔。父母對未成年子女的扶養義務，不因離婚或未擔任主要照顧者而免除；監護安排與扶養義務是不同問題。</p>
+        </details>
+        <details>
+          <summary>收入不固定或對方不提供薪資資料，怎麼算？</summary>
+          <p>工具只能依你輸入的平均月收入試算。實際案件還可能透過所得、財產、薪轉、勞保投保、職業與工作能力等資料判斷，不建議因暫時查不到收入，就直接把對方負擔能力當成0元。</p>
+        </details>
+        <details>
+          <summary>扶養費原則上要付到幾歲？</summary>
+          <p>本工具以成年年齡18歲作為未來總額的概估終點。若成年子女仍有不能維持生活、身心狀況或其他特殊情形，是否仍有扶養請求，需另外依個案判斷。</p>
+        </details>
+        <details>
+          <summary>可以一次請求到18歲的全部扶養費嗎？</summary>
+          <p>法院通常會依案件情況決定按月或其他方式給付。本工具顯示的至18歲總額只是把目前月額作名目加總，沒有處理一次給付可能涉及的中間利息及未來情況變動。</p>
+        </details>
+        <details>
+          <summary>工具算出的金額就是法院會判的金額嗎？</summary>
+          <p>不是。法院仍會依收入、財產、實際支出、主要照顧者勞務、子女特殊需要及雙方提出的證據調整。試算結果比較適合用來準備協商、調解或諮詢時的初步數字。</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="contact-band">
+      <section class="section contact" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">實際扶養費，問題不只在公式</h2>
+          <p>計算機只能算出協商起點。對方收入不明、子女有特殊支出、需要追討過去代墊費用，或雙方對主要照顧與分擔比例有爭議時，真正影響結果的往往是證據、請求期間與主張方式。</p>
+        </div>
+        <a class="button line-button" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" data-line-source="support_calculator_cta"><span class="line-mark" aria-hidden="true"><img src="https://cdn.simpleicons.org/line/06C755" alt="" width="24" height="24"></span><span>LINE免費初評</span></a>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 鄧宇律師　｜　<a href="/">返回首頁</a></p>
+      <a href="tel:0911494236">電話 0911-494-236</a>
+    </div>
+  </footer>
+
+  <a class="line-float" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" aria-label="使用LINE取得免費初評" data-line-source="support_calculator_float"><span class="line-mark" aria-hidden="true"><img src="https://cdn.simpleicons.org/line/06C755" alt="" width="24" height="24"></span><span>LINE免費初評</span></a>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var REGIONS = [
+        { name: '全國平均', value: 28513, note: '114年全國平均' },
+        { name: '臺北市', value: 36654 },
+        { name: '新北市', value: 30364 },
+        { name: '桃園市', value: 27136 },
+        { name: '臺中市', value: 29797 },
+        { name: '臺南市', value: 25038 },
+        { name: '高雄市', value: 28844 },
+        { name: '基隆市', value: 25857 },
+        { name: '新竹市', value: 34253 },
+        { name: '嘉義市', value: 28643 },
+        { name: '新竹縣', value: 32315 },
+        { name: '苗栗縣', value: 24490 },
+        { name: '彰化縣', value: 21757 },
+        { name: '南投縣', value: 19562 },
+        { name: '雲林縣', value: 20922 },
+        { name: '嘉義縣', value: 24947 },
+        { name: '屏東縣', value: 24136 },
+        { name: '宜蘭縣', value: 26046 },
+        { name: '花蓮縣', value: 22413 },
+        { name: '臺東縣', value: 20826 },
+        { name: '澎湖縣', value: 23031 },
+        { name: '金門縣', value: 28513, note: '114年區域表未列，暫採全國平均' },
+        { name: '連江縣', value: 28513, note: '114年區域表未列，暫採全國平均' }
+      ];
+
+      var form = document.getElementById('support-form');
+      var countSelect = document.getElementById('child-count');
+      var regionSelect = document.getElementById('region');
+      var childrenFields = document.getElementById('children-fields');
+      var errorBox = document.getElementById('form-error');
+      var resultEmpty = document.getElementById('result-empty');
+      var resultContent = document.getElementById('result-content');
+      var regionSource = document.getElementById('region-source');
+
+      function currency(value) {
+        return 'NT$ ' + Math.round(value).toLocaleString('zh-TW');
+      }
+
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>'"]/g, function (char) {
+          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char];
+        });
+      }
+
+      REGIONS.forEach(function (region) {
+        var option = document.createElement('option');
+        option.value = String(region.value);
+        option.dataset.name = region.name;
+        option.dataset.note = region.note || '';
+        option.textContent = region.name + '（每月 ' + region.value.toLocaleString('zh-TW') + ' 元）';
+        regionSelect.appendChild(option);
+      });
+      regionSelect.value = '28513';
+
+      function selectedBasis() {
+        return (form.querySelector('input[name="basis"]:checked') || {}).value || 'region';
+      }
+
+      function renderChildren() {
+        var previous = Array.prototype.map.call(childrenFields.querySelectorAll('.child-row'), function (row) {
+          return {
+            age: row.querySelector('.child-age').value,
+            custom: row.querySelector('.custom-need').value,
+            special: row.querySelector('.special-expense').value
+          };
+        });
+        var count = Number(countSelect.value);
+        var custom = selectedBasis() === 'custom';
+        var html = '';
+        for (var i = 0; i < count; i += 1) {
+          var saved = previous[i] || { age: '', custom: '', special: '' };
+          html += '<div class="child-row" data-child-index="' + i + '">' +
+            '<div class="child-index">子女 ' + (i + 1) + '</div>' +
+            '<div class="field"><label for="child-age-' + i + '">目前足歲</label>' +
+            '<input class="child-age" id="child-age-' + i + '" type="number" min="0" max="17" step="1" inputmode="numeric" placeholder="0至17" value="' + escapeHtml(saved.age) + '"></div>' +
+            '<div class="field custom-field"' + (custom ? '' : ' hidden') + '><label for="custom-need-' + i + '">每月實際生活需要</label>' +
+            '<input class="custom-need" id="custom-need-' + i + '" type="number" min="0" step="100" inputmode="numeric" placeholder="例如 28000" value="' + escapeHtml(saved.custom) + '"></div>' +
+            '<div class="field"><label for="special-expense-' + i + '">額外特殊支出（選填）</label>' +
+            '<input class="special-expense" id="special-expense-' + i + '" type="number" min="0" step="100" inputmode="numeric" placeholder="沒有請留空" value="' + escapeHtml(saved.special) + '"></div>' +
+            '</div>';
+        }
+        childrenFields.innerHTML = html;
+      }
+
+      function updateRegionNote() {
+        var option = regionSelect.options[regionSelect.selectedIndex];
+        var extra = option.dataset.note ? '；' + option.dataset.note : '';
+        regionSource.textContent = '114年家庭收支調查，每人每月消費支出' + extra + '。';
+      }
+
+      function showError(message) {
+        errorBox.textContent = message;
+        errorBox.hidden = false;
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      function clearError() {
+        errorBox.hidden = true;
+        errorBox.textContent = '';
+      }
+
+      countSelect.addEventListener('change', renderChildren);
+      regionSelect.addEventListener('change', updateRegionNote);
+      form.querySelectorAll('input[name="basis"]').forEach(function (input) {
+        input.addEventListener('change', renderChildren);
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        clearError();
+
+        var fatherIncome = Number(document.getElementById('father-income').value);
+        var motherIncome = Number(document.getElementById('mother-income').value);
+        if (!Number.isFinite(fatherIncome) || !Number.isFinite(motherIncome) || fatherIncome < 0 || motherIncome < 0) {
+          showError('請輸入父母雙方不小於0的平均月收入。');
+          return;
+        }
+        if (fatherIncome + motherIncome <= 0) {
+          showError('父母收入合計必須大於0，才能計算分擔比例。');
+          return;
+        }
+
+        var payer = (form.querySelector('input[name="payer"]:checked') || {}).value || 'father';
+        var payerIncome = payer === 'father' ? fatherIncome : motherIncome;
+        var payerRatio = payerIncome / (fatherIncome + motherIncome);
+        var basis = selectedBasis();
+        var regionBase = Number(regionSelect.value);
+        var rows = Array.prototype.slice.call(childrenFields.querySelectorAll('.child-row'));
+        var results = [];
+
+        for (var i = 0; i < rows.length; i += 1) {
+          var ageValue = rows[i].querySelector('.child-age').value;
+          var age = Number(ageValue);
+          if (ageValue === '' || !Number.isInteger(age) || age < 0 || age > 17) {
+            showError('請填寫子女 ' + (i + 1) + ' 的足歲，範圍為0至17歲。');
+            return;
+          }
+          var customValue = rows[i].querySelector('.custom-need').value;
+          var base = basis === 'custom' ? Number(customValue) : regionBase;
+          if (basis === 'custom' && (customValue === '' || !Number.isFinite(base) || base <= 0)) {
+            showError('請填寫子女 ' + (i + 1) + ' 每月實際生活需要。');
+            return;
+          }
+          var specialValue = rows[i].querySelector('.special-expense').value;
+          var special = specialValue === '' ? 0 : Number(specialValue);
+          if (!Number.isFinite(special) || special < 0) {
+            showError('子女 ' + (i + 1) + ' 的額外特殊支出不能小於0。');
+            return;
+          }
+          var need = base + special;
+          var monthly = need * payerRatio;
+          var monthsRemaining = (18 - age) * 12;
+          results.push({ age: age, base: base, special: special, need: need, monthly: monthly, future: monthly * monthsRemaining, months: monthsRemaining });
+        }
+
+        var monthlyTotal = results.reduce(function (sum, item) { return sum + item.monthly; }, 0);
+        var futureTotal = results.reduce(function (sum, item) { return sum + item.future; }, 0);
+        document.getElementById('monthly-total').textContent = currency(monthlyTotal);
+        document.getElementById('payer-ratio').textContent = (payerRatio * 100).toFixed(1) + '%';
+        document.getElementById('result-child-count').textContent = results.length + ' 名';
+        document.getElementById('future-total').textContent = currency(futureTotal);
+
+        document.getElementById('child-results').innerHTML = results.map(function (item, index) {
+          var detail = '生活需要 ' + currency(item.need) + ' × 給付方 ' + (payerRatio * 100).toFixed(1) + '%';
+          if (item.special > 0) detail += '（含特殊支出 ' + currency(item.special) + '）';
+          return '<div class="child-result"><div class="child-result-head"><strong>子女 ' + (index + 1) + '・' + item.age + '歲</strong><strong>' + currency(item.monthly) + '／月</strong></div>' +
+            '<small>' + detail + '；至18歲約 ' + currency(item.future) + '</small></div>';
+        }).join('');
+
+        resultEmpty.hidden = true;
+        resultContent.hidden = false;
+        if (typeof gtag === 'function') {
+          gtag('event', 'support_calculation_completed', {
+            child_count: results.length,
+            payer: payer,
+            basis: basis,
+            region: regionSelect.options[regionSelect.selectedIndex].dataset.name
+          });
+        }
+        if (window.matchMedia('(max-width: 820px)').matches) {
+          document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      form.addEventListener('reset', function () {
+        window.setTimeout(function () {
+          regionSelect.value = '28513';
+          renderChildren();
+          updateRegionNote();
+          clearError();
+          resultContent.hidden = true;
+          resultEmpty.hidden = false;
+        }, 0);
+      });
+
+      document.getElementById('print-result').addEventListener('click', function () { window.print(); });
+      document.querySelectorAll('[data-line-source]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'line_click', {
+              event_category: 'conversion',
+              event_label: link.dataset.lineSource,
+              transport_type: 'beacon'
+            });
+          }
+        });
+      });
+
+      var floatingLine = document.querySelector('.line-float');
+      var siteFooter = document.getElementById('site-footer');
+      if ('IntersectionObserver' in window && floatingLine && siteFooter) {
+        new IntersectionObserver(function (entries) {
+          floatingLine.classList.toggle('is-hidden', entries[0].isIntersecting);
+        }, { threshold: 0.05 }).observe(siteFooter);
+      }
+
+      var navTools = document.querySelector('.nav-tools');
+      var navToolsTrigger = document.querySelector('.nav-tools-trigger');
+      if (navTools && navToolsTrigger) {
+        navToolsTrigger.addEventListener('click', function () {
+          var isOpen = navTools.classList.toggle('is-open');
+          navToolsTrigger.setAttribute('aria-expanded', String(isOpen));
+        });
+        document.addEventListener('click', function (event) {
+          if (!navTools.contains(event.target)) {
+            navTools.classList.remove('is-open');
+            navToolsTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        navTools.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            navTools.classList.remove('is-open');
+            navToolsTrigger.setAttribute('aria-expanded', 'false');
+            navToolsTrigger.focus();
+          }
+        });
+      }
+
+      renderChildren();
+      updateRegionNote();
+    }());
+  </script>
+</body>
+</html>
