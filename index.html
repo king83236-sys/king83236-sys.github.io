@@ -115,10 +115,19 @@
   .section-title { font-size: 1.6rem; font-weight: 900; color: #1A1A1A; margin-bottom: 20px; }
   .articles-section { padding: 60px 0; }
 
-  .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-  .filter-tag { padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: 1.5px solid #D8D0C8; background: #FFFFFF; color: #555; transition: all 0.15s; user-select: none; }
-  .filter-tag.active { background: #2D0F0F; color: #D4786A; border-color: #2D0F0F; }
+  .filter-panel { margin-bottom: 14px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E0D8CC; border-radius: 12px; }
+  .filter-group { margin: 0; padding: 0; border: 0; }
+  .filter-group + .filter-group { margin-top: 16px; padding-top: 16px; border-top: 1px solid #EEE7DE; }
+  .filter-label { margin: 0 0 9px; padding: 0; color: #2D0F0F; font-size: 0.78rem; font-weight: 800; }
+  .filter-tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 0; }
+  .filter-tag { min-height: 38px; padding: 7px 15px; border-radius: 20px; border: 1.5px solid #D8D0C8; background: #FFFFFF; color: #555; font: inherit; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: color 150ms ease-out, background 150ms ease-out, border-color 150ms ease-out; user-select: none; }
   .filter-tag:hover:not(.active) { border-color: #2D0F0F; color: #2D0F0F; }
+  .filter-tag:focus-visible { outline: 3px solid rgba(212,120,106,.4); outline-offset: 2px; }
+  .filter-group--topic .filter-tag.active { background: #2D0F0F; color: #F3B0A5; border-color: #2D0F0F; }
+  .filter-group--type .filter-tag.active { background: #F7E7E3; color: #4B1717; border-color: #D4786A; }
+  .filter-summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; color: #77706A; font-size: 0.78rem; }
+  .filter-summary strong { color: #2D0F0F; font-size: 0.84rem; }
+  .filter-empty { margin: 0 0 22px; padding: 22px; border: 1px dashed #C8BEB3; border-radius: 10px; background: #FFFFFF; color: #59514C; text-align: center; }
 
   .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; min-height: 400px; }
   .article-card { background: #FFFFFF; border-radius: 10px; border: 1px solid #E0D8CC; overflow: hidden; text-decoration: none; transition: box-shadow 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms cubic-bezier(0.23, 1, 0.32, 1); display: flex; flex-direction: column; }
@@ -175,6 +184,8 @@
     .about-grid { grid-template-columns: 1fr; }
     .about-avatar { width: 140px; height: 175px; }
     .articles-grid { grid-template-columns: 1fr; }
+    .filter-panel { padding: 16px; }
+    .filter-summary { align-items: flex-start; flex-direction: column; gap: 2px; }
     .stat-num { font-size: 1.3rem; }
     .free-tools { padding: 42px 0 46px; }
     .free-tools-head { display: block; }
@@ -282,13 +293,30 @@
     <div class="section-label">文章</div>
     <div class="section-title">法律文章</div>
 
-    <div class="filter-tags">
-      <div class="filter-tag active" data-cat="all">全部</div>
-      <div class="filter-tag" data-cat="工具說明">工具說明</div>
-      <div class="filter-tag" data-cat="法律知識">法律知識</div>
-      <div class="filter-tag" data-cat="訴訟程序">訴訟程序</div>
-      <div class="filter-tag" data-cat="判決分析">判決分析</div>
+    <div class="filter-panel" aria-label="文章篩選">
+      <fieldset class="filter-group filter-group--topic">
+        <legend class="filter-label">法律主題</legend>
+        <div class="filter-tags">
+          <button class="filter-tag active" type="button" data-topic="all" aria-pressed="true" aria-controls="articles-grid">全部主題</button>
+          <button class="filter-tag" type="button" data-topic="車禍求償" aria-pressed="false" aria-controls="articles-grid">車禍求償</button>
+          <button class="filter-tag" type="button" data-topic="子女扶養費" aria-pressed="false" aria-controls="articles-grid">子女扶養費</button>
+          <button class="filter-tag" type="button" data-topic="父母扶養義務" aria-pressed="false" aria-controls="articles-grid">父母扶養義務</button>
+        </div>
+      </fieldset>
+      <fieldset class="filter-group filter-group--type">
+        <legend class="filter-label">文章類型</legend>
+        <div class="filter-tags">
+          <button class="filter-tag active" type="button" data-cat="all" aria-pressed="true" aria-controls="articles-grid">全部類型</button>
+          <button class="filter-tag" type="button" data-cat="工具說明" aria-pressed="false" aria-controls="articles-grid">工具說明</button>
+          <button class="filter-tag" type="button" data-cat="法律知識" aria-pressed="false" aria-controls="articles-grid">法律知識</button>
+          <button class="filter-tag" type="button" data-cat="訴訟程序" aria-pressed="false" aria-controls="articles-grid">訴訟程序</button>
+          <button class="filter-tag" type="button" data-cat="判決分析" aria-pressed="false" aria-controls="articles-grid">判決分析</button>
+        </div>
+      </fieldset>
     </div>
+
+    <div class="filter-summary"><strong id="filter-count" aria-live="polite">共 60 篇文章</strong><span>可同時選擇法律主題與文章類型</span></div>
+    <p class="filter-empty" id="filter-empty" hidden>目前沒有符合這組條件的文章，請改選其他主題或文章類型。</p>
 
     <div class='articles-grid' id='articles-grid'>
       <a href='article-1.html' class='article-card' data-cat='工具說明'>
@@ -763,23 +791,59 @@
           <div class='article-excerpt'>整理6件骨盆骨折判決，比較5萬至60萬元慰撫金，拆解請求上限、手術住院、永久疼痛及勞動能力減損的影響，並提醒這不是最終受償額。</div>
         </div><div class='article-footer'><span>判決分析</span><span>閱讀全文 →</span></div>
       </a>
-      <a href='article-53.html' class='article-card' data-cat='工具說明'>
+      <a href='article-53.html' class='article-card' data-cat='工具說明' data-topic='父母扶養義務'>
         <div class='article-tag'>工具說明</div><div class='article-body'>
           <div class='article-title'>父母突然要您付扶養費？3分鐘自評能否減輕、免除</div>
           <div class='article-excerpt'>免費自評父母資力、過去扶養、家庭侵害、子女負擔、證據及程序狀況，查看初步結論、律師提醒與下一步建議。</div>
         </div><div class='article-footer'><span>工具說明</span><span>閱讀全文 →</span></div>
       </a>
-      <a href='article-54.html' class='article-card' data-cat='工具說明'>
+      <a href='article-54.html' class='article-card' data-cat='工具說明' data-topic='子女扶養費'>
         <div class='article-tag'>工具說明</div><div class='article-body'>
           <div class='article-title'>子女扶養費每月要付多少？免費計算機試算到18歲</div>
           <div class='article-excerpt'>依子女年齡、居住地生活費、父母收入比例及特殊支出，試算每月分擔額與至18歲概估總額，並說明法院還會考量哪些因素。</div>
         </div><div class='article-footer'><span>工具說明</span><span>閱讀全文 →</span></div>
       </a>
+      <a href='article-55.html' class='article-card' data-cat='法律知識' data-topic='父母扶養義務'>
+        <div class='article-tag'>法律知識</div><div class='article-body'>
+          <div class='article-title'>父母要求扶養費，法院可能判你每月付 2 萬元？也可能完全免除？律師教你看這些重點！</div>
+          <div class='article-excerpt'>以三份裁定主文，呈現完全免除、比例減輕與按月給付扶養費等部分可能結果，再認識影響結果的法律前提。</div>
+        </div><div class='article-footer'><span>法律知識</span><span>閱讀全文 →</span></div>
+      </a>
+      <a href='article-56.html' class='article-card' data-cat='法律知識' data-topic='父母扶養義務'>
+        <div class='article-tag'>法律知識</div><div class='article-body'>
+          <div class='article-title'>父母突然要你付扶養費？收到律師函、聲請狀？先別慌，律師逐一教你如何應對！</div>
+          <div class='article-excerpt'>收到私人請款、律師函、行政處分、法院聲請狀或調解通知時，先辨識文件類型、期限與適合的回應方式。</div>
+        </div><div class='article-footer'><span>法律知識</span><span>閱讀全文 →</span></div>
+      </a>
+      <a href='article-57.html' class='article-card' data-cat='判決分析' data-topic='父母扶養義務'>
+        <div class='article-tag'>判決分析</div><div class='article-body'>
+          <div class='article-title'>父母有退休金還來要扶養費？律師教你看法院對「不能維持生活」的認定標準</div>
+          <div class='article-excerpt'>從兩件法院裁定，看退休金、保險、收入與財產如何影響父母是否已經「不能維持生活」及扶養義務是否發生。</div>
+        </div><div class='article-footer'><span>判決分析</span><span>閱讀全文 →</span></div>
+      </a>
+      <a href='article-58.html' class='article-card' data-cat='判決分析' data-topic='父母扶養義務'>
+        <div class='article-tag'>判決分析</div><div class='article-body'>
+          <div class='article-title'>父母突然要你付扶養費？父母過去未扶養可以減輕或免除？律師帶你看法院標準在哪！</div>
+          <div class='article-excerpt'>比較一件完全免除與一件僅予減輕的裁定，看法院如何認定父母無正當理由未盡扶養，以及情節是否重大。</div>
+        </div><div class='article-footer'><span>判決分析</span><span>閱讀全文 →</span></div>
+      </a>
+      <a href='article-59.html' class='article-card' data-cat='判決分析' data-topic='父母扶養義務'>
+        <div class='article-tag'>判決分析</div><div class='article-body'>
+          <div class='article-title'>父母突然要你付扶養費？父母曾家暴、重大侮辱能否減輕或免除？律師帶你看法院認定標準！</div>
+          <div class='article-excerpt'>比較完全免除與僅予減輕的裁定，看侵害種類、嚴重程度、實際影響與證據如何改變法院認定。</div>
+        </div><div class='article-footer'><span>判決分析</span><span>閱讀全文 →</span></div>
+      </a>
+      <a href='article-60.html' class='article-card' data-cat='判決分析' data-topic='父母扶養義務'>
+        <div class='article-tag'>判決分析</div><div class='article-body'>
+          <div class='article-title'>扶養父母會養不起自己？律師帶你看法院減輕扶養義務的標準</div>
+          <div class='article-excerpt'>比較兩份真實裁定，看收入、低收入戶、身心障礙、未成年子女與必要支出如何影響法院對扶養能力的判斷。</div>
+        </div><div class='article-footer'><span>判決分析</span><span>閱讀全文 →</span></div>
+      </a>
     </div>
 
     <div class="pagination">
       <div class="pg-btn disabled" id="pg-prev">←</div>
-      <div class="pg-info" id="pg-info">第 1 頁 / 共 9 頁</div>
+      <div class="pg-info" id="pg-info">第 1 頁 / 共 10 頁</div>
       <div class="pg-btn" id="pg-next">→</div>
     </div>
   </div>
@@ -883,12 +947,17 @@ document.querySelectorAll('[data-tool-name]').forEach(link => {
 const articleCards = Array.from(document.querySelectorAll('.article-card')).reverse();
 
 const PER_PAGE = 6;
+let currentTopic = 'all';
 let currentCat = 'all';
 let currentPage = 1;
 
 function getFiltered() {
-  if (currentCat === 'all') return articleCards;
-  return articleCards.filter(card => card.dataset.cat === currentCat);
+  return articleCards.filter(card => {
+    const cardTopic = card.dataset.topic || '車禍求償';
+    const topicMatches = currentTopic === 'all' || cardTopic === currentTopic;
+    const typeMatches = currentCat === 'all' || card.dataset.cat === currentCat;
+    return topicMatches && typeMatches;
+  });
 }
 
 function render() {
@@ -902,6 +971,8 @@ function render() {
   articleCards.forEach(card => { card.style.display = 'none'; });
   pageItems.forEach((card, index) => { card.style.display = 'flex'; card.style.order = index; });
 
+  document.getElementById('filter-count').textContent = `共 ${filtered.length} 篇文章`;
+  document.getElementById('filter-empty').hidden = filtered.length !== 0;
   document.getElementById('pg-info').textContent = `第 ${currentPage} 頁 / 共 ${totalPages} 頁`;
   document.getElementById('pg-prev').className = 'pg-btn' + (currentPage <= 1 ? ' disabled' : '');
   document.getElementById('pg-next').className = 'pg-btn' + (currentPage >= totalPages ? ' disabled' : '');
@@ -909,9 +980,15 @@ function render() {
 
 document.querySelectorAll('.filter-tag').forEach(tag => {
   tag.addEventListener('click', () => {
-    document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+    const group = tag.closest('.filter-group');
+    group.querySelectorAll('.filter-tag').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-pressed', 'false');
+    });
     tag.classList.add('active');
-    currentCat = tag.dataset.cat;
+    tag.setAttribute('aria-pressed', 'true');
+    if (tag.dataset.topic) currentTopic = tag.dataset.topic;
+    if (tag.dataset.cat) currentCat = tag.dataset.cat;
     currentPage = 1;
     render();
   });
