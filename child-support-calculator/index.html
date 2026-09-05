@@ -688,6 +688,44 @@
       var resultEmpty = document.getElementById('result-empty');
       var resultContent = document.getElementById('result-content');
       var regionSource = document.getElementById('region-source');
+      var TOOL_NAME = 'child_support_calculator';
+      var toolStarted = false;
+      var toolCompleted = false;
+
+      function entrySource() {
+        var explicitSource = new URLSearchParams(window.location.search).get('entry_source');
+        if (explicitSource && /^[a-z0-9_-]{1,64}$/i.test(explicitSource)) return explicitSource.toLowerCase();
+        if (!document.referrer) return 'direct';
+        try {
+          var referrer = new URL(document.referrer);
+          if (referrer.origin !== window.location.origin) return 'external_referral';
+          if (referrer.pathname === '/' || /\/index\.html$/.test(referrer.pathname)) return 'homepage';
+          var articleMatch = referrer.pathname.match(/\/article-(\d+)\.html$/);
+          if (articleMatch) return 'article_' + articleMatch[1];
+          if (/\/(calculator|child-support-calculator|parent-support-assessment)\//.test(referrer.pathname)) return 'other_tool';
+          return 'internal_page';
+        } catch (error) {
+          return 'unknown';
+        }
+      }
+
+      function trackToolEvent(eventName, ctaLocation) {
+        if (typeof gtag !== 'function') return;
+        gtag('event', eventName, {
+          tool_name: TOOL_NAME,
+          entry_source: entrySource(),
+          cta_location: ctaLocation || 'not_applicable',
+          transport_type: 'beacon'
+        });
+      }
+
+      function markToolStarted() {
+        if (toolStarted) return;
+        toolStarted = true;
+        trackToolEvent('tool_start');
+      }
+
+      trackToolEvent('tool_open');
 
       function currency(value) {
         return 'NT$ ' + Math.round(value).toLocaleString('zh-TW');
@@ -761,6 +799,8 @@
       form.querySelectorAll('input[name="basis"]').forEach(function (input) {
         input.addEventListener('change', renderChildren);
       });
+      form.addEventListener('input', markToolStarted);
+      form.addEventListener('change', markToolStarted);
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -826,13 +866,9 @@
 
         resultEmpty.hidden = true;
         resultContent.hidden = false;
-        if (typeof gtag === 'function') {
-          gtag('event', 'support_calculation_completed', {
-            child_count: results.length,
-            payer: payer,
-            basis: basis,
-            region: regionSelect.options[regionSelect.selectedIndex].dataset.name
-          });
+        if (!toolCompleted) {
+          toolCompleted = true;
+          trackToolEvent('tool_complete');
         }
         if (window.matchMedia('(max-width: 820px)').matches) {
           document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -853,13 +889,11 @@
       document.getElementById('print-result').addEventListener('click', function () { window.print(); });
       document.querySelectorAll('[data-line-source]').forEach(function (link) {
         link.addEventListener('click', function () {
-          if (typeof gtag === 'function') {
-            gtag('event', 'line_click', {
-              event_category: 'conversion',
-              event_label: link.dataset.lineSource,
-              transport_type: 'beacon'
-            });
-          }
+          var ctaLocation = link.dataset.lineSource === 'support_calculator_float'
+            ? 'floating_cta'
+            : 'page_cta';
+          trackToolEvent('free_assessment_click', ctaLocation);
+          trackToolEvent('line_click', ctaLocation);
         });
       });
 
