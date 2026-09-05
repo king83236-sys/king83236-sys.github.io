@@ -48,6 +48,8 @@
   }
 
   function phoneLocation(link) {
+    const explicitLocation = link.dataset.phoneLocation;
+    if (explicitLocation) return explicitLocation;
     if (link.closest("footer, .footer")) return "footer_phone";
     if (link.closest("nav, .nav")) return "navigation_phone";
     return isHomepage ? "homepage_contact" : "article_body";
