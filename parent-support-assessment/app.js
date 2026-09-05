@@ -2,6 +2,38 @@
 
 // 鄧宇律師網站目前使用的官方 LINE 連結。
 const LINE_OFFICIAL_URL = "https://lin.ee/yfDGMXo";
+const TOOL_NAME = "parent_support_assessment";
+let toolStarted = false;
+let toolCompleted = false;
+
+function entrySource() {
+  const explicitSource = new URLSearchParams(window.location.search).get("entry_source");
+  if (explicitSource && /^[a-z0-9_-]{1,64}$/i.test(explicitSource)) return explicitSource.toLowerCase();
+  if (!document.referrer) return "direct";
+  try {
+    const referrer = new URL(document.referrer);
+    if (referrer.origin !== window.location.origin) return "external_referral";
+    if (referrer.pathname === "/" || /\/index\.html$/.test(referrer.pathname)) return "homepage";
+    const articleMatch = referrer.pathname.match(/\/article-(\d+)\.html$/);
+    if (articleMatch) return `article_${articleMatch[1]}`;
+    if (/\/(calculator|child-support-calculator|parent-support-assessment)\//.test(referrer.pathname)) return "other_tool";
+    return "internal_page";
+  } catch {
+    return "unknown";
+  }
+}
+
+function trackToolEvent(eventName, ctaLocation = "not_applicable") {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", eventName, {
+    tool_name: TOOL_NAME,
+    entry_source: entrySource(),
+    cta_location: ctaLocation,
+    transport_type: "beacon"
+  });
+}
+
+trackToolEvent("tool_open");
 
 const evidenceOptions = [
   ["protection", "保護令、法院裁判或調解資料", ""],
@@ -175,6 +207,10 @@ function showView(view) {
 }
 
 function startQuiz() {
+  if (!toolStarted) {
+    toolStarted = true;
+    trackToolEvent("tool_start");
+  }
   state.answers = {};
   state.index = 0;
   state.result = null;
@@ -560,6 +596,10 @@ function finishQuiz() {
 
   showView("result");
   $("#resultTitle").focus();
+  if (!toolCompleted) {
+    toolCompleted = true;
+    trackToolEvent("tool_complete");
+  }
 }
 
 function statusLabel(value) {
@@ -618,6 +658,13 @@ async function copyAndOpenLine() {
   }
 
   if (LINE_OFFICIAL_URL) {
+    const ctaLocation = state.shareMode === "review"
+      ? "result_share_dialog_free_review"
+      : "result_share_dialog_engagement";
+    if (state.shareMode === "review") {
+      trackToolEvent("free_assessment_click", ctaLocation);
+    }
+    trackToolEvent("line_click", ctaLocation);
     window.setTimeout(() => {
       window.location.href = LINE_OFFICIAL_URL;
     }, 350);
