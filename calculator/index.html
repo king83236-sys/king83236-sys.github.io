@@ -670,7 +670,7 @@
       <h1>車禍和解金<span class="hero-title-break">試算器</span></h1>
       <p class="hero-lead">輸入傷勢、費用、保險與肇責，參考2,600筆判決，免費產生求償明細。</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="#calculator">開始試算</a>
+        <a class="button button-primary" href="#calculator" data-tool-start>開始試算</a>
         <a class="button button-secondary" href="#how-it-works">了解計算方式</a>
       </div>
     </div>
@@ -689,7 +689,7 @@
             <h2 id="tool-title">直接開始整理求償項目</h2>
             <p>依畫面順序填寫，資料不完整時也可以先試算。</p>
           </div>
-          <a class="external-link" href="https://tool.tengyulaw.tw" target="_blank" rel="noopener">另開完整工具</a>
+          <a class="external-link" href="https://tool.tengyulaw.tw" target="_blank" rel="noopener" data-tool-start>另開完整工具</a>
         </div>
         <div class="tool-shell" id="tool-shell">
           <div class="tool-loading" aria-live="polite">
@@ -862,6 +862,48 @@
 
   <script>
     (function () {
+      var TOOL_NAME = 'accident_compensation_calculator';
+      var toolStarted = false;
+      var toolCompleted = false;
+
+      function entrySource() {
+        var explicitSource = new URLSearchParams(window.location.search).get('entry_source');
+        if (explicitSource && /^[a-z0-9_-]{1,64}$/i.test(explicitSource)) return explicitSource.toLowerCase();
+        if (!document.referrer) return 'direct';
+        try {
+          var referrer = new URL(document.referrer);
+          if (referrer.origin !== window.location.origin) return 'external_referral';
+          if (referrer.pathname === '/' || /\/index\.html$/.test(referrer.pathname)) return 'homepage';
+          var articleMatch = referrer.pathname.match(/\/article-(\d+)\.html$/);
+          if (articleMatch) return 'article_' + articleMatch[1];
+          if (/\/(calculator|child-support-calculator|parent-support-assessment)\//.test(referrer.pathname)) return 'other_tool';
+          return 'internal_page';
+        } catch (error) {
+          return 'unknown';
+        }
+      }
+
+      function trackToolEvent(eventName, ctaLocation) {
+        if (typeof gtag !== 'function') return;
+        gtag('event', eventName, {
+          tool_name: TOOL_NAME,
+          entry_source: entrySource(),
+          cta_location: ctaLocation || 'not_applicable',
+          transport_type: 'beacon'
+        });
+      }
+
+      function markToolStarted() {
+        if (toolStarted) return;
+        toolStarted = true;
+        trackToolEvent('tool_start');
+      }
+
+      trackToolEvent('tool_open');
+      document.querySelectorAll('[data-tool-start]').forEach(function (control) {
+        control.addEventListener('click', markToolStarted);
+      });
+
       var navTools = document.querySelector('.nav-tools');
       var navToolsTrigger = document.querySelector('.nav-tools-trigger');
       if (navTools && navToolsTrigger) {
@@ -897,14 +939,25 @@
       }
       document.querySelectorAll('[data-line-source]').forEach(function (link) {
         link.addEventListener('click', function () {
-          if (typeof gtag === 'function') {
-            gtag('event', 'line_click', {
-              event_category: 'conversion',
-              event_label: link.dataset.lineSource,
-              transport_type: 'beacon'
-            });
-          }
+          var ctaLocation = link.dataset.lineSource === 'calculator_float'
+            ? 'floating_cta'
+            : 'page_cta';
+          trackToolEvent('free_assessment_click', ctaLocation);
+          trackToolEvent('line_click', ctaLocation);
         });
+      });
+      window.addEventListener('message', function (event) {
+        if (event.origin !== 'https://tool.tengyulaw.tw' || !event.data || event.data.source !== 'tengyulaw_tool') return;
+        if (event.data.event === 'tool_start') markToolStarted();
+        if (event.data.event === 'tool_complete' && !toolCompleted) {
+          toolCompleted = true;
+          trackToolEvent('tool_complete');
+        }
+        if (event.data.event === 'free_assessment_click') {
+          var embeddedCtaLocation = event.data.cta_location || 'embedded_tool_result';
+          trackToolEvent('free_assessment_click', embeddedCtaLocation);
+          trackToolEvent('line_click', embeddedCtaLocation);
+        }
       });
       var loaded = false;
       function loadTool() {
