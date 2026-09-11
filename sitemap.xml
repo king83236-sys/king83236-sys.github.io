@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tengyulaw.tw/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -80,13 +80,13 @@
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-10.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-11.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -104,19 +104,19 @@
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-14.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-15.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-16.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-20.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -152,13 +152,13 @@
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-22.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-23.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-25.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://tengyulaw.tw/article-28.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -453,6 +453,12 @@
   <url>
     <loc>https://tengyulaw.tw/article-72.html</loc>
     <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/article-73.html</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
