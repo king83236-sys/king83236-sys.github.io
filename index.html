@@ -111,6 +111,13 @@
   .intro-video-secondary:focus-visible { outline: 3px solid rgba(212,120,106,.4); outline-offset: 3px; }
   .intro-video-frame { width: 100%; max-width: 320px; aspect-ratio: 9 / 16; overflow: hidden; border: 1px solid #D8D0C8; border-radius: 18px; background: #1F0D0D; box-shadow: 0 18px 46px rgba(45,15,15,0.16); }
   .intro-video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .intro-video-poster { position: relative; display: block; width: 100%; height: 100%; padding: 0; overflow: hidden; border: 0; background: #1F0D0D; cursor: pointer; }
+  .intro-video-poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .intro-video-play { position: absolute; top: 50%; left: 50%; display: grid; width: 68px; height: 68px; place-items: center; border: 1px solid rgba(255,255,255,0.46); border-radius: 50%; background: rgba(45,15,15,0.9); box-shadow: 0 8px 24px rgba(0,0,0,0.28); transform: translate(-50%,-50%); transition: background-color 150ms ease-out, transform 150ms ease-out; }
+  .intro-video-play::before { content: ""; width: 0; height: 0; margin-left: 5px; border-top: 11px solid transparent; border-bottom: 11px solid transparent; border-left: 17px solid #FFFFFF; }
+  .intro-video-poster:hover .intro-video-play { background: #A84840; transform: translate(-50%,-50%) scale(1.06); }
+  .intro-video-poster:active .intro-video-play { transform: translate(-50%,-50%) scale(0.96); }
+  .intro-video-poster:focus-visible { outline: 4px solid #D4786A; outline-offset: -4px; }
   .free-tools { padding: 54px 0 58px; background: #F5F3EE; border-bottom: 1px solid #E8E0D0; }
   .free-tools-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 24px; }
   .free-tools-head h2 { margin: 0; color: #2D0F0F; font-size: 1.55rem; line-height: 1.3; }
@@ -294,7 +301,10 @@
       </div>
     </div>
     <div class="intro-video-frame">
-      <iframe src="https://www.youtube-nocookie.com/embed/Nlf_iYnPhVk?rel=0" title="鄧宇律師說明免費初評與法律服務項目" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <button class="intro-video-poster" type="button" data-youtube-id="Nlf_iYnPhVk" aria-label="播放鄧宇律師免費初評與法律服務說明影片">
+        <img src="images/youtube-free-assessment-cover-v1.png" alt="" width="941" height="1672" decoding="async">
+        <span class="intro-video-play" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </section>
@@ -1064,6 +1074,23 @@ document.querySelectorAll('[data-tool-name]').forEach(link => {
     }
   });
 });
+
+const introVideoPoster = document.querySelector('.intro-video-poster');
+if (introVideoPoster) {
+  introVideoPoster.addEventListener('click', () => {
+    const videoId = introVideoPoster.dataset.youtubeId;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
+    iframe.title = '鄧宇律師說明免費初評與法律服務項目';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    introVideoPoster.replaceWith(iframe);
+    if (typeof gtag === 'function') {
+      gtag('event', 'video_play', { video_name: 'free_assessment_intro', source: 'homepage_intro_video' });
+    }
+  }, { once: true });
+}
 
 const articleCards = Array.from(document.querySelectorAll('.article-card')).reverse();
 
