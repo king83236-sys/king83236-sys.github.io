@@ -280,7 +280,8 @@
   .assessment-action { margin-top: 34px; gap: 17px 20px; }
   .assessment-cta { min-height: 54px; padding: 14px 27px; border-radius: 3px; background: var(--line-green); box-shadow: none; }
   .assessment-microcopy { color: #756963; font-size: .78rem; letter-spacing: .025em; }
-  .assessment-mark { grid-area: mark; align-self: stretch; border-left: 1px solid #d5c8b8; border-bottom: 1px solid #d5c8b8; opacity: .88; }
+  .assessment-mark { grid-area: mark; align-self: center; justify-self: start; width: min(100%, 220px); margin: 0; }
+  .assessment-mark img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 4px; }
 
   .assessment-reasons { padding: clamp(48px, 5vw, 66px) 0; background: var(--paper-50); color: var(--ink-900); }
   .assessment-reasons .dossier-container { display: grid; grid-template-columns: minmax(320px, .85fr) minmax(0, 1.5fr); gap: clamp(44px, 5vw, 64px); }
@@ -406,7 +407,9 @@
         <span class="assessment-microcopy">本人直接查看・不經法務或助理・不強迫委任</span>
       </div>
     </div>
-    <div class="assessment-mark" aria-hidden="true"></div>
+    <figure class="assessment-mark">
+      <img src="https://tengyulaw.tw/images/lawyer-portrait.webp" alt="鄧宇律師" width="800" height="1000" loading="eager" decoding="async" fetchpriority="high">
+    </figure>
   </div>
 </header>
 
