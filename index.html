@@ -314,6 +314,17 @@
   .intro-video-frame { width: 250px; max-width: 250px; border: 1px solid #c7b9aa; border-radius: 8px; background: var(--wine-950); box-shadow: none; }
   .intro-video-play { width: 60px; height: 60px; border-radius: 50%; background: rgba(43,16,19,.88); }
 
+  .experience-preview { padding: clamp(56px, 6vw, 78px) 0; background: var(--paper-50); border-top: 1px solid var(--paper-200); border-bottom: 1px solid var(--paper-200); }
+  .experience-preview .dossier-container { display: grid; grid-template-columns: minmax(250px, .78fr) minmax(0, 1.55fr); gap: clamp(44px, 5vw, 68px); align-items: start; }
+  .experience-preview-head h2 { margin: 0; color: var(--wine-950); font-family: "Noto Serif TC", "Songti TC", serif; font-size: clamp(1.75rem, 2.7vw, 2.2rem); line-height: 1.42; letter-spacing: -.02em; }
+  .experience-preview-head p { margin: 13px 0 0; color: var(--ink-650); font-size: .88rem; line-height: 1.75; }
+  .experience-preview-list { border-top: 1px solid #bfb1a1; }
+  .experience-preview-row { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 28px; padding: 19px 0 20px; border-bottom: 1px solid #d8ccbd; }
+  .experience-preview-row h3 { margin: 0; color: var(--wine-850); font-family: "Noto Serif TC", "Songti TC", serif; font-size: 1.06rem; line-height: 1.65; }
+  .experience-preview-row p { margin: 0; color: #5e544f; font-size: .92rem; line-height: 1.8; }
+  .experience-preview-link { display: inline-block; margin-top: 20px; color: var(--wine-700); font-size: .88rem; font-weight: 800; text-decoration: none; }
+  .experience-preview-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
   .free-tools { padding: clamp(76px, 9vw, 108px) 0; background: var(--paper-100); border-bottom-color: var(--paper-200); }
   .free-tools-head { align-items: start; margin-bottom: 34px; }
   .free-tools-head h2, .section-title { color: var(--wine-950); font-family: "Noto Serif TC", "Songti TC", serif; font-weight: 700; letter-spacing: -.02em; }
@@ -360,6 +371,8 @@
     .video-followup-copy { text-align: left; }
     .intro-video-frame { width: 144px; max-width: 144px; }
     .assessment-video { justify-self: start; }
+    .experience-preview .dossier-container { grid-template-columns: 1fr; gap: 24px; }
+    .experience-preview-row { grid-template-columns: 1fr; gap: 6px; padding: 17px 0 18px; }
     .free-tools-head { display: block; }
     .free-tools-head p { margin-top: 12px; }
   }
@@ -472,6 +485,32 @@
           <p>可以先看影片了解初評的方式與範圍，再決定是否傳送資料。</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience-preview" aria-labelledby="experience-preview-title">
+  <div class="container dossier-container">
+    <div class="experience-preview-head">
+      <h2 id="experience-preview-title">曾協助處理的<br>案件類型</h2>
+      <p>以下列出部分常見案件與法律事務。</p>
+    </div>
+    <div>
+      <div class="experience-preview-list">
+        <article class="experience-preview-row">
+          <h3>刑事案件</h3>
+          <p>妨害名譽、詐欺、過失傷害、恐嚇、誣告、業務侵占等。</p>
+        </article>
+        <article class="experience-preview-row">
+          <h3>民事與家事案件</h3>
+          <p>侵權行為、不當得利、侵害配偶權、假扣押、借款返還、代墊款返還等。</p>
+        </article>
+        <article class="experience-preview-row">
+          <h3>契約與調解</h3>
+          <p>契約撰擬與審閱、遺產分割協議撰擬、民事調解、刑事調解、車禍調解等。</p>
+        </article>
+      </div>
+      <a class="experience-preview-link" href="/about.html#experience">查看更多實務案件經驗 →</a>
     </div>
   </div>
 </section>

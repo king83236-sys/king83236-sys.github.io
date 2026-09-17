@@ -119,6 +119,14 @@
     .profile-block h3{margin:0 0 16px;color:var(--wine);font-size:1.25rem}
     .profile-block ul{margin:0;padding-left:1.25em;color:#4e4541}
     .profile-block li{margin:7px 0;padding-left:4px}
+    .experience-content{min-width:0}
+    .experience-intro{margin:0 0 18px;color:#4e4541}
+    .experience-list{border-top:1px solid var(--line)}
+    .experience-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:30px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .experience-row h3{margin:0;color:var(--wine);font-size:1.12rem;line-height:1.55}
+    .experience-row p{margin:0;color:#4e4541;line-height:1.85}
+    .experience-link{display:inline-block;margin-top:22px;color:var(--wine);font-size:.9rem;font-weight:800;text-decoration:none}
+    .experience-link:hover{text-decoration:underline;text-underline-offset:4px}
     .cta{margin-top:18px;padding:42px;background:#fff;border:1px solid var(--line);border-radius:14px}
     .cta h2{margin:0 0 12px;color:var(--wine-deep);font-size:1.65rem}
     .cta p{margin:8px 0;color:#4e4541}
@@ -142,6 +150,7 @@
       .main{padding:54px 0 68px}
       .section{grid-template-columns:1fr;gap:28px;padding:46px 0}
       .profile-columns{grid-template-columns:1fr;gap:38px}
+      .experience-row{grid-template-columns:1fr;gap:8px;padding:21px 0}
       .cta{padding:30px 24px}.cta-actions{display:grid}
       .footer-inner{flex-direction:column;text-align:center}.footer-actions{flex-wrap:wrap;justify-content:center}
       .line-float{right:12px;bottom:18px}
@@ -222,14 +231,13 @@
           <h3>學經歷</h3>
           <ul>
             <li>曾任浩宇法律事務所受雇律師</li>
-            <li>曾任浩宇法律事務所實習律師</li>
             <li>應屆考取律師執照</li>
             <li>東吳大學法律研究所刑法組進修</li>
             <li>國立中興大學法律學系畢業</li>
           </ul>
         </div>
         <div class="profile-block">
-          <h3>主要辦理事項</h3>
+          <h3>服務項目</h3>
           <ul>
             <li>民事訴訟代理</li>
             <li>刑事偵查及審判辯護</li>
@@ -242,14 +250,43 @@
       </div>
     </section>
 
+    <section class="section" id="experience">
+      <h2>實務案件經驗</h2>
+      <div class="experience-content">
+        <p class="experience-intro">我曾協助的法律案件與事務類型包括：</p>
+        <div class="experience-list">
+          <article class="experience-row">
+            <h3>刑事案件</h3>
+            <p>詐欺、妨害名譽、誣告、恐嚇、貪污、業務侵占、過失傷害、違反銀行法、重利罪等。</p>
+          </article>
+          <article class="experience-row">
+            <h3>民事與不動產案件</h3>
+            <p>侵權行為、不當得利、支付命令、本票裁定、假扣押、袋地通行、房屋返還、借款返還、借用物返還、代墊款返還請求、無名契約請求權、房地買賣糾紛等。</p>
+          </article>
+          <article class="experience-row">
+            <h3>家事、婚姻與繼承事務</h3>
+            <p>侵害配偶權、子女姓氏變更、遺產分割協議撰擬與審閱等。</p>
+          </article>
+          <article class="experience-row">
+            <h3>公司與勞動事務</h3>
+            <p>工作規則撰擬與審閱等。</p>
+          </article>
+          <article class="experience-row">
+            <h3>調解及其他法律事務</h3>
+            <p>民事調解、刑事調解、車禍調解，以及其他法律文件撰擬與審閱。</p>
+          </article>
+        </div>
+        <a class="experience-link" href="/services.html">查看法律協助項目與收費 →</a>
+      </div>
+    </section>
+
     <section class="cta">
-      <h2>收到法律通知，或準備採取法律行動？歡迎使用本所免費初評服務</h2>
-      <p>如果您準備提出刑事告訴、提起民事訴訟請求付款或損害賠償，或已收到法院、地檢署、警察機關或對方寄來的法律文件，需要回應對方的請求、主張或進行辯護，可以先加入 LINE，由鄧宇律師進行免費初評。</p>
-      <p>律師會依目前資料，協助您確認案件的急迫性、可能的處理方向，以及下一步適合採取的處理方式。</p>
-      <strong>免費初評會依目前資料確認可能方向；如需針對個案提供具體法律意見，再安排付費諮詢。</strong>
+      <h2>先花一點時間免費確認，別讓問題拖到更難處理</h2>
+      <p>您只需要把目前文件、簡要經過與手邊資料傳到官方 LINE，由鄧宇律師本人免費初評，先陪您確認期限、程序風險與需要補充的資料。即使最後決定自行處理，事前先知道問題可能出在哪裡，也通常比期限屆滿、已經作出回覆或承諾後才設法補救更容易。</p>
+      <strong>先把事情一步一步整理清楚，您不需要一個人面對。</strong>
       <div class="cta-actions">
-        <a class="btn" href="tel:0911494236" data-phone-location="about_end_cta">電話聯絡律師</a>
         <a class="btn btn-line" href="https://lin.ee/yfDGMXo" target="_blank" rel="noopener" data-line-location="about_end_cta">加 LINE 免費初評</a>
+        <a class="btn" href="tel:0911494236" data-phone-location="about_end_cta">電話聯絡律師</a>
       </div>
     </section>
   </main>
