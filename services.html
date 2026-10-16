@@ -163,6 +163,18 @@
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.line-float a,.nav-tools-trigger::after,.nav-tools-menu{transition:none}}
   </style>
+<style>
+.service-paths{margin:6px 0 40px;padding-bottom:30px;border-bottom:1px solid #dfd5c8}
+.service-paths h2{font-size:1.5rem;margin:0 0 8px;color:#4b1717}
+.service-paths>p{margin:0 0 18px;line-height:1.85}
+.service-paths__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.service-paths__grid a{display:flex;flex-direction:column;gap:8px;padding:18px;background:#fff;border:1px solid #dfd5c8;border-radius:9px;color:#231815;text-decoration:none;min-width:0}
+.service-paths__grid strong{font-size:1.07rem;color:#4b1717}
+.service-paths__grid span{font-size:.9rem;line-height:1.7;color:#635b54;flex:1}
+.service-paths__grid em{font-style:normal;color:#4b1717;font-weight:750;font-size:.89rem}
+.service-paths__grid a:hover,.service-paths__grid a:focus-visible{border-color:#c85a50;outline-offset:2px}
+@media(max-width:760px){.service-paths__grid{grid-template-columns:1fr}.service-paths__grid a{padding:15px 17px;gap:5px}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳至主要內容</a>
@@ -211,7 +223,16 @@
     </nav>
 
     <div class="content">
-      <section class="content-section" id="individual">
+      <section class="service-paths" aria-labelledby="service-paths-title">
+<h2 id="service-paths-title">依案件類型了解法律服務</h2>
+<p>如果您想先了解律師能協助處理哪些問題、由誰實際承辦，以及從免費初評到委任的流程，可以參考以下服務介紹；本頁則提供各項服務的參考收費。</p>
+<div class="service-paths__grid">
+<a href="/taoyuan-criminal-lawyer.html"><strong>刑事案件</strong><span>警詢陪同、詐欺洗錢、偵查與審判辯護</span><em>了解刑事法律服務 →</em></a>
+<a href="/taoyuan-traffic-accident-lawyer.html"><strong>車禍案件</strong><span>肇責分析、求償、調解與訴訟</span><em>了解車禍法律服務 →</em></a>
+<a href="/taoyuan-support-lawyer.html"><strong>扶養費案件</strong><span>子女扶養費、代墊扶養費及父母扶養義務</span><em>了解扶養費法律服務 →</em></a>
+</div>
+</section>
+<section class="content-section" id="individual">
         <h2>單次法律協助</h2>
         <p class="section-intro">適合希望先釐清問題、完成特定文件，或在單次程序中由律師陪同的當事人。</p>
 
