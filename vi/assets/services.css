@@ -1,0 +1,81 @@
+/* Composition from the Chinese services.html, including its distinct pricing and CTA. */
+body { background:#f7f2ea; color:#231815; line-height:1.8; }
+.services-hero { background:linear-gradient(145deg,#2d0f0f,#5a2020); color:#fff; }
+.services-hero .hero-inner { width:min(1040px,calc(100% - 44px)); margin:auto; padding:68px 0 64px; }
+.services-hero h1 { max-width:820px; color:#fff; font-size:clamp(2.2rem,5vw,3.8rem); line-height:1.2; letter-spacing:-.02em; }
+.services-hero .hero-copy > p { max-width:720px; margin:24px 0 0; color:#eadfda; font-size:1.06rem; text-wrap:pretty; }
+.services-hero .hero-copy > p:first-of-type { display:inline-flex; max-width:100%; margin:0 0 18px; padding:7px 12px; border:1px solid rgba(243,176,165,.42); border-radius:999px; color:#f8d7d1; font-size:.86rem; }
+.services-hero .hero-copy > p:nth-of-type(3) { margin-top:14px; color:#f3b0a5; font-weight:700; }
+.fees-layout { width:min(1040px,calc(100% - 44px)); margin:auto; padding:64px 0 80px; display:grid; grid-template-columns:220px minmax(0,1fr); gap:64px; align-items:start; }
+.page-nav { position:sticky; top:96px; min-width:0; padding:2px 0; }
+.page-nav > strong { display:block; margin-bottom:14px; color:#4b1717; font-size:.9rem; }
+.page-nav a { display:block; padding:8px 0; color:#6f6560; font-size:.86rem; text-decoration:none; }
+.page-nav a:hover { color:#4b1717; }
+.page-nav-contact { display:block; margin-top:22px; padding-top:20px; border-top:1px solid #dfd5c8; }
+.page-nav-contact a { color:#4b1717; font-weight:700; }
+.fees-content { min-width:0; }
+.fee-section { scroll-margin-top:96px; margin-bottom:58px; }
+.fee-section > h2 { margin:0 0 14px; padding:14px 18px; border-radius:10px; background:#2d0f0f; color:#fff; font-size:1.86rem; line-height:1.35; }
+.fee-section > p { max-width:68ch; margin:0 0 24px; color:#6f6560; }
+.free-consult { margin:0 0 12px; padding:18px 20px; border-left:4px solid #d4786a; background:#fffaf5; }
+.free-consult h3 { margin:0 0 5px; color:#2d0f0f; font-size:1.08rem; line-height:1.55; }
+.free-consult p { max-width:68ch; margin:8px 0 0; color:#4f4743; }
+.fee-item { display:grid; grid-template-columns:minmax(0,1fr) minmax(180px,230px); gap:28px; padding:27px 0; border-top:1px solid #dfd5c8; }
+.fee-item:last-child { border-bottom:1px solid #dfd5c8; }
+.fee-copy { min-width:0; }
+.fee-item .fee-copy h3 { margin:0 0 10px; color:#231815; font-size:1.16rem; line-height:1.55; }
+.fee-copy p { max-width:65ch; margin:8px 0; color:#4f4743; text-wrap:pretty; }
+.price { align-self:start; text-align:right; color:#4b1717; font-size:1.12rem; font-weight:800; font-variant-numeric:tabular-nums; }
+.price p { margin:0; color:inherit; }
+.price strong { font-weight:800; }
+.price .price-unit { display:block; margin-top:4px; color:#6f6560; font-size:.78rem; font-weight:600; }
+.sub-price + .sub-price { margin-top:16px; padding-top:14px; border-top:1px solid #eee6dc; }
+.sub-price { font-size:.96rem; }
+.plain-service:not(.free-consult) { padding:30px 0; border-top:1px solid #dfd5c8; }
+.plain-service:last-of-type { border-bottom:1px solid #dfd5c8; }
+.plain-service:not(.free-consult) h3 { margin:0 0 12px; color:#2d0f0f; font-size:1.34rem; line-height:1.5; }
+.fee-note { font-size:.84rem; }
+.consultation-packages { padding-top:27px; border-top:1px solid #dfd5c8; }
+.consultation-packages > h3 { margin:0 0 12px; color:#2d0f0f; font-size:1.34rem; line-height:1.5; }
+.consultation-intro { margin-bottom:27px; }
+.consultation-plan { display:block; }
+.consultation-plan h3 { display:grid; grid-template-columns:minmax(0,1fr) minmax(180px,230px); gap:28px; margin:0 0 16px; color:#231815; font-family:"Noto Serif",Georgia,serif; font-size:1.16rem; font-weight:600; line-height:1.55; }
+.consultation-plan .price { font-family:"Noto Sans",Arial,sans-serif; }
+.consultation-notes { padding:24px 0 28px; border-top:1px solid #dfd5c8; }
+.consultation-notes h3 { margin:0 0 14px; color:#2d0f0f; font-family:"Noto Serif",Georgia,serif; font-size:1.08rem; font-weight:600; line-height:1.55; }
+.consultation-notes p { max-width:68ch; margin:12px 0 0; color:#4f4743; font-size:.94rem; line-height:1.85; }
+.services-contact { scroll-margin-top:96px; margin-top:62px; padding:42px; background:#2d0f0f; color:#fff; border-radius:14px; }
+.services-contact h2 { margin:0 0 12px; color:#fff; font-size:1.65rem; line-height:1.45; }
+.services-contact p { max-width:65ch; margin:8px 0; color:#eadfda; }
+.services-contact > p > strong { color:#f3b0a5; }
+.services-contact .btn-phone { background:#fff; color:#2d0f0f; }
+.services-contact .btn-phone:hover { background:#f8ded9; }
+.services-contact .actions + p { margin-top:24px; }
+.services-contact .footnote,.services-contact .service-language-note { margin-top:24px; padding-top:20px; border-top:1px solid #87615f; font-size:.84rem; color:#e1c5bf; }
+footer { background:#1f0d0d; }
+@media (max-width:780px) {
+  .services-hero .hero-inner,.fees-layout { width:calc(100% - 36px); }
+  .services-hero .hero-inner { padding:50px 0 48px; }
+  .services-hero h1 { font-size:2.25rem; }
+  .fees-layout { display:block; padding:42px 0 64px; }
+  .page-nav { position:static; display:flex; max-width:100%; gap:8px; overflow-x:auto; margin-bottom:42px; padding:0 0 10px; scrollbar-width:thin; scrollbar-color:#9c7770 #f7f2ea; }
+  .page-nav > strong { display:none; }
+  .page-nav a { display:flex; align-items:center; min-height:44px; flex:0 0 auto; padding:8px 12px; border:1px solid #dfd5c8; border-radius:999px; background:#fff; color:#4b1717; white-space:nowrap; }
+  .page-nav-contact { flex:0 0 auto; margin:0; padding:0; border:0; }
+  .fee-item { grid-template-columns:minmax(0,1fr); gap:10px; padding:24px 0; }
+  .price { grid-row:1; text-align:left; font-size:1.08rem; }
+  .fee-item .fee-copy { grid-row:2; }
+  .consultation-plan h3 { grid-template-columns:minmax(0,1fr); gap:12px; }
+  .consultation-plan .price { grid-row:auto; }
+  .fee-section { margin-bottom:46px; }
+  .services-contact { margin-top:48px; padding:30px 24px; }
+}
+@media print {
+  .services-hero { background:#fff; }
+  .services-hero h1,.services-hero .hero-copy > p,.services-hero .hero-copy > p:first-of-type,.services-hero .hero-copy > p:nth-of-type(3) { color:#231815; }
+  .fees-layout { display:block; width:100%; padding:20pt 0; }
+  .page-nav { display:none; }
+  .fee-section > h2 { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+  .services-contact { background:#fff; border:1px solid #dfd5c8; padding:20pt; }
+  .services-contact h2,.services-contact p,.services-contact > p > strong,.services-contact .footnote,.services-contact .service-language-note { color:#231815; }
+}

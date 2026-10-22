@@ -1154,5 +1154,33 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://tengyulaw.tw/vi/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/vi/about.html</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/vi/services.html</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/vi/legal-aid/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/id/legal-aid/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/en/legal-aid/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/th/legal-aid/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
 </urlset>
 
