@@ -5,25 +5,45 @@
   window.__tengyuContactTrackingLoaded = true;
 
   const currentPath = window.location.pathname;
-  const isHomepage = currentPath === "/" || currentPath.endsWith("/index.html");
+  const isHomepage = /^\/(?:vi\/)?(?:index\.html)?$/.test(currentPath);
   const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
-  const articleMatch = new URL(canonical, window.location.origin).pathname.match(/article-(\d+)\.html$/);
+  const canonicalPath = new URL(canonical, window.location.origin).pathname;
+  const articleMatch = canonicalPath.match(/article-(\d+)\.html$/);
+  const legalAidMatch = canonicalPath.match(/^\/(en|id|th|vi)\/legal-aid\/(?:index\.html)?$/);
   const articleNumber = articleMatch ? Number(articleMatch[1]) : null;
-  const articleId = articleNumber ? `article-${articleNumber}` : "not_applicable";
-  const parentSupportArticles = new Set([53, 55, 56, 57, 58, 59, 60]);
-  const childSupportArticles = new Set([54, 61, 62, 63, 64, 65, 66]);
+  const articleId = articleNumber ? `article-${articleNumber}` : legalAidMatch ? `legal-aid-${legalAidMatch[1]}` : "not_applicable";
+  // Reviewed against article bodies, not inferred from publication order.
+  // Add a reviewed article ID to ONE group; unknown articles stay "other".
+  // Keep traffic-specific criminal cases in traffic_accident for continuity.
+  const topicArticles = {
+    traffic_accident: new Set([...Array.from({ length: 52 }, (_, i) => i + 1), 73, 80, 81, 82, 83, 84, 85, 86]),
+    parent_support: new Set([53, 55, 56, 57, 58, 59, 60]),
+    child_support: new Set([54, 61, 62, 63, 64, 65, 66]),
+    criminal: new Set([67, 68, 69, 70, 71, 72, 74, 76, 77, 78, 79, 87, 88, 91]),
+    civil: new Set([89, 90, 93]),
+    debt: new Set([94]),
+    occupational_accident: new Set([92]),
+    legal_fees: new Set([75])
+  };
+  const pageTopics = {
+    "/taoyuan-traffic-accident-lawyer.html": "traffic_accident",
+    "/taoyuan-criminal-lawyer.html": "criminal",
+    // This pillar covers BOTH parent and child support.
+    "/taoyuan-support-lawyer.html": "support"
+  };
 
   function pageType() {
     if (isHomepage) return "homepage";
-    if (articleNumber) return "article";
+    if (articleNumber || legalAidMatch) return "article";
     return "other";
   }
 
   function articleTopic() {
-    if (articleNumber && articleNumber <= 52) return "traffic_accident";
-    if (parentSupportArticles.has(articleNumber)) return "parent_support";
-    if (childSupportArticles.has(articleNumber)) return "child_support";
-    return "other";
+    for (const [topic, articles] of Object.entries(topicArticles)) {
+      if (articles.has(articleNumber)) return topic;
+    }
+    if (legalAidMatch) return "legal_aid";
+    return pageTopics[canonicalPath] || "other";
   }
 
   function lineLocation(link) {

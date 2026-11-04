@@ -25,12 +25,16 @@ function entrySource() {
 
 function trackToolEvent(eventName, ctaLocation = "not_applicable") {
   if (typeof window.gtag !== "function") return;
-  window.gtag("event", eventName, {
+  var parameters = {
     tool_name: TOOL_NAME,
     entry_source: entrySource(),
     cta_location: ctaLocation,
     transport_type: "beacon"
-  });
+  };
+  if (eventName === "line_click") {
+    parameters.line_location = parameters.cta_location;
+  }
+  window.gtag("event", eventName, parameters);
 }
 
 trackToolEvent("tool_open");

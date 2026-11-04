@@ -711,12 +711,16 @@
 
       function trackToolEvent(eventName, ctaLocation) {
         if (typeof gtag !== 'function') return;
-        gtag('event', eventName, {
+        var parameters = {
           tool_name: TOOL_NAME,
           entry_source: entrySource(),
           cta_location: ctaLocation || 'not_applicable',
           transport_type: 'beacon'
-        });
+        };
+        if (eventName === 'line_click') {
+          parameters.line_location = parameters.cta_location;
+        }
+        gtag('event', eventName, parameters);
       }
 
       function markToolStarted() {
