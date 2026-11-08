@@ -14,7 +14,7 @@
 
 
 
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-08</lastmod>
 
 
 
@@ -2367,6 +2367,18 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/about.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/lecture-ai-criminal-law-20261105.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
 
