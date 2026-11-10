@@ -14,7 +14,7 @@
 
 
 
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
 
 
 
@@ -2371,6 +2371,12 @@
   <url>
     <loc>https://tengyulaw.tw/article-96.html</loc>
     <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tengyulaw.tw/article-97.html</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
